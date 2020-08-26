@@ -17,6 +17,7 @@
   },
   "homepage": "https://gitlab.com/hejjnt/foodie-farmer-html#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-http-proxy": "^1.6.2"
   }
 }
