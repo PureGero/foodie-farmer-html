@@ -4,37 +4,47 @@
     <title>Foodie Farmers | Login Test</title>
     <meta name="google-signin-client_id" content="1077433649025-slog3d5l02cd9bd6av58agmgc2aspr79.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="js/index.js"></script>
     <script>
       function onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
-        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        let profile = googleUser.getBasicProfile()
         document.getElementById('output').innerHTML += 
-          '<img src="' + profile.getImageUrl() + '"/><br/>'
-        + 'Hello ' + profile.getName() + '!<br/>'
-        + '<a href="#" onclick="signOut()">Sign out</a>';
-        
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'api/signin');
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onload = function() {
-        console.log('Signed in as: ' + xhr.responseText);
-        };
-        xhr.send('idtoken=' + googleUser.getAuthResponse().id_token);
+            `<img src="${profile.getImageUrl()}"/><br/>
+             Hello ${profile.getName()}!<br/>
+             <a href="#" onclick="signOut()">Sign out</a>`
+
+        post('api/signin', 'idtoken=' + googleUser.getAuthResponse().id_token, (data, err) => {
+          console.log('Signed in as: ' + data)
+
+          get('api/customer/get_profile', (data, err) => {
+            let json = JSON.parse(data)
+            document.getElementById('output').innerHTML += 
+                `<p>Bank Account Number:
+                 <input id="bankAccount" type="number" value="${json.bankAccount}"/>
+                 <button onclick="updateBankAccount(this)">Save</button></p>`
+          })
+        })
       }
-      
+
       function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-        console.log('User signed out.');
-        location.reload();
-        });
-        
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "api/signout", true);
-        xhttp.send();
+        let auth2 = gapi.auth2.getAuthInstance()
+
+        auth2.signOut().then(() => {
+          get('api/signout', (data, err) => {
+            location.reload()
+          })
+        })
+      }
+
+      function updateBankAccount(button) {
+        let bankAccount = document.getElementById('bankAccount');
+        button.innerText = 'Saving...'
+
+        post('api/customer/edit_bankaccount', `bankAccount=${bankAccount.value}`, (data, err) => {
+          if (err) return button.innerText = 'Error saving'
+
+          button.innerText = 'Saved'
+        })
       }
     </script>
   </head>
