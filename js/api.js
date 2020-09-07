@@ -9,7 +9,7 @@ function createRequest(method, url, callback) {
       let data = this.responseText
       let err = this.status == 200 ?
                 null : 
-                `${this.status} ${statusText}`
+                `${this.status} ${this.statusText}`
       
       if (typeof callback === 'function') callback(data, err)
     }
