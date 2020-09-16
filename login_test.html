@@ -19,6 +19,10 @@
           get('api/customer/get_profile', (data, err) => {
             let json = JSON.parse(data)
             document.getElementById('output').innerHTML += 
+                `<p>Address:
+                 <input id="address" type="text" value="${json.address}"/>
+                 <button onclick="updateAddress(this)">Save</button></p>`
+            document.getElementById('output').innerHTML += 
                 `<p>Bank Account Number:
                  <input id="bankAccount" type="number" value="${json.bankAccount}"/>
                  <button onclick="updateBankAccount(this)">Save</button></p>`
@@ -33,6 +37,17 @@
           get('api/signout', (data, err) => {
             location.reload()
           })
+        })
+      }
+
+      function updateAddress(button) {
+        let address = document.getElementById('address');
+        button.innerText = 'Saving...'
+
+        post('api/customer/edit_address', `address=${address.value}`, (data, err) => {
+          if (err) return button.innerText = 'Error saving'
+
+          button.innerText = 'Saved'
         })
       }
 
