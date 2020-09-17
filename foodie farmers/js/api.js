@@ -1,5 +1,25 @@
 'use strict'
 
+let loginDialogShown = false
+
+// On google sign in
+function onSignIn(googleUser) {
+  let profile = googleUser.getBasicProfile()
+
+  $.post('/api/signin', 'idtoken=' + googleUser.getAuthResponse().id_token, data => {
+    if (loginDialogShown) {
+      location.reload()
+    }
+  })
+}
+
+// Check if user is signed in
+$.get('/api/customer/get_profile').fail(() => {
+  loginDialogShown = true
+  $('.login-dialog').modal()
+});
+
+// Load recommended items
 if ($('.recommend-items').length) {
   $.get('/api/customer/list_recommend', data => {
     data.forEach(item => {
@@ -16,6 +36,7 @@ if ($('.recommend-items').length) {
   })
 }
 
+// Load group purchases
 if ($('.group-purchase').length) {
   $.get('/api/customer/list_group_purchases', data => {
     data.forEach(item => {
@@ -54,8 +75,8 @@ if ($('.group-purchase').length) {
             items: 3
           }
         }
-      });
-    };
-    slider();
+      })
+    }
+    slider()
   })
 }
