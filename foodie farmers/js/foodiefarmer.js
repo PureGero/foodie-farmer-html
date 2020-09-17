@@ -1,5 +1,7 @@
 'use strict'
 
+/* Foodie Farmer javascript */
+
 let loginDialogShown = false
 
 // On google sign in
