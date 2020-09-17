@@ -14,9 +14,12 @@ function onSignIn(googleUser) {
 }
 
 // Check if user is signed in
-$.get('/api/customer/get_profile').fail(() => {
-  loginDialogShown = true
-  $('.login-dialog').modal()
+$.get('/api/customer/get_profile').fail(jqXHR => {
+  // The server returns a response code of 400 when not logged in
+  if (jqXHR.status == 400) {
+    loginDialogShown = true
+    $('.login-dialog').modal()
+  }
 });
 
 // Load recommended items
