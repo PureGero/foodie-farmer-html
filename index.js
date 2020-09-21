@@ -28,7 +28,7 @@ app.use((req, res, next) => {
       res.end(data)
     })
   } else {
-    fs.readFile(file, function(err, data) {
+    fs.readFile(file, (err, data) => {
       if (err) return next()
 
       res.end(data)
@@ -74,8 +74,18 @@ function buildDirectory(src, dist) {
     
         if (stats.isDirectory()) {
           buildDirectory(from, to)
-        } else {
+        } else if (file.endsWith('.html') || file.endsWith('.js')) {
           parseFile(from, (err, data) => {
+            if (err) return console.log(err)
+
+            fs.writeFile(to, data, err => {
+              if (err) return console.log(err)
+
+              console.log(from + ' was built')
+            })
+          })
+        } else {
+          fs.readFile(from, (err, data) => {
             if (err) return console.log(err)
 
             fs.writeFile(to, data, err => {
