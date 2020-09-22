@@ -6,10 +6,10 @@ The html base for the Foodie Farmer application
 
 Install the packages with
 
-  npm install
+  `npm install`
 
 Run the server with
 
-  node .
+  `npm run start`
 
 And you can access it at http://localhost:8080
