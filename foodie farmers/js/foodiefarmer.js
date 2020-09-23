@@ -24,6 +24,10 @@ $.get('/api/customer/get_profile').fail(jqXHR => {
   }
 });
 
+// Set active navigation element
+let filename = location.pathname.substr(location.pathname.lastIndexOf('/') + 1)
+$(`nav a[href="${filename}"]`).parent().addClass('active')
+
 // Load recommended items
 if ($('.recommend-items').length) {
   $.get('/api/customer/list_recommend', data => {
