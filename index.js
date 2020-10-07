@@ -13,17 +13,20 @@ const app = express()
 app.use('/api', proxy('localhost:3000'))
 
 app.use((req, res, next) => {
-  let path = url.parse(req.url).pathname
+  let path = decodeURI(url.parse(req.url).pathname)
 
   if (path.endsWith('/')) {
     path = path + 'index.html'
   }
 
   let file = SRC + path
-
+  
   if (file.endsWith('.html') || file.endsWith('.js')) {
     parseFile(file, (err, data) => {
       if (err) return next()
+
+      if (file.endsWith('.html')) res.setHeader('content-type', 'text/html; charset=utf-8');
+      if (file.endsWith('.js')) res.setHeader('content-type', 'text/js; charset=utf-8');
 
       res.end(data)
     })
