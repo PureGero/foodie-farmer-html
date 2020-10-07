@@ -25,8 +25,8 @@ app.use((req, res, next) => {
     parseFile(file, (err, data) => {
       if (err) return next()
 
-      if (file.endsWith('.html')) res.setHeader('content-type', 'text/html; charset=utf-8');
-      if (file.endsWith('.js')) res.setHeader('content-type', 'text/js; charset=utf-8');
+      if (file.endsWith('.html')) res.setHeader('content-type', 'text/html; charset=utf-8')
+      if (file.endsWith('.js')) res.setHeader('content-type', 'text/js; charset=utf-8')
 
       res.end(data)
     })
