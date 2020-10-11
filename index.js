@@ -90,12 +90,21 @@ function buildDirectory(src, dist) {
           })
         } else if (file.endsWith('.jpg')) {
           sharp(from)
-            .resize(1000)
+            .resize(350)
             .toFile(to, (err, info) => {
               if (err) return console.log(err)
 
               console.log(from + ' was compressed')
             });
+          fs.readFile(from, (err, data) => {
+            if (err) return console.log(err)
+
+            fs.writeFile(to.substr(0, to.lastIndexOf('.')) + '-large.jpg', data, err => {
+              if (err) return console.log(err)
+
+              console.log(from + ' was built')
+            })
+          })
         } else {
           fs.readFile(from, (err, data) => {
             if (err) return console.log(err)
