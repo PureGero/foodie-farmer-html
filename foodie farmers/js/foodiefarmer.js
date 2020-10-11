@@ -53,11 +53,9 @@ if ($('.produce-items').length) {
     data.forEach(item => {
       $(`<div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
         <div class="block-4 text-center border">
-          <figure class="block-4-image">
-            <a href="shop-single.html?item="${item.id}"><img src="${item.picture}" alt="Image placeholder" class="img-fluid"></a>
-          </figure>
+          <figure class="block-4-image" style="background-image: url('${item.picture}')"></figure>
           <div class="block-4-text p-4">
-            <h3><a href="shop-single.html">${item.name}</a></h3>
+            <h3><a href="shop-single.html?id=${item.id}">${item.name}</a></h3>
             <p class="mb-0">${item.description}</p>
             <p class="text-primary font-weight-bold">$${item.price}</p>
           </div>

@@ -1,8 +1,13 @@
 /* Foodie farmer styles */
 
 .recommend-items figure,
-.group-purchase figure {
+.group-purchase figure,
+.produce-items figure {
     background-position: center;
     background-size: cover;
-    padding-top: 100%;
+    padding-top: 66%;
+}
+
+.recommend-items figure {
+    padding-top: 80%;
 }
