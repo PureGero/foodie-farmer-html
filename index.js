@@ -2,6 +2,7 @@ const express = require('express')
 const fs = require('fs')
 const path = require('path')
 const proxy = require('express-http-proxy')
+const sharp = require('sharp')
 const url = require('url')
 
 const PORT = 8080
@@ -87,6 +88,14 @@ function buildDirectory(src, dist) {
               console.log(from + ' was built')
             })
           })
+        } else if (file.endsWith('.jpg')) {
+          sharp(from)
+            .resize(1000)
+            .toFile(to, (err, info) => {
+              if (err) return console.log(err)
+
+              console.log(from + ' was compressed')
+            });
         } else {
           fs.readFile(from, (err, data) => {
             if (err) return console.log(err)
