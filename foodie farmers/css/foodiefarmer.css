@@ -2,7 +2,9 @@
 
 .recommend-items figure,
 .group-purchase figure,
-.produce-items figure {
+.produce-items figure,
+.shop-single figure,
+.featured-items figure {
     background-position: center;
     background-size: cover;
     padding-top: 66%;
