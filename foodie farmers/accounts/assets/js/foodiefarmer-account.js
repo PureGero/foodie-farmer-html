@@ -23,6 +23,8 @@ function loadProfile(idtoken) {
     $('#bsb').val(customer.bsb)
     $('#accountNumber').val(customer.accountNumber)
     $('#accountName').val(customer.accountName)
+    $('#address').val(customer.address)
+    $('#deliverToCollectionPoint').prop('checked', customer.deliverToCollectionPoint)
 
   }).fail(jqXHR => {
     if (jqXHR.status == 400) {
@@ -50,6 +52,23 @@ function savePaymentMethod(button) {
   
   $.post('/api/customer/edit_bankaccount',
     `bsb=${bsb}&accountNumber=${accountNumber}&accountName=${accountName}`,
+    data => {
+      $(button).text('Saved')
+      setTimeout(() => $(button).text('Save Change'), 2000)
+    }
+  ).fail(jqXHR => {
+    $(button).text(jqXHR.responseText)
+  })
+}
+
+function saveAddress(button) {
+  $(button).text('Saving...')
+
+  let address = $('#address').val()
+  let deliverToCollectionPoint = $('#deliverToCollectionPoint').prop('checked')
+  
+  $.post('/api/customer/edit_address',
+    `address=${address}&deliverToCollectionPoint=${deliverToCollectionPoint}`,
     data => {
       $(button).text('Saved')
       setTimeout(() => $(button).text('Save Change'), 2000)
