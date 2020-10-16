@@ -82,7 +82,7 @@
                                         <li>
                                             <a id="pills-address-tab" class="link--icon-left" data-toggle="pill"
                                                 href="#pills-address" role="tab" aria-controls="pills-address"
-                                                aria-selected="false"><i class="fas fa-map-marker-alt"></i> Address</a>
+                                                aria-selected="false"><i class="fas fa-map-marker-alt"></i> Delivery Address</a>
                                         </li>
                                         <li>
                                             <a id="pills-account-tab" class="link--icon-left" data-toggle="pill"
@@ -204,22 +204,23 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-box__single-group">
-                                                        <input type="text" placeholder="BSB">
+                                                        <input type="text" id="bsb" placeholder="BSB">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-box__single-group">
-                                                        <input type="text" placeholder="Account Number">
+                                                        <input type="text" id="accountNumber" placeholder="Account Number">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-box__single-group">
-                                                        <input type="text" placeholder="Full Name">
+                                                        <input type="text" id="accountName" placeholder="Full Name">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-box__single-group">
                                                         <button
+                                                            onclick="savePaymentMethod(this)"
                                                             class="btn btn--box btn--small btn--uppercase btn--blue">Save
                                                             Change</button>
                                                     </div>
@@ -230,13 +231,22 @@
                                     <div class="tab-pane fade" id="pills-address" role="tabpanel"
                                         aria-labelledby="pills-address-tab">
                                         <div class="my-account-address account-wrapper">
-                                            <h4 class="account-title">Payment Method</h4>
+                                            <h4 class="account-title">Delivery Address</h4>
                                             <div class="account-address m-t-30">
-                                                <h6 class="name">Alex Tuntuni</h6>
-                                                <p>1355 Market St, Suite 900 <br> San Francisco, CA 94103</p>
-                                                <p>Mobile: (123) 456-7890</p>
-                                                <a class="box-btn m-t-25 " href="#"><i class="far fa-edit"></i> Edit
-                                                    Address</a>
+                                                <h6>Home Address</h6>
+                                                <p>
+                                                    <textarea id="address" cols="30" rows="4" placeholder="400 George St, Brisbane QLD 4000"></textarea>
+                                                </p>
+                                                <h6>Deliver to collection point?</h6>
+                                                <p>Add a massive discount on your delivery fees by having it delivered to a nearby designated collection point.</p>
+                                                <p class="ml-3 mb-4">
+                                                    <input id="deliverToCollectionPoint" type="checkbox"/>
+                                                    <span class="ml-4">Deliver to <b id="nearestCollectionPoint">St Lucia Marketplace, St Lucia QLD 4067</b></span>
+                                                </p>
+                                                <button
+                                                    onclick="saveAddress(this)"
+                                                    class="btn btn--box btn--small btn--uppercase btn--blue">Save
+                                                    Change</button>
                                             </div>
                                         </div>
                                     </div>

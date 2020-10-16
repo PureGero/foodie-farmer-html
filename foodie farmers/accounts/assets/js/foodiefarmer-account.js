@@ -2,7 +2,7 @@
 
 /* Foodie Farmer javascript for the account page */
 
-let signedIn = false;
+let signedIn = false
 
 // On google sign in
 function onSignIn(googleUser) {
@@ -15,10 +15,14 @@ function loadProfile(idtoken) {
   // Check if user is signed in
   $.get('/api/customer/get_profile', customer => {
     // Customer is signed in
-    signedIn = true;
+    signedIn = true
     $('.welcome-dashboard').html(`
       <p>Hello, <strong>${customer.name}</strong> (If Not <strong>${customer.name} !</strong> <a
       href="#" onclick="signout()">Logout</a> )</p>`)
+
+    $('#bsb').val(customer.bsb)
+    $('#accountNumber').val(customer.accountNumber)
+    $('#accountName').val(customer.accountName)
 
   }).fail(jqXHR => {
     if (jqXHR.status == 400) {
@@ -34,6 +38,24 @@ function loadProfile(idtoken) {
       // Another kind of error occured
       $('.welcome-dashboard').html(`Could not contact api server`)
     }
+  })
+}
+
+function savePaymentMethod(button) {
+  $(button).text('Saving...')
+
+  let bsb = $('#bsb').val()
+  let accountNumber = $('#accountNumber').val()
+  let accountName = $('#accountName').val()
+  
+  $.post('/api/customer/edit_bankaccount',
+    `bsb=${bsb}&accountNumber=${accountNumber}&accountName=${accountName}`,
+    data => {
+      $(button).text('Saved')
+      setTimeout(() => $(button).text('Save Change'), 2000)
+    }
+  ).fail(jqXHR => {
+    $(button).text(jqXHR.responseText)
   })
 }
 
