@@ -257,51 +257,47 @@
 
                                             <div class="account-details">
                                                 <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-12">
                                                         <div class="form-box__single-group">
-                                                            <input type="text" placeholder="First Name">
+                                                            <p class="mb-0">Account details are managed by <a href="https://myaccount.google.com/'" target="_blank">Google</a>.</p>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-box__single-group">
-                                                            <input type="text" placeholder="Last Name">
+                                                            <input id="firstName" type="text" placeholder="First Name" disabled>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-box__single-group">
+                                                            <input id="lastName" type="text" placeholder="Last Name" disabled>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="form-box__single-group">
-                                                            <input type="text" placeholder="Display Name">
+                                                            <input id="name" type="text" placeholder="Display Name" disabled>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="form-box__single-group">
-                                                            <input type="text" placeholder="Email address">
+                                                            <input id="email" type="text" placeholder="Email address" disabled>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="form-box__single-group">
-                                                            <h5 class="title">Password change</h5>
+                                                            <h5 class="title">Profile Picture</h5>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-box__single-group">
+                                                            <img id="profileIcon" style="width: 100%"/>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <div class="form-box__single-group">
-                                                            <input type="password" placeholder="Current Password">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-box__single-group">
-                                                            <input type="password" placeholder="New Password">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-box__single-group">
-                                                            <input type="password" placeholder="Confirm Password">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
                                                         <div class="form-box__single-group">
                                                             <button
-                                                                class="btn btn--box btn--small btn--uppercase btn--blue">Save
-                                                                Change</button>
+                                                                id="googleAccountButton"
+                                                                class="btn btn--box btn--small btn--uppercase btn--blue">Change
+                                                                Your Account Details &gt;</button>
                                                         </div>
                                                     </div>
                                                 </div>

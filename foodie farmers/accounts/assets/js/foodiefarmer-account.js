@@ -20,9 +20,17 @@ function loadProfile(idtoken) {
       <p>Hello, <strong>${customer.name}</strong> (If Not <strong>${customer.name} !</strong> <a
       href="#" onclick="signout()">Logout</a> )</p>`)
 
+    $('#firstName').val(customer.name.split(' ')[0])
+    $('#lastName').val(customer.name.split(' ')[1])
+    $('#name').val(customer.name)
+    $('#email').val(customer.userName)
+    $('#profileIcon').attr('src', customer.picture)
+    $('#googleAccountButton').click(e => open('https://myaccount.google.com/', '_blank'))
+
     $('#bsb').val(customer.bsb)
     $('#accountNumber').val(customer.accountNumber)
     $('#accountName').val(customer.accountName)
+
     $('#address').val(customer.address)
     $('#deliverToCollectionPoint').prop('checked', customer.deliverToCollectionPoint)
 
