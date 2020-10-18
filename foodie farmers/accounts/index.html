@@ -91,6 +91,12 @@
                                                 Account Details</a>
                                         </li>
                                         <li>
+                                            <a id="pills-farm-tab" class="link--icon-left" data-toggle="pill"
+                                                href="#pills-farm" role="tab" aria-controls="pills-farm"
+                                                aria-selected="false"><i class="fas fa-tractor"></i>
+                                                Farm Details</a>
+                                        </li>
+                                        <li>
                                             <a class="link--icon-left" href="#" onclick="signout()"><i class="fas fa-sign-out-alt"></i>
                                                 Logout</a>
                                         </li>
@@ -298,6 +304,40 @@
                                                                 id="googleAccountButton"
                                                                 class="btn btn--box btn--small btn--uppercase btn--blue">Change
                                                                 Your Account Details &gt;</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-farm" role="tabpanel"
+                                        aria-labelledby="pills-farm-tab">
+                                        <div class="my-farm-details account-wrapper">
+                                            <h4 class="farm-title">Farm Details</h4>
+
+                                            <div class="farm-details">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-box__single-group">
+                                                            <p class="mb-0">Please fill out these details to be eligible to sell food on Foodie Farmers.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-box__single-group">
+                                                            <input id="farmName" type="text" placeholder="Farm Name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-box__single-group">
+                                                            <input id="farmAddress" type="text" placeholder="Farm Address">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-box__single-group">
+                                                            <button
+                                                                onclick="saveFarm(this)"
+                                                                class="btn btn--box btn--small btn--uppercase btn--blue">Save
+                                                                Change</button>
                                                         </div>
                                                     </div>
                                                 </div>

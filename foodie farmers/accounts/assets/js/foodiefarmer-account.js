@@ -34,6 +34,9 @@ function loadProfile(idtoken) {
     $('#address').val(customer.address)
     $('#deliverToCollectionPoint').prop('checked', customer.deliverToCollectionPoint)
 
+    $('#farmName').val(customer.farmName)
+    $('#farmAddress').val(customer.farmAddress)
+
   }).fail(jqXHR => {
     if (jqXHR.status == 400) {
       // The server returns a response code of 400 when not logged in
@@ -77,6 +80,23 @@ function saveAddress(button) {
   
   $.post('/api/customer/edit_address',
     `address=${address}&deliverToCollectionPoint=${deliverToCollectionPoint}`,
+    data => {
+      $(button).text('Saved')
+      setTimeout(() => $(button).text('Save Change'), 2000)
+    }
+  ).fail(jqXHR => {
+    $(button).text(jqXHR.responseText)
+  })
+}
+
+function saveFarm(button) {
+  $(button).text('Saving...')
+
+  let farmName = $('#farmName').val()
+  let farmAddress = $('#farmAddress').val()
+  
+  $.post('/api/customer/edit_farm',
+    `farmName=${farmName}&farmAddress=${farmAddress}`,
     data => {
       $(button).text('Saved')
       setTimeout(() => $(button).text('Save Change'), 2000)
