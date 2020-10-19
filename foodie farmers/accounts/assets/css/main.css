@@ -3620,14 +3620,6 @@ table tbody > tr td {
   padding: 30px 15px;
   text-align: center;
 }
-table tbody > tr td a {
-  color: #666;
-  text-decoration: none !important;
-  display: inline-block;
-}
-table tbody > tr td a:hover {
-  color: #666;
-}
 
 .product-thumbnail {
   width: 150px;

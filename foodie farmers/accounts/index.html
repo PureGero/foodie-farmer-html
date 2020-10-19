@@ -333,12 +333,105 @@
                                                             <th class="date">Description</th>
                                                             <th class="status">Type</th>
                                                             <th class="status">Quantity</th>
+                                                            <th class="status">Edit</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         
                                                     </tbody>
                                                 </table>
+                                            </div>
+
+                                            <h5 class="account-title m-t-30">Add new stock</h5>
+                                            <div class="stock-details">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <div class="form-box__single-group">
+                                                            Item Name
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-box__single-group">
+                                                            <input id="stockName" type="text" placeholder="Item Name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-box__single-group">
+                                                            Item Description
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-box__single-group">
+                                                            <input id="stockDescription" type="text" placeholder="Item Description">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-box__single-group">
+                                                            Picture URL
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-box__single-group">
+                                                            <input id="stockPicture" type="text" placeholder="Picture URL">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-box__single-group">
+                                                            Quantity
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-box__single-group">
+                                                            <input id="stockQuantity" type="number" placeholder="Quantity">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-box__single-group">
+                                                            Price
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-box__single-group">
+                                                            <input id="stockPrice" type="number" placeholder="Price">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-box__single-group">
+                                                            Expiration Date
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-box__single-group">
+                                                            <input id="stockExpirationDate" type="date" placeholder="Expiration Date">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-box__single-group">
+                                                            Stock Type
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-box__single-group">
+                                                            <select id="stockType">
+                                                                
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-box__single-group">
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-box__single-group">
+                                                            <button
+                                                                id="saveStockButton"
+                                                                onclick="saveStock(this)"
+                                                                class="btn btn--box btn--small btn--uppercase btn--blue">Add
+                                                                Stock</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -59,6 +59,7 @@ function loadProfile(idtoken) {
   })
 }
 
+// Show the tabs only visible to farmers
 function showFarmTabs() {
   if ($('#pills-stock-tab').css('display') == 'none') {
     // Show the stock and group purchases tabs if not shown already
@@ -67,16 +68,37 @@ function showFarmTabs() {
 
     $.get('/api/farmer/get_farm_stock', stocks => {
       stocks.forEach(stock => {
-        $(`<tr>
-            <td><img src="${stock.picture}" width="64px"/></td>
-            <td>${stock.name}</td>
-            <td>${stock.description}</td>
-            <td>${stock.stockType}</td>
-            <td>${stock.quantity}</td>
-          </tr>`).appendTo('.my-account-stock tbody')
+        appendStock(stock)
       })
     })
+
+    loadStockTypes()
   }
+}
+
+// Append a stock item to the list of stocks, removing it first if it already exists
+function appendStock(stock) {
+  $(`stock-${stock.id}`).remove()
+  $(`<tr id="stock-${stock.id}">
+    <td><img src="${stock.picture}" width="64px"/></td>
+    <td>${stock.name}</td>
+    <td>${stock.description}</td>
+    <td>${stock.stockType}</td>
+    <td>${stock.quantity}</td>
+    <td><a class="box-btn" href="#" onclick="editStock(this)"><i class="far fa-edit"></i></a></td>
+  </tr>`).appendTo('.my-account-stock tbody')
+}
+
+// Load the types of stock for the stock type dropdown menu
+function loadStockTypes() {
+  $.get('/api/customer/list_stock_types', stockTypes => {
+    $('#stockType').empty()
+
+    stockTypes.forEach(stockType => {
+      $(`<option value="${stockType.name}">${stockType.name}</option>`)
+        .appendTo('#stockType')
+    })
+  })
 }
 
 function savePaymentMethod(button) {
@@ -128,6 +150,38 @@ function saveFarm(button) {
 
       // Show the farm tabs
       showFarmTabs()
+    }
+  ).fail(jqXHR => {
+    $(button).text(jqXHR.responseText)
+  })
+}
+
+function saveStock(button) {
+  $(button).text('Saving...')
+
+  let name = $('#stockName').val()
+  let description = $('#stockDescription').val()
+  let picture = $('#stockPicture').val()
+  let quantity = $('#stockQuantity').val()
+  let price = $('#stockPrice').val()
+  let expirationDate = $('#stockExpirationDate').val()
+  let stockType = $('#stockType').val()
+  
+  $.post('/api/farmer/add_stock',
+    `name=${name}&description=${description}&picture=${picture}&quantity=${quantity}&price=${price}&expirationDate=${expirationDate}&stockType=${stockType}`,
+    stock => {
+      $(button).text('Saved')
+      setTimeout(() => $(button).text('Add Stock'), 2000)
+
+      $('#stockName').val('')
+      $('#stockDescription').val('')
+      $('#stockPicture').val('')
+      $('#stockQuantity').val('')
+      $('#stockPrice').val('')
+      $('#stockExpirationDate').val('')
+      $('#stockType').val('')
+
+      appendStock(stock)
     }
   ).fail(jqXHR => {
     $(button).text(jqXHR.responseText)
