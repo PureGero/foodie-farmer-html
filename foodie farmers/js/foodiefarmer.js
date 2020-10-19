@@ -167,3 +167,11 @@ if ($('.featured-items').length) {
     slider()
   })
 }
+
+//add items to HTML5 storage
+function AddItem() {
+
+  var name = document.getElementsByClassName("text-black item-name")[0].innerHTML
+  var quanitity = document.getElementsByClassName("form-control text-center")[0].innerHTML
+  localStorage.setItem(name, quanitity);
+}
