@@ -4,6 +4,9 @@
 
 let signedIn = false
 
+// Map of stock id to stock of the farmer
+const stockMap = {}
+
 // On google sign in
 function onSignIn(googleUser) {
   let profile = googleUser.getBasicProfile()
@@ -78,15 +81,34 @@ function showFarmTabs() {
 
 // Append a stock item to the list of stocks, removing it first if it already exists
 function appendStock(stock) {
-  $(`stock-${stock.id}`).remove()
+  stockMap[stock.id] = stock
+
+  $(`#stock-${stock.id}`).remove()
   $(`<tr id="stock-${stock.id}">
     <td><img src="${stock.picture}" width="64px"/></td>
     <td>${stock.name}</td>
     <td>${stock.description}</td>
     <td>${stock.stockType}</td>
     <td>${stock.quantity}</td>
-    <td><a class="box-btn" href="#" onclick="editStock(this)"><i class="far fa-edit"></i></a></td>
+    <td><a class="box-btn" href="#" onclick="editStock(${stock.id})"><i class="far fa-edit"></i></a></td>
   </tr>`).appendTo('.my-account-stock tbody')
+}
+
+function editStock(stockId) {
+  const stock = stockMap[stockId]
+
+  $('#stockId').val(stock.id)
+  $('#stockName').val(stock.name)
+  $('#stockDescription').val(stock.description)
+  $('#stockPicture').val(stock.picture)
+  $('#stockQuantity').val(stock.quantity)
+  $('#stockPrice').val(stock.price)
+  $('#stockExpirationDate').prop('valueAsDate', new Date(stock.expirationDate))
+  $('#stockType').val(stock.stockType)
+
+  $('#saveStockButton').text('Save Edits')
+
+  $('#stockName').focus()
 }
 
 // Load the types of stock for the stock type dropdown menu
@@ -159,6 +181,7 @@ function saveFarm(button) {
 function saveStock(button) {
   $(button).text('Saving...')
 
+  let id = $('#stockId').val()
   let name = $('#stockName').val()
   let description = $('#stockDescription').val()
   let picture = $('#stockPicture').val()
@@ -168,11 +191,12 @@ function saveStock(button) {
   let stockType = $('#stockType').val()
   
   $.post('/api/farmer/add_stock',
-    `name=${name}&description=${description}&picture=${picture}&quantity=${quantity}&price=${price}&expirationDate=${expirationDate}&stockType=${stockType}`,
+    `id=${id}&name=${name}&description=${description}&picture=${picture}&quantity=${quantity}&price=${price}&expirationDate=${expirationDate}&stockType=${stockType}`,
     stock => {
       $(button).text('Saved')
       setTimeout(() => $(button).text('Add Stock'), 2000)
 
+      $('#stockId').val('')
       $('#stockName').val('')
       $('#stockDescription').val('')
       $('#stockPicture').val('')
