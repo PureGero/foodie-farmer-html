@@ -37,6 +37,11 @@ function loadProfile(idtoken) {
     $('#farmName').val(customer.farmName)
     $('#farmAddress').val(customer.farmAddress)
 
+    if (customer.farmName) {
+      // Show the farm tabs if we are a farm
+      showFarmTabs()
+    }
+
   }).fail(jqXHR => {
     if (jqXHR.status == 400) {
       // The server returns a response code of 400 when not logged in
@@ -52,6 +57,26 @@ function loadProfile(idtoken) {
       $('.welcome-dashboard').html(`Could not contact api server`)
     }
   })
+}
+
+function showFarmTabs() {
+  if ($('#pills-stock-tab').css('display') == 'none') {
+    // Show the stock and group purchases tabs if not shown already
+    $('#pills-stock-tab').css('display', '')
+    $('#pills-group-tab').css('display', '')
+
+    $.get('/api/farmer/get_farm_stock', stocks => {
+      stocks.forEach(stock => {
+        $(`<tr>
+            <td><img src="${stock.picture}" width="64px"/></td>
+            <td>${stock.name}</td>
+            <td>${stock.description}</td>
+            <td>${stock.stockType}</td>
+            <td>${stock.quantity}</td>
+          </tr>`).appendTo('.my-account-stock tbody')
+      })
+    })
+  }
 }
 
 function savePaymentMethod(button) {
@@ -95,11 +120,14 @@ function saveFarm(button) {
   let farmName = $('#farmName').val()
   let farmAddress = $('#farmAddress').val()
   
-  $.post('/api/customer/edit_farm',
+  $.post('/api/farmer/edit_farm',
     `farmName=${farmName}&farmAddress=${farmAddress}`,
     data => {
       $(button).text('Saved')
       setTimeout(() => $(button).text('Save Change'), 2000)
+
+      // Show the farm tabs
+      showFarmTabs()
     }
   ).fail(jqXHR => {
     $(button).text(jqXHR.responseText)

@@ -65,13 +65,7 @@
                                         <li>
                                             <a id="pills-order-tab" class="link--icon-left" data-toggle="pill"
                                                 href="#pills-order" role="tab" aria-controls="pills-order"
-                                                aria-selected="false"><i class="fas fa-shopping-cart"></i> Order</a>
-                                        </li>
-                                        <li>
-                                            <a id="pills-download-tab" class="link--icon-left" data-toggle="pill"
-                                                href="#pills-download" role="tab" aria-controls="pills-download"
-                                                aria-selected="false"><i class="fas fa-cloud-download-alt"></i>
-                                                Download</a>
+                                                aria-selected="false"><i class="fas fa-shopping-cart"></i> Orders</a>
                                         </li>
                                         <li>
                                             <a id="pills-payment-tab" class="link--icon-left" data-toggle="pill"
@@ -95,6 +89,20 @@
                                                 href="#pills-farm" role="tab" aria-controls="pills-farm"
                                                 aria-selected="false"><i class="fas fa-tractor"></i>
                                                 Farm Details</a>
+                                        </li>
+                                        <li>
+                                            <a id="pills-stock-tab" class="link--icon-left" data-toggle="pill"
+                                                href="#pills-stock" role="tab" aria-controls="pills-stock"
+                                                aria-selected="false" style="display: none">
+                                                <i class="fas fa-seedling"></i>
+                                                Stock</a>
+                                        </li>
+                                        <li>
+                                            <a id="pills-group-tab" class="link--icon-left" data-toggle="pill"
+                                                href="#pills-group" role="tab" aria-controls="pills-group"
+                                                aria-selected="false" style="display: none">
+                                                <i class="fas fa-users"></i>
+                                                Group Purchases</a>
                                         </li>
                                         <li>
                                             <a class="link--icon-left" href="#" onclick="signout()"><i class="fas fa-sign-out-alt"></i>
@@ -171,38 +179,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="pills-download" role="tabpanel"
-                                        aria-labelledby="pills-download-tab">
-                                        <div class="my-account-download account-wrapper">
-                                            <h4 class="account-title">Download</h4>
-                                            <div class="account-table text-center m-t-30 table-responsive">
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="name">Product</th>
-                                                            <th class="date">Date</th>
-                                                            <th class="status">Expire</th>
-                                                            <th class="action">Download</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Mostarizing Oil</td>
-                                                            <td>Aug 22, 2020</td>
-                                                            <td>Yes</td>
-                                                            <td><a href="#">Download File</a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Katopeno Altuni</td>
-                                                            <td>July 22, 2020</td>
-                                                            <td>Never</td>
-                                                            <td><a href="#">Download File</a></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="tab-pane fade" id="pills-payment" role="tabpanel"
                                         aria-labelledby="pills-payment-tab">
                                         <div class="my-account-payment account-wrapper">
@@ -265,7 +241,7 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-box__single-group">
-                                                            <p class="mb-0">Account details are managed by <a href="https://myaccount.google.com/'" target="_blank">Google</a>.</p>
+                                                            <p class="mb-0">Account details are managed by <a href="https://myaccount.google.com/" target="_blank">Google</a>.</p>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -341,6 +317,57 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-stock" role="tabpanel"
+                                        aria-labelledby="pills-stock-tab">
+                                        <div class="my-account-stock account-wrapper">
+                                            <h4 class="account-title">Stock</h4>
+                                            <div class="account-table text-center m-t-30 table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="status">Picture</th>
+                                                            <th class="name">Name</th>
+                                                            <th class="date">Description</th>
+                                                            <th class="status">Type</th>
+                                                            <th class="status">Quantity</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-group" role="tabpanel"
+                                        aria-labelledby="pills-group-tab">
+                                        <div class="my-account-group account-wrapper">
+                                            <h4 class="account-title">Group Purchases</h4>
+                                            <div class="account-table text-center m-t-30 table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="name">Product</th>
+                                                            <th class="date">Date</th>
+                                                            <th class="status">Expire</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Mostarizing Oil</td>
+                                                            <td>Aug 22, 2020</td>
+                                                            <td>Yes</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Katopeno Altuni</td>
+                                                            <td>July 22, 2020</td>
+                                                            <td>Never</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>
