@@ -105,7 +105,7 @@ function appendStock(stock) {
 
   // Add it to the group purchase stock options, removing it if it already exists
   $(`#groupPurchaseStock-${stock.id}`).remove()
-  $(`<option id= "groupPurchaseStock-${stock.id}" value="${stock.id}">${stock.name}</option>`)
+  $(`<option id= "groupPurchaseStock-${stock.id}" value="${stock.id}">${stock.name} ($${stock.price})</option>`)
         .appendTo('#groupPurchaseStock')
 }
 
@@ -118,7 +118,7 @@ function appendGroupPurchase(groupPurchase) {
     <td><img src="${groupPurchase.picture}" title="${groupPurchase.name}" width="64px"/></td>
     <td>${new Date(groupPurchase.endTime).toLocaleString()}</td>
     <td>${groupPurchase.totalQuantity} / ${groupPurchase.capacity}</td>
-    <td>${groupPurchase.maxDiscount}</td>
+    <td>$${groupPurchase.maxDiscount}</td>
     <td><a class="box-btn" href="#" onclick="editGroupPurchase(${groupPurchase.id})"><i class="far fa-edit"></i></a></td>
   </tr>`).appendTo('.my-account-group tbody')
 }
