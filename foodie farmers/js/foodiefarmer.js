@@ -36,6 +36,9 @@ if ($('.shop-single').length) {
     $('.item-picture').css('background-image', `url('${item.picture}')`)
     $('.item-description').text(item.description)
     $('.item-price').text('$' + item.price)
+    $('.item-detail').text('$' + item.detail)
+    $('.item-rating').text('$' + item.rating)
+    $('.item-comment').text('$' + item.comment)
     $('.item-farm').text(item.farm + ', ' + item.location)
   })
 }
