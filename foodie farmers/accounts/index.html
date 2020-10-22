@@ -444,24 +444,80 @@
                                                 <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th class="name">Product</th>
-                                                            <th class="date">Date</th>
-                                                            <th class="status">Expire</th>
+                                                            <th class="status">Picture</th>
+                                                            <th class="status">End Time</th>
+                                                            <th class="status">Orders / Capacity</th>
+                                                            <th class="status">Max Discount</th>
+                                                            <th class="status">Edit</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <td>Mostarizing Oil</td>
-                                                            <td>Aug 22, 2020</td>
-                                                            <td>Yes</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Katopeno Altuni</td>
-                                                            <td>July 22, 2020</td>
-                                                            <td>Never</td>
-                                                        </tr>
+
                                                     </tbody>
                                                 </table>
+                                            </div>
+
+                                            <h5 class="account-title m-t-30">Start new group purchase</h5>
+                                            <div class="groupPurchase-details">
+                                                <div class="row">
+                                                    <input id="groupPurchaseId" type="number" style="display: none">
+                                                    <div class="col-md-3">
+                                                        <div class="form-box__single-group">
+                                                            Stock Item
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-box__single-group">
+                                                            <select id="groupPurchaseStock">
+                                                                
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-box__single-group">
+                                                            End Time
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-box__single-group">
+                                                            <input id="groupPurchaseEndTime" type="datetime-local" placeholder="End Time">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-box__single-group">
+                                                            Capacity
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-box__single-group">
+                                                            <input id="groupPurchaseCapacity" type="number" placeholder="Capacity">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-box__single-group">
+                                                            Max Discount
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-box__single-group">
+                                                            <input id="groupPurchaseMaxDiscount" type="number" placeholder="Max Discount">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-box__single-group">
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-box__single-group">
+                                                            <button
+                                                                id="saveGroupPurchaseButton"
+                                                                onclick="saveGroupPurchase(this)"
+                                                                class="btn btn--box btn--small btn--uppercase btn--blue">Add
+                                                                Group Purchase</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
