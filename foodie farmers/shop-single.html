@@ -1,19 +1,95 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Foodie Farmer</title>
     
-    %include head.html%
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="google-signin-client_id" content="1077433649025-slog3d5l02cd9bd6av58agmgc2aspr79.apps.googleusercontent.com">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
+<link rel="stylesheet" href="fonts/icomoon/style.css">
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+<link rel="stylesheet" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+
+<link rel="stylesheet" href="css/aos.css">
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="css/foodiefarmer.css">
     
   </head>
   <body class="site-wrap">
   
-    %include header.html%
+    <header class="site-navbar" role="banner">
+  <div class="site-navbar-top">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
+          <form action="" class="site-block-top-search">
+            <span class="icon icon-search2"></span>
+            <input type="text" class="form-control border-0" placeholder="Search">
+          </form>
+        </div>
+
+        <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
+          <div class="site-logo">
+            <a href="index.html" class="js-logo-clone">FOODIE FARMER</a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 order-3 order-md-3 text-right">
+          <div class="site-top-icons">
+            <ul>
+              <li><a href="accounts/index.html" class="icon icon-person"></span></a></li>
+              <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
+              <li>
+                <a href="cart.html" class="site-cart">
+                  <span class="icon icon-shopping_cart"></span>
+                </a>
+              </li> 
+              <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
+            </ul>
+          </div> 
+        </div>
+
+      </div>
+    </div>
+  </div> 
+  <nav class="site-navigation text-right text-md-center" role="navigation">
+    <div class="container">
+      <ul class="site-menu js-clone-nav d-none d-md-block">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shop.html">Quick Purchase</a></li>
+        <li><a href="group_purchase.html">Group Purchase</a></li>
+        <li><a href="farms.html">Farms</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!--li class="has-children">
+          <a href="#">Dropdown Menu</a>
+          <ul class="dropdown">
+            <li><a href="#">Menu One</a></li>
+            <li><a href="#">Menu Two</a></li>
+            <li><a href="#">Menu Three</a></li>
+          </ul>
+        </li-->
+      </ul>
+    </div>
+  </nav>
+</header>
+
 
     <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black item-name"></strong></div>
+          <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black item-name">Item Name</strong></div>
         </div>
       </div>
     </div>  
@@ -22,13 +98,13 @@
       <div class="container">
         <div class="row shop-single">
           <div class="col-md-6">
-            <figure class="item-picture"></figure>
+            <figure class="item-picture" style="background-image: url(images/cloth_1.jpg)"></figure>
           </div>
           <div class="col-md-6">
-            <h2 class="text-black item-name"></h2>
+            <h2 class="text-black item-name">Tank Top T-Shirt</h2>
             <p><small class="item-farm"></small></p>
             <p class="item-description"></p>
-            <p><strong class="text-primary h4 item-price"></strong></p>
+            <p><strong class="text-primary h4 item-price">$50.00</strong></p>
             <div class="mb-5">
               <div class="input-group mb-3" style="max-width: 120px;">
               <div class="input-group-prepend">
@@ -41,13 +117,289 @@
             </div>
 
             </div>
-            <p><a href="#" onclick="AddItem()" class="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
+            <p><a href="cart.html" class="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
+            <div id="productDescription_feature_div" data-feature-name="productDescription" data-template-name="productDescription" class="a-row feature" data-cel-widget="productDescription_feature_div">
+
+
+
+<div class="a-divider a-divider-section"><div class="a-divider-inner"></div></div>
+
+<!--Item Description-->
+<h2 class="default">Item Description</h2>
+<div id="productDescription" class="a-section a-spacing-small" data-cel-widget="productDescription">
+<div class="disclaim">
+Color:<strong>チェリーレッド</strong>&nbsp;|&nbsp;
+Size:<strong>ミニ(10cm)</strong>
+</div>
+
+<!-- show up to 2 reviews by default -->
+<p>The Le Creuset 1/3 quart (about 0.3 liter) pan is perfect for spinach, boiled artichokes or fruit tarts. This mini French saucepan is a very practical kitchen utensil. Made of strong and durable cast iron. Satin black enamel is used on the inside. Durable and non-reactive. Non-porous. The outer side is made of durable enamel material with a beautiful luster, adding a popular element to the kitchen. This mini French saucepan achieves even heat distribution and excellent heat preservation performance. It can cook food better and achieve longer heat preservation and preservation of food. This durable enamel cast iron cookware combines many advantages in one and is very compact, and can be cleaned in the dishwasher. Made of strong and durable cast iron. The outer side is made of colorful enamel, which is very durable. The inner side is durable, non-reactive and non-porous. The heat is evenly distributed and the heat preservation performance is excellent. 4 inches in diameter (about 10.2 cm). It is 3.5 inches (approximately 8.9 cm) high.
+</p>
+</div>
+
+<style type="text/css">
+#productDescription {
+color: #333333;
+word-wrap: break-word;
+font-size: small;
+line-height: initial;
+margin: 0.5em 0px 0em 25px;
+}
+
+#productDescription_feature_div > h2.default {
+color: #CC6600;
+font-size: medium;
+margin: 0 0 0.25em;
+}
+#productDescription_feature_div > h2.books {
+color:#333 !important;
+font-size:21px !important;
+line-height: 1.3;
+padding-bottom: 4px;
+font-weight: normal;
+margin: 0px;
+}
+#productDescription_feature_div > h2.softlines {
+color:#333 !important;
+font-size:21px !important;
+line-height: 1.3;
+padding-bottom: 4px;
+font-weight: bold;
+margin: 0px;
+}
+#productDescription > p, #productDescription > div, #productDescription > table {
+margin: 0 0 1em 0;
+}
+#productDescription p {
+margin: 0em 0 1em 1em;
+}
+#productDescription h3 {
+font-weight: normal;
+color: #333333;
+font-size: 1.23em;
+clear: left;
+margin: 0.75em 0px 0.375em -15px;
+}
+#productDescription table {
+border-collapse: inherit !important;
+margin-bottom: 0;
+}
+#productDescription table img {
+max-width: inherit !important;
+}
+#productDescription table td {
+font-size: small;
+vertical-align: inherit !important;
+}
+#productDescription ul li {
+margin: 0 0 0 20px;
+}
+#productDescription ul li ul {
+list-style-type: disc !important;
+margin-left: 20px !important;
+}
+#productDescription ul ul li {
+list-style-type: disc !important;
+margin-left: 20px !important;
+}
+#productDescription > ul ul li {
+list-style-type: disc !important;
+}
+#productDescription ul li ul li {
+margin: 0 0 0 20px;
+}
+#productDescription .aplus p {
+margin: 0 0 1em 0;
+}
+#productDescription small {
+font-size: smaller;
+}
+#productDescription.prodDescWidth {
+max-width: 1000px
+}
+</style>
+<!-- Used to set table width because AUI is overriding the width attribute of the tables coming in description -->
+<script type="text/javascript">
+P.when('jQuery').execute(function($){
+$("#productDescription table").each(function() {
+var width = $(this).attr('width');
+if (width) width += 'px';
+else width = 'auto';
+$(this).css('width', width);
+var padding = $(this).attr('cellpadding');
+if (padding) padding += 'px';
+else padding = '0px';
+$(this).css('padding', padding);
+});
+});
+</script>
+
+<style>
+#productDescription h3 {
+margin: 0.75em 0px 0.375em -1px;
+}
+</style>
+</div>
 
           </div>
         </div>
       </div>
     </div>
 
+
+
+
+
+  <div class="a-fixed-left-grid-col a-col-left" style="width:300px;margin-left:-300px;float:left;"><div class="a-row"><h2>Buyers Comments</h2></div><div class="a-section a-spacing-none a-spacing-top-mini cr-widget-ACR"><div class="a-fixed-left-gridAverageCustomerReviews a-spacing-small"><div class="a-fixed-left-grid-inner" style="padding-left:105px"><div class="a-fixed-left-grid-col a-col-left" style="width:105px;margin-left:-105px;float:left;"><idata-hook="average-star-rating" class="a-icon a-icon-star-medium a-star-medium-3-5 averageStarRating"><spanclass="a-icon-alt">3.3 </span></i></div><div class="a-fixed-left-grid-col aok-align-center a-col-right"style="padding-left:0%;float:left;"><div class="a-row"><span class="a-size-base a-nowrap"><spandata-hook="rating-out-of-text" class="a-size-medium a-color-base">3.3</span></span></div></div></div></div><divdata-hook="total-review-count" class="a-row a-spacing-medium averageStarRatingNumerical"><span class="a-size-basea-color-secondary"><!--TODO: Replace this string with arp-x-ratings 5/22/19 (ShopperExp-5143)-->
+10 Ratings</span></div></div><span class="cr-widget-Histogram">
+<div class="a-fixed-left-grid a-spacing-none"><div class="a-fixed-left-grid-inner" style="padding-left:280px"><div class="a-fixed-left-grid-col a-col-left" style="width:280px;margin-left:-280px;float:left;"><span class="a-declarative" data-action="reviews:filter-action:push-state" data-reviews:filter-action:push-state="{&quot;scrollToSelector&quot;:&quot;#reviews-filter-info&quot;,&quot;allowLinkDefault&quot;:&quot;1&quot;}"><table id="histogramTable" class="a-normal a-spacing-none" role="presentation">
+</table><table id="histogramTable" class="a-normal a-align-center a-spacing-base">
+
+<tbody><tr data-reftag="" data-reviews-state-param="{&quot;filterByStar&quot;:&quot;five_star&quot;, &quot;pageNumber&quot;:&quot;1&quot;}" class="a-histogram-row a-align-center">
+
+<td class="aok-nowrap">
+
+  <span class="a-size-base">
+    <a class="a-link-normal 5star" title="43% Reviews are 5 stars" href="/product-reviews/B006PE35QG/ref=acr_dp_hist_5?ie=UTF8&amp;filterByStar=five_star&amp;reviewerType=all_reviews#reviews-filter-bar">
+      5 stars
+    </a>
+  </span>
+
+  <span class="a-letter-space"></span>
+</td>
+
+<td class="a-span10">
+  <a class="a-link-normal" title="43% Reviews are 5 stars" href="/product-reviews/B006PE35QG/ref=acr_dp_hist_5?ie=UTF8&amp;filterByStar=five_star&amp;reviewerType=all_reviews#reviews-filter-bar">
+    <div class="a-meter" aria-label="43%"><div class="a-meter-bar" style="width: 43%;"></div></div>
+  </a>
+</td>
+
+<td class="a-text-right a-nowrap">
+  <span class="a-letter-space"></span>
+  <span class="a-size-base">
+    <a class="a-link-normal" title="43% Reviews are 5 stars" href="/product-reviews/B006PE35QG/ref=acr_dp_hist_5?ie=UTF8&amp;filterByStar=five_star&amp;reviewerType=all_reviews#reviews-filter-bar">
+        43%
+    </a>
+  </span>
+</td>
+</tr>
+
+<tr class="a-histogram-row">
+
+<td class="a-nowrap">
+  <span class="a-size-base">
+    4 stars
+  </span>
+  <span class="a-offscreen">
+    0% (0%)
+  </span>
+  <span class="a-letter-space"></span>
+</td>
+
+<td aria-hidden="true" class="a-span10">
+  <div class="a-meter" aria-label="0%"><div class="a-meter-bar" style="width: 0%;"></div></div>
+</td>
+<td class="a-text-right a-nowrap">
+  <span class="a-letter-space"></span>
+  <span class="a-size-base">
+    0%
+  </span>
+</td>
+</tr>
+<tr data-reftag="" data-reviews-state-param="{&quot;filterByStar&quot;:&quot;three_star&quot;, &quot;pageNumber&quot;:&quot;1&quot;}" class="a-histogram-row a-align-center">
+
+<td class="aok-nowrap">
+
+  <span class="a-size-base">
+    <a class="a-link-normal 3star" title="30% reviews are 3 stars" href="/product-reviews/B006PE35QG/ref=acr_dp_hist_3?ie=UTF8&amp;filterByStar=three_star&amp;reviewerType=all_reviews#reviews-filter-bar">
+      3 stars
+    </a>
+  </span>
+  <span class="a-letter-space"></span>
+</td>
+<td class="a-span10">
+  <a class="a-link-normal" title="30% reviews are 3 stars" href="/product-reviews/B006PE35QG/ref=acr_dp_hist_3?ie=UTF8&amp;filterByStar=three_star&amp;reviewerType=all_reviews#reviews-filter-bar">
+    <div class="a-meter" aria-label="30%"><div class="a-meter-bar" style="width: 30%;"></div></div>
+  </a>
+</td>
+<td class="a-text-right a-nowrap">
+  <span class="a-letter-space"></span>
+  <span class="a-size-base">
+    <a class="a-link-normal" title="30% reviews are 3 stars" href="/product-reviews/B006PE35QG/ref=acr_dp_hist_3?ie=UTF8&amp;filterByStar=three_star&amp;reviewerType=all_reviews#reviews-filter-bar">
+        30% 
+    </a>
+  </span>
+</td>
+</tr>
+<tr class="a-histogram-row">
+
+<td class="a-nowrap">
+  <span class="a-size-base">
+    2 星
+  </span>
+
+  <span class="a-offscreen">
+    0% (0%)
+  </span>
+
+  <span class="a-letter-space"></span>
+</td>
+
+<td aria-hidden="true" class="a-span10">
+  <div class="a-meter" aria-label="0%"><div class="a-meter-bar" style="width: 0%;"></div></div>
+</td>
+
+<td class="a-text-right a-nowrap">
+  <span class="a-letter-space"></span>
+  <span class="a-size-base">
+    
+      0%
+    
+  </span>
+</td>
+</tr>
+
+
+<tr data-reftag="" data-reviews-state-param="{&quot;filterByStar&quot;:&quot;one_star&quot;, &quot;pageNumber&quot;:&quot;1&quot;}" class="a-histogram-row a-align-center">
+
+<td class="aok-nowrap">
+
+  <span class="a-size-base">
+    <a class="a-link-normal 1star" title="26% reviews are 1 star" href="/product-reviews/B006PE35QG/ref=acr_dp_hist_1?ie=UTF8&amp;filterByStar=one_star&amp;reviewerType=all_reviews#reviews-filter-bar">
+      1 star
+    </a>
+  </span>
+
+  <span class="a-letter-space"></span>
+</td>
+
+<td class="a-span10">
+  <a class="a-link-normal" title="26% reviews are 1 star" href="/product-reviews/B006PE35QG/ref=acr_dp_hist_1?ie=UTF8&amp;filterByStar=one_star&amp;reviewerType=all_reviews#reviews-filter-bar">
+    <div class="a-meter" aria-label="26%"><div class="a-meter-bar" style="width: 26%;"></div></div>
+  </a>
+</td>
+
+<td class="a-text-right a-nowrap">
+  <span class="a-letter-space"></span>
+  <span class="a-size-base">
+    <a class="a-link-normal" title="26% reviews are 1 star" href="/product-reviews/B006PE35QG/ref=acr_dp_hist_1?ie=UTF8&amp;filterByStar=one_star&amp;reviewerType=all_reviews#reviews-filter-bar">
+        26% 
+    </a>
+  </span>
+</td>
+</tr>
+
+</tbody></table>
+<hr aria-hidden="true" class="a-spacing-large a-spacing-top-large a-divider-normal"><span class="cr-widget-SummaryAttribute" data-hook="cr-widget-SummaryAttribute"></span>
+<div data-hook="cr-solicitation" class="a-section cr-solicitation"><h3 data-hook="solicitation-title" class="a-spacing-micro">Comment</h3><div data-hook="share-your-thoughts-text" id="dp-summary-share-your-thoughts" class="a-row a-spacing-medium">Share your comments</div><div class="a-row"><span class="a-button a-button-base writeReviewButton cm-cr-button-wide" id="a-autoid-37"><span class="a-button-inner"><a href="/review/create-review/ref=cm_cr_dp_d_wr_but_top?ie=UTF8&amp;channel=glance-detail&amp;asin=B006PE35QG" data-hook="write-review-button" class="a-button-text" role="button" id="a-autoid-37-announce">Write a comment</a></span></span></div></div><hr aria-hidden="true" class="a-spacing-extra-large a-spacing-top-extra-large a-divider-normal"><div id="cr-ADPlaceholder" class="a-section reviews-display-ad"><script>if (typeof uet === 'function' && typeof ues === 'function') {var scope = 'Detail_customer-reviews-top_Glance';var placementId = '';ues('wb', 'adplacements:' + scope.replace(/\_/g, ':'), {wb:1}); uet('bb', 'adplacements:' + scope.replace(/\_/g, ':'), {wb:1}); if (placementId) {ues('wb', 'adplacements:' + placementId, {wb:1});uet('bb', 'adplacements:' + placementId, {wb:1});}}</script><div id="ape_Detail_customer-reviews-top_Glance_placement" class="copilot-secure-display celwidget  text/x-dacx-safeframe" cel_widget_id="adplacements:Detail:customer-reviews-top:Glance" data-campaign="659" style="width: 300px; height: 280px; display: none;" data-ad-details="{&quot;slot&quot; :&quot;Detail_customer-reviews-top_Glance&quot;,&quot;pageType&quot;: &quot;Detail&quot;,&quot;subPageType&quot;:  &quot;Glance&quot;,&quot;slotName&quot; :&quot;customer-reviews-top&quot;,&quot;src&quot; : &quot;http://aax-fe-pek.amazon-adsystem.com/e/xsp/getAd?src=514&amp;slot=customer-reviews-top&amp;rid=0101e319c446563988c14183a5becbf85c3f4b42aa70535af58fe8f81de1e980ade8&amp;rj=%7B%7D&quot;,&quot;adServer&quot; :&quot;cs&quot;,&quot;campaignId&quot; :  &quot;659&quot;,&quot;arid&quot; :&quot;c4dba7f5277f4fb49f9542f4b6fbe9a0&quot;,&quot;size&quot; :{&quot;width&quot;: &quot;300&quot;,&quot;height&quot; : &quot;250&quot;},&quot;allowedSizes&quot; :[{&quot;width&quot;:&quot;305px&quot;, &quot;height&quot;:&quot;255px&quot;},{&quot;width&quot;:&quot;305px&quot;, &quot;height&quot;:&quot;250px&quot;}],&quot;allowedDomains&quot; :  [&quot;g-ecx.images-amazon.com&quot;],&quot;aanParams&quot; :   &quot;site%3Damazon.cn%3Bpt%3DDetail%3Bslot%3Dcustomer-reviews-top%3Bpid%3DB006PE35QG%3Barid%3Dc4dba7f5277f4fb49f9542f4b6fbe9a0&quot;,&quot;loadAfter&quot; :   &quot;criticalFeature&quot;,&quot;extraDelay&quot; :  0,&quot;iframeExtraStyle&quot;: &quot;&quot;,&quot;iframeClass&quot;:  &quot;&quot;,&quot;adPixels&quot;: [],&quot;adPixelDelay&quot;: &quot;0&quot;,&quot;aaxInstrPixelUrl&quot;: &quot;&quot;,&quot;serverSideFetchAd&quot;: &quot;false&quot;,&quot;enableAdBlockerDetector&quot;: false,&quot;disableResizeFunc&quot;: true,&quot;fallbackStaticAdImgUrl&quot;: &quot;&quot;,&quot;fallbackStaticAdClickUrl&quot;: &quot;&quot;,&quot;fallbackStaticAdExtraStyle&quot;: &quot;&quot;,&quot;adFeedbackInfo&quot;: {&quot;endPoint&quot;: &quot;/gp/aq-feedback/lazyLoad/handler/af-link-handler.html&quot;,&quot;boolFeedback&quot;: true,&quot;slugText&quot;: &quot;推广&quot;},&quot;adPlacementMetaData&quot;: {&quot;pageUrl&quot;: &quot;aHR0cDovL2hwLXJldmlld3NtZWRsZXktY24tMWIucGVrLmFtYXpvbi5jb206ODA4MC9XRUItSU5GL3ZpZXdzL21lZGxleVJBV1BhZ2VWaWV3LmpzcD8/cmVmJTVGPWxwJTVGODEzMjAwMDUxJTVGMSU1RjMmcz1raXRjaGVuJnFpZD0xNjAzMDcwNzk4JnNyPTEtMw==&quot;,&quot;adElementId&quot;: &quot;ape_Detail_customer-reviews-top_Glance_placement&quot;,&quot;pageType&quot;: &quot;Detail&quot;,&quot;slotName&quot;: &quot;customer-reviews-top&quot;},&quot;adCreativeMetaData&quot;: {&quot;adNetwork&quot;: &quot;cs&quot;},&quot;advertisementStyle&quot;: {&quot;position&quot;: &quot;absolute&quot;,&quot;top&quot;: &quot;2px&quot;,&quot;right&quot;: &quot;0px&quot;,&quot;display&quot;: &quot;inline-block&quot;,&quot;font&quot;: &quot;normal 10.5px Simsun&quot;,&quot;color&quot;: &quot;grey&quot;},&quot;feedbackDivStyle&quot;: {&quot;position&quot;: &quot;relative&quot;,&quot;height&quot;: &quot;14px&quot;,&quot;top&quot;: &quot;2px&quot;},&quot;viewabilityStandards&quot;: [{&quot;p&quot;: 0, &quot;t&quot;: 0, &quot;def&quot;: &quot;amzn&quot;}, {&quot;p&quot;: 50, &quot;t&quot;: 1, &quot;def&quot;: &quot;iab&quot;}, {&quot;p&quot;: 100, &quot;t&quot;: 1, &quot;def&quot;: &quot;groupm&quot;}],&quot;ajaxWeblabTriggerId&quot;: &quot;&quot;,&quot;abpStatus&quot;: &quot;1&quot;,&quot;abpAcceptable&quot;: &quot;false&quot;,&quot;programIdsToCollapse&quot;: [],&quot;DAsfUrl&quot;:&quot;https://images-cn.ssl-images-amazon.cn/images/G/28/ape/sf/desktop/DAsf-1.50.246027e._V404653618_.js&quot;}" aria-hidden="true" data-arid="c4dba7f5277f4fb49f9542f4b6fbe9a0" data-csa-c-id="d4ivog-r796ew-dam4lh-wb2emk" data-cel-widget="adplacements:Detail:customer-reviews-top:Glance"><iframe name="{&quot;slot&quot;:&quot;Detail_customer-reviews-top_Glance&quot;,&quot;pageType&quot;:&quot;Detail&quot;,&quot;subPageType&quot;:&quot;Glance&quot;,&quot;slotName&quot;:&quot;customer-reviews-top&quot;,&quot;src&quot;:&quot;http://aax-fe-pek.amazon-adsystem.com/e/xsp/getAd?src=514&amp;slot=customer-reviews-top&amp;rid=0101e319c446563988c14183a5becbf85c3f4b42aa70535af58fe8f81de1e980ade8&amp;rj=%7B%7D&quot;,&quot;adServer&quot;:&quot;cs&quot;,&quot;campaignId&quot;:&quot;659&quot;,&quot;arid&quot;:&quot;c4dba7f5277f4fb49f9542f4b6fbe9a0&quot;,&quot;size&quot;:{&quot;width&quot;:&quot;300&quot;,&quot;height&quot;:&quot;250&quot;},&quot;allowedSizes&quot;:[{&quot;width&quot;:&quot;305px&quot;,&quot;height&quot;:&quot;255px&quot;},{&quot;width&quot;:&quot;305px&quot;,&quot;height&quot;:&quot;250px&quot;},{&quot;width&quot;:&quot;300&quot;,&quot;height&quot;:&quot;250&quot;}],&quot;allowedDomains&quot;:[&quot;g-ecx.images-amazon.com&quot;,&quot;d3l3lkinz3f56t.cloudfront.net&quot;,&quot;g-ecx.images-amazon.com&quot;,&quot;z-ecx.images-amazon.com&quot;,&quot;images-na.ssl-images-amazon.com&quot;,&quot;g-ec4.images-amazon.com&quot;,&quot;images-cn.ssl-images-amazon.com&quot;],&quot;aanParams&quot;:&quot;site%3Damazon.cn%3Bpt%3DDetail%3Bslot%3Dcustomer-reviews-top%3Bpid%3DB006PE35QG%3Barid%3Dc4dba7f5277f4fb49f9542f4b6fbe9a0&quot;,&quot;loadAfter&quot;:&quot;criticalFeature&quot;,&quot;extraDelay&quot;:0,&quot;iframeExtraStyle&quot;:&quot;&quot;,&quot;iframeClass&quot;:&quot;&quot;,&quot;adPixels&quot;:[],&quot;adPixelDelay&quot;:&quot;0&quot;,&quot;aaxInstrPixelUrl&quot;:&quot;&quot;,&quot;serverSideFetchAd&quot;:&quot;false&quot;,&quot;enableAdBlockerDetector&quot;:false,&quot;disableResizeFunc&quot;:true,&quot;fallbackStaticAdImgUrl&quot;:&quot;&quot;,&quot;fallbackStaticAdClickUrl&quot;:&quot;&quot;,&quot;fallbackStaticAdExtraStyle&quot;:&quot;&quot;,&quot;adFeedbackInfo&quot;:{&quot;endPoint&quot;:&quot;/gp/aq-feedback/lazyLoad/handler/af-link-handler.html&quot;,&quot;boolFeedback&quot;:true,&quot;slugText&quot;:&quot;推广&quot;},&quot;adPlacementMetaData&quot;:{&quot;pageUrl&quot;:&quot;aHR0cDovL2hwLXJldmlld3NtZWRsZXktY24tMWIucGVrLmFtYXpvbi5jb206ODA4MC9XRUItSU5GL3ZpZXdzL21lZGxleVJBV1BhZ2VWaWV3LmpzcD8/cmVmJTVGPWxwJTVGODEzMjAwMDUxJTVGMSU1RjMmcz1raXRjaGVuJnFpZD0xNjAzMDcwNzk4JnNyPTEtMw==&quot;,&quot;adElementId&quot;:&quot;ape_Detail_customer-reviews-top_Glance_placement&quot;,&quot;pageType&quot;:&quot;Detail&quot;,&quot;slotName&quot;:&quot;customer-reviews-top&quot;},&quot;adCreativeMetaData&quot;:{&quot;adNetwork&quot;:&quot;cs&quot;},&quot;advertisementStyle&quot;:{&quot;position&quot;:&quot;absolute&quot;,&quot;top&quot;:&quot;2px&quot;,&quot;right&quot;:&quot;0px&quot;,&quot;display&quot;:&quot;inline-block&quot;,&quot;font&quot;:&quot;normal 10.5px Simsun&quot;,&quot;color&quot;:&quot;grey&quot;},&quot;feedbackDivStyle&quot;:{&quot;position&quot;:&quot;relative&quot;,&quot;height&quot;:&quot;14px&quot;,&quot;top&quot;:&quot;2px&quot;},&quot;viewabilityStandards&quot;:[{&quot;p&quot;:0,&quot;t&quot;:0,&quot;def&quot;:&quot;amzn&quot;},{&quot;p&quot;:50,&quot;t&quot;:1,&quot;def&quot;:&quot;iab&quot;},{&quot;p&quot;:100,&quot;t&quot;:1,&quot;def&quot;:&quot;groupm&quot;}],&quot;ajaxWeblabTriggerId&quot;:&quot;&quot;,&quot;abpStatus&quot;:&quot;1&quot;,&quot;abpAcceptable&quot;:&quot;false&quot;,&quot;programIdsToCollapse&quot;:[],&quot;DAsfUrl&quot;:&quot;https://images-cn.ssl-images-amazon.cn/images/G/28/ape/sf/desktop/DAsf-1.50.246027e._V404653618_.js&quot;,&quot;hostDomain&quot;:&quot;https://www.amazon.cn&quot;,&quot;queryParams&quot;:{},&quot;aPageStart&quot;:1603070824273,&quot;adStartTime&quot;:1603070825562,&quot;safeFrameSrc&quot;:&quot;https://images-cn.ssl-images-amazon.com/images/G/28/ape/sf/desktop/sf-1.50.246027e._V404653619_.html&quot;,&quot;collectSafeframeRTD&quot;:false}" id="ape_Detail_customer-reviews-top_Glance_iframe" src="https://images-cn.ssl-images-amazon.com/images/G/28/ape/sf/desktop/sf-1.50.246027e._V404653619_.html" height="250" width="300" class="" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" allowtransparency="true" data-arid="c4dba7f5277f4fb49f9542f4b6fbe9a0" sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-top-navigation-by-user-activation" ></iframe></div><script>(function(){function a(d,e){if(window.addEventListener){window.addEventListener(d,e,false);}else{if(window.attachEvent){window.attachEvent("on"+d,e);}}}function c(d,e){if(window.removeEventListener){window.removeEventListener(d,e,false);}else{if(window.detachEvent){window.detachEvent("on"+d,e);}}}var b=function(){(function(){(function(j,m){j.sfLogErrors=j.sfLogErrors||false;var o=o||function(s,r){r=r||new Error(s);if(j.ue&&typeof ue.count=="function"){ue.count("adplacements:safeFrameError",1);}if(!j.sfLogErrors){return;}if(j.ueLogError){j.ueLogError(r,{logLevel:"ERROR",attribution:"APE-safeframe",message:s+" "});}else{if(typeof console!=="undefined"&&console.error){console.error(s,r);}}};j.aanParams=j.aanParams||{};j.aanParams["customer-reviews-top"]="site=amazon.cn;pt=Detail;slot=customer-reviews-top;pid=B006PE35QG;arid=c4dba7f5277f4fb49f9542f4b6fbe9a0";j["customer-reviews-top"]={};j["customer-reviews-top"].adStartTime=(new Date()).getTime();function d(){return j.innerHeight||m.documentElement.clientHeight;}function g(){return j.innerWidth||m.documentElement.clientWidth;}function e(t,r,s){if(t>0){return(s>t);}else{return(r>0);}}var f=function(){return(Date.now?Date.now():new Date().getTime());};throttle=function(s,u,y){var r,w,z;var x=null;var v=0;if(!y){y={};}var t=function(){v=y.leading===false?0:f();x=null;z=s.apply(r,w);if(!x){r=w=null;}};return function(){var B=f();if(!v&&y.leading===false){v=B;}var A=u-(B-v);r=this;w=arguments;if(A<=0||A>u){if(x){clearTimeout(x);x=null;}v=B;z=s.apply(r,w);if(!x){r=w=null;}}else{if(!x&&y.trailing!==false){x=setTimeout(t,A);}}return z;};};function l(u,w,v,r){try{var t=m.getElementById(u).getBoundingClientRect();if(e(t.top,t.bottom,d())&&e(t.left,t.right,g())){if(typeof uet=="function"){uet("bb","adplacements:viewablelatency:"+w,{wb:1});if(v){uet("bb","adplacements:viewablelatency:"+v,{wb:1});}}if(typeof uex=="function"&&j.ue&&typeof ue.count=="function"){if(j.apeViewableLatencyTrackers[r].loaded){uex("ld","adplacements:viewablelatency:"+w,{wb:1});if(v){uex("ld","adplacements:viewablelatency:"+v,{wb:1});}ue.count("adplacements:htmlviewed:loaded:"+w,1);if(v){ue.count("adplacements:htmlviewed:loaded:"+v,1);}}ue.count("adplacements:htmlviewed:"+w,1);if(v){ue.count("adplacements:htmlviewed:"+v,1);}}j.apeViewableLatencyTrackers[r].viewed=true;if(j.apeViewableLatencyTrackers[r].tracker){c("scroll",j.apeViewableLatencyTrackers[r].tracker);c("resize",j.apeViewableLatencyTrackers[r].tracker);}}}catch(s){j.apeViewableLatencyTrackers[r].valid=false;}}try{j.apeViewableLatencyTrackers=j.apeViewableLatencyTrackers||{};var q="ape_Detail_customer-reviews-top_Glance_placement";var p="Detail_customer-reviews-top_Glance".replace(/\_/g,":");var h="";var i="c4dba7f5277f4fb49f9542f4b6fbe9a0";j.apeViewableLatencyTrackers[i]=j.apeViewableLatencyTrackers[i]||{};j.apeViewableLatencyTrackers[i].valid=true;l(q,p,h,i);if(j.apeViewableLatencyTrackers[i].valid&&!j.apeViewableLatencyTrackers[i].viewed){j.apeViewableLatencyTrackers[i].tracker=throttle(function(){l(q,p,h,i);},20);a("scroll",j.apeViewableLatencyTrackers[i].tracker);a("resize",j.apeViewableLatencyTrackers[i].tracker);}}catch(k){if(j.apeViewableLatencyTrackers&&j.apeViewableLatencyTrackers.c4dba7f5277f4fb49f9542f4b6fbe9a0){j.apeViewableLatencyTrackers.c4dba7f5277f4fb49f9542f4b6fbe9a0.valid=false;}o("Error initializing viewable latency instrumentation",k);}try{if(j.DAsf){j.DAsf.loadAds();}else{var n=m.createElement("script");n.type="text/javascript";n.async=true;n.charset="utf-8";n.src="https://images-cn.ssl-images-amazon.cn/images/G/28/ape/sf/desktop/DAsf-1.50.246027e._V404653618_.js?csm_attribution=APE-SafeFrame";n.onerror=function(){o("Error loading SafeFrame library");};n.setAttribute("crossorigin","anonymous");(m.getElementsByTagName("head")[0]||m.getElementsByTagName("body")[0]).appendChild(n);j.collectSafeframeRTD=Math.random()*100<0;if(j.collectSafeframeRTD){var n=m.createElement("script");n.type="text/javascript";n.async=true;n.charset="utf-8";n.src="https://images-cn.ssl-images-amazon.cn/images/G/28/ape/sf/rtd/safeframeRtd-1.50.246027e._V404653582_.js";n.onerror=function(){o("Error loading SafeFrame RTD library");};n.setAttribute("crossorigin","anonymous");(m.getElementsByTagName("head")[0]||m.getElementsByTagName("body")[0]).appendChild(n);}}}catch(k){o("Error appending DAsf library",k);}}(window,document));})();};b();})();</script></div></div>
+
+
+
+
+
+
+<!--Featured Products-->
+    <div class="a-divider a-divider-section"><div class="a-divider-inner"></div></div>
     <div class="site-section block-3 site-blocks-2 bg-light">
       <div class="container">
         <div class="row justify-content-center">
@@ -65,7 +417,103 @@
       </div>
     </div>
 
-    %include footer.html%
+    <footer class="site-footer border-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="footer-heading mb-4">Navigations</h3>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <ul class="list-unstyled">
+              <li><a href="about.html">About</a></li>
+              <li><a href="cart.html">Shopping cart</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <ul class="list-unstyled">
+              <li><a href="shop.html">Quick Purchase</a></li>
+              <li><a href="group_purchase.html">Group Purchase</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <ul class="list-unstyled">
+              <li><a href="farms.html">Farms</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <ul class="list-unstyled">
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="block-5 mb-5">
+          <h3 class="footer-heading mb-4">Contact Info</h3>
+          <ul class="list-unstyled">
+            <li class="address">400 George St<br/>Brisbane QLD 4000</li>
+            <li class="phone"><a href="tel://611900654321">+61 1900 654 321</a></li>
+            <li class="email"><a href="mailto:contactus@foodiefarmer.com">contactus@foodiefarmer.com</a></li>
+          </ul>
+        </div>
+
+        <div class="block-7">
+          <form action="#" method="post">
+            <label for="email_subscribe" class="footer-heading">Subscribe to Updates</label>
+            <div class="form-group">
+              <input type="text" class="form-control py-4" id="email_subscribe" placeholder="Email">
+              <input type="submit" class="btn btn-sm btn-primary" value="Send">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row pt-5 mt-5 text-center">
+      <div class="col-md-12">
+        <p>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i>
+          by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+
+<div class="modal login-dialog" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Not logged in</h5>
+      </div>
+      <div class="modal-body">
+        <p>Please sign in to access customer features</p>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/aos.js"></script>
+
+<script src="js/main.js"></script>
+
+<script src="js/foodiefarmer.js"></script>
     
   </body>
 </html>
