@@ -52,19 +52,21 @@ if ($('.shop-single').length) {
 // Load shop group item
 if ($('.shop-group').length) {
   let id = new URLSearchParams(window.location.search).get('id')
-  $.get(`/api/customer/get_group_item?id=${id}`, item => {
-    $('.item-name').text(item.name)
-    $('.item-picture').css('background-image', `url('${item.picture}')`)
-    $('.item-description').text(item.description)
-    $('.product__price-del').text(formatPrice(item.price))
-    $('.product__price-reg').text(formatPrice(item.price - item.maxDiscount))
-    $('.item-detail').text('$' + item.detail)
-    $('.item-rating').text('$' + item.rating)
-    $('.item-comment').text('$' + item.comment)
-    $('.item-farm').text(item.farm + ', ' + item.location)
-    $('.item-remaining').text(`${item.remaining} of ${item.capacity} remaining`)
-    $('.product__tag--discount').text(`-${(item.maxDiscount/item.price*100).toFixed(0)}%`)
-    countDownDate = new Date(item.endTime)
+  $.get(`/api/customer/get_group_items?id=${id}`, items => {
+    items.forEach(item => {
+      $('.item-name').text(item.name)
+      $('.item-picture').css('background-image', `url('${item.picture}')`)
+      $('.item-description').text(item.description)
+      $('.product__price-del').text(formatPrice(item.price))
+      $('.product__price-reg').text(formatPrice(item.price - item.maxDiscount))
+      $('.item-detail').text('$' + item.detail)
+      $('.item-rating').text('$' + item.rating)
+      $('.item-comment').text('$' + item.comment)
+      $('.item-farm').text(item.farm + ', ' + item.location)
+      $('.item-remaining').text(`${item.remaining} of ${item.capacity} remaining`)
+      $('.product__tag--discount').text(`-${(item.maxDiscount/item.price*100).toFixed(0)}%`)
+      countDownDate = new Date(item.endTime)
+    })
   })
 }
 
@@ -128,15 +130,18 @@ if ($('.group-items').length) {
 
 // Load group purchases
 if ($('.group-purchase').length) {
-  $.get('/api/customer/list_group_purchases', data => {
+  $.get('/api/customer/get_group_items?limit=6', data => {
     data.forEach(item => {
       $(`<div class="item">
         <div class="block-4 text-center">
-          <figure class="block-4-image" style="background-image: url('${item.image}')"></figure>
+          <figure class="block-4-image" style="background-image: url('${item.picture}')"></figure>
           <div class="block-4-text p-4">
-            <h3><a href="#">${item.name}</a></h3>
+            <h3><a href="shop-group.html?id=${item.id}">${item.name}</a></h3>
             <p class="mb-0">${item.farm}</p>
-            <p class="text-primary font-weight-bold">${formatPrice(item.price)}</p>
+            <p class="text-primary font-weight-bold">
+              <span class="product__price-del">${formatPrice(item.price)}</span>
+              <span class="product__price-reg">${formatPrice(item.price - item.maxDiscount)}</span>
+            </p>
           </div>
         </div>
       </div>`).appendTo('.group-purchase')
