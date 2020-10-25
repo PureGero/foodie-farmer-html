@@ -105,6 +105,27 @@ if ($('.produce-items').length) {
   })
 }
 
+// Load group items
+if ($('.group-items').length) {
+  $.get('/api/customer/get_group_items', data => {
+    data.forEach(item => {
+      $(`<div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
+        <div class="block-4 text-center border">
+          <figure class="block-4-image" style="background-image: url('${item.picture}')"></figure>
+          <div class="block-4-text p-4">
+            <h3><a href="shop-group.html?id=${item.id}">${item.name}</a></h3>
+            <p class="mb-0">${item.description}</p>
+            <p class="text-primary font-weight-bold">
+              <span class="product__price-del">${formatPrice(item.price)}</span>
+              <span class="product__price-reg">${formatPrice(item.price - item.maxDiscount)}</span>
+            </p>
+          </div>
+        </div>
+      </div> `).appendTo('.group-items')
+    })
+  })
+}
+
 // Load group purchases
 if ($('.group-purchase').length) {
   $.get('/api/customer/list_group_purchases', data => {
