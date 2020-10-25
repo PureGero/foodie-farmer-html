@@ -22,7 +22,13 @@ function onSignIn(googleUser) {
     loginDialogShown = true
     $('.login-dialog').modal()
   }
-});*/
+})*/
+
+// Returns the price formatted in the local currency
+//  eg $2.00 or 200￥
+function formatPrice(price) {
+  return '$' + price.toFixed(2)
+}
 
 // Set active navigation element
 let filename = location.pathname.substr(location.pathname.lastIndexOf('/') + 1)
@@ -35,11 +41,30 @@ if ($('.shop-single').length) {
     $('.item-name').text(item.name)
     $('.item-picture').css('background-image', `url('${item.picture}')`)
     $('.item-description').text(item.description)
-    $('.item-price').text('$' + item.price)
+    $('.item-price').text(formatPrice(item.price))
     $('.item-detail').text('$' + item.detail)
     $('.item-rating').text('$' + item.rating)
     $('.item-comment').text('$' + item.comment)
     $('.item-farm').text(item.farm + ', ' + item.location)
+  })
+}
+
+// Load shop group item
+if ($('.shop-group').length) {
+  let id = new URLSearchParams(window.location.search).get('id')
+  $.get(`/api/customer/get_group_item?id=${id}`, item => {
+    $('.item-name').text(item.name)
+    $('.item-picture').css('background-image', `url('${item.picture}')`)
+    $('.item-description').text(item.description)
+    $('.product__price-del').text(formatPrice(item.price))
+    $('.product__price-reg').text(formatPrice(item.price - item.maxDiscount))
+    $('.item-detail').text('$' + item.detail)
+    $('.item-rating').text('$' + item.rating)
+    $('.item-comment').text('$' + item.comment)
+    $('.item-farm').text(item.farm + ', ' + item.location)
+    $('.item-remaining').text(`${item.remaining} of ${item.capacity} remaining`)
+    $('.product__tag--discount').text(`-${(item.maxDiscount/item.price*100).toFixed(0)}%`)
+    countDownDate = new Date(item.endTime)
   })
 }
 
@@ -52,7 +77,7 @@ if ($('.recommend-items').length) {
           <figure class="image" style="background-image: url('${item.image}')"></figure>
           <div class="text">
             <span class="text-uppercase">${item.farm}'s ${item.name}</span>
-            <h3>$${item.price}</h3>
+            <h3>${formatPrice(item.price)}</h3>
           </div>
         </a>
       </div>`).appendTo('.recommend-items')
@@ -72,7 +97,7 @@ if ($('.produce-items').length) {
           <div class="block-4-text p-4">
             <h3><a href="shop-single.html?id=${item.id}">${item.name}</a></h3>
             <p class="mb-0">${item.description}</p>
-            <p class="text-primary font-weight-bold">$${item.price}</p>
+            <p class="text-primary font-weight-bold">${formatPrice(item.price)}</p>
           </div>
         </div>
       </div> `).appendTo('.produce-items')
@@ -90,7 +115,7 @@ if ($('.group-purchase').length) {
           <div class="block-4-text p-4">
             <h3><a href="#">${item.name}</a></h3>
             <p class="mb-0">${item.farm}</p>
-            <p class="text-primary font-weight-bold">$${item.price}</p>
+            <p class="text-primary font-weight-bold">${formatPrice(item.price)}</p>
           </div>
         </div>
       </div>`).appendTo('.group-purchase')
@@ -136,7 +161,7 @@ if ($('.featured-items').length) {
               <h3><a href="shop-single.html?id=${item.id}">${item.name}</a></h3>
               <small class="mb-0">${item.farm}, ${item.location}</small>
               <p class="mb-0">${item.description}</p>
-              <p class="text-primary font-weight-bold">$${item.price}</p>
+              <p class="text-primary font-weight-bold">${formatPrice(item.price)}</p>
             </div>
           </div>
         </div>`).appendTo('.featured-items')

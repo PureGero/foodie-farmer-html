@@ -3,7 +3,9 @@
 .recommend-items figure,
 .group-purchase figure,
 .produce-items figure,
+.group-items figure,
 .shop-single figure,
+.shop-group figure,
 .featured-items figure {
     background-position: center;
     background-size: cover;
