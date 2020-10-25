@@ -7,6 +7,9 @@ let signedIn = false
 // Map of stock id to stock of the farmer
 const stockMap = {}
 
+// Map of group purchase id to the group purchase of the farmer
+const groupPurchaseMap = {}
+
 // On google sign in
 function onSignIn(googleUser) {
   let profile = googleUser.getBasicProfile()
@@ -75,6 +78,12 @@ function showFarmTabs() {
       })
     })
 
+    $.get('/api/farmer/get_farm_group_purchases', groupPurchases => {
+      groupPurchases.forEach(groupPurchase => {
+        appendGroupPurchase(groupPurchase)
+      })
+    })
+
     loadStockTypes()
   }
 }
@@ -83,17 +92,38 @@ function showFarmTabs() {
 function appendStock(stock) {
   stockMap[stock.id] = stock
 
+  // Add it to the list, removing it if it already exists
   $(`#stock-${stock.id}`).remove()
   $(`<tr id="stock-${stock.id}">
-    <td><img src="${stock.picture}" width="64px"/></td>
+    <td><img src="${stock.picture}" title="${stock.name}" width="64px"/></td>
     <td>${stock.name}</td>
     <td>${stock.description}</td>
     <td>${stock.stockType}</td>
     <td>${stock.quantity}</td>
     <td><a class="box-btn" href="#" onclick="editStock(${stock.id})"><i class="far fa-edit"></i></a></td>
   </tr>`).appendTo('.my-account-stock tbody')
+
+  // Add it to the group purchase stock options, removing it if it already exists
+  $(`#groupPurchaseStock-${stock.id}`).remove()
+  $(`<option id= "groupPurchaseStock-${stock.id}" value="${stock.id}">${stock.name} ($${stock.price})</option>`)
+        .appendTo('#groupPurchaseStock')
 }
 
+// Append a group purchase to the list of group purchases, removing it first if it already exists
+function appendGroupPurchase(groupPurchase) {
+  groupPurchaseMap[groupPurchase.id] = groupPurchase
+
+  $(`#stock-${groupPurchase.id}`).remove()
+  $(`<tr id="stock-${groupPurchase.id}">
+    <td><img src="${groupPurchase.picture}" title="${groupPurchase.name}" width="64px"/></td>
+    <td>${new Date(groupPurchase.endTime).toLocaleString()}</td>
+    <td>${groupPurchase.totalQuantity} / ${groupPurchase.capacity}</td>
+    <td>$${groupPurchase.maxDiscount}</td>
+    <td><a class="box-btn" href="#" onclick="editGroupPurchase(${groupPurchase.id})"><i class="far fa-edit"></i></a></td>
+  </tr>`).appendTo('.my-account-group tbody')
+}
+
+// Load a stock from memory into the input fields on the stock tab
 function editStock(stockId) {
   const stock = stockMap[stockId]
 
@@ -111,6 +141,21 @@ function editStock(stockId) {
   $('#stockName').focus()
 }
 
+// Load a group purchase from memory into the input fields on the group purchase tab
+function editGroupPurchase(groupPurchaseId) {
+  const groupPurchase = groupPurchaseMap[groupPurchaseId]
+
+  $('#groupPurchaseId').val(groupPurchase.id)
+  $('#groupPurchaseStock').val(groupPurchase.stockId)
+  $('#groupPurchaseEndTime').prop('valueAsNumber', new Date(groupPurchase.endTime) - new Date().getTimezoneOffset()*1000*60)
+  $('#groupPurchaseCapacity').val(groupPurchase.capacity)
+  $('#groupPurchaseMaxDiscount').val(groupPurchase.maxDiscount)
+
+  $('#saveGroupPurchaseButton').text('Save Edits')
+
+  $('#groupPurchaseEndTime').focus()
+}
+
 // Load the types of stock for the stock type dropdown menu
 function loadStockTypes() {
   $.get('/api/customer/list_stock_types', stockTypes => {
@@ -123,6 +168,7 @@ function loadStockTypes() {
   })
 }
 
+// Save details on the payment tab to the server
 function savePaymentMethod(button) {
   $(button).text('Saving...')
 
@@ -141,6 +187,7 @@ function savePaymentMethod(button) {
   })
 }
 
+// Save details on the address tab to the server
 function saveAddress(button) {
   $(button).text('Saving...')
 
@@ -158,6 +205,7 @@ function saveAddress(button) {
   })
 }
 
+// Save details on the farm tab to the server
 function saveFarm(button) {
   $(button).text('Saving...')
 
@@ -178,6 +226,7 @@ function saveFarm(button) {
   })
 }
 
+// Save details on the stock tab to the server
 function saveStock(button) {
   $(button).text('Saving...')
 
@@ -206,6 +255,35 @@ function saveStock(button) {
       $('#stockType').val('')
 
       appendStock(stock)
+    }
+  ).fail(jqXHR => {
+    $(button).text(jqXHR.responseText)
+  })
+}
+
+// Save details on the group purchase tab to the server
+function saveGroupPurchase(button) {
+  $(button).text('Saving...')
+
+  let id = $('#groupPurchaseId').val()
+  let stockId = $('#groupPurchaseStock').val()
+  let endTime = $('#groupPurchaseEndTime').val()
+  let capacity = $('#groupPurchaseCapacity').val()
+  let maxDiscount = $('#groupPurchaseMaxDiscount').val()
+  
+  $.post('/api/farmer/add_group_purchase',
+    `id=${id}&stockId=${stockId}&endTime=${endTime}&capacity=${capacity}&maxDiscount=${maxDiscount}`,
+    groupPurchase => {
+      $(button).text('Saved')
+      setTimeout(() => $(button).text('Add Group Purchase'), 2000)
+
+      $('#groupPurchaseId').val('')
+      $('#groupPurchaseStock').val('')
+      $('#groupPurchaseEndTime').val('')
+      $('#groupPurchaseCapacity').val('')
+      $('#groupPurchaseMaxDiscount').val('')
+
+      appendGroupPurchase(groupPurchase)
     }
   ).fail(jqXHR => {
     $(button).text(jqXHR.responseText)

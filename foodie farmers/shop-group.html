@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Foodie Farmer</title>
+    
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="google-signin-client_id" content="1077433649025-slog3d5l02cd9bd6av58agmgc2aspr79.apps.googleusercontent.com">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
+<link rel="stylesheet" href="fonts/icomoon/style.css">
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+<link rel="stylesheet" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+
+<link rel="stylesheet" href="css/aos.css">
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="css/foodiefarmer.css">
+
+<!-- Main Style CSS File -->
+<link rel="stylesheet" href="accounts/assets/css/main.css">
+    
+  </head>
+  <body class="site-wrap">
+  
+    <header class="site-navbar" role="banner">
+  <div class="site-navbar-top">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
+          <form action="" class="site-block-top-search">
+            <span class="icon icon-search2"></span>
+            <input type="text" class="form-control border-0" placeholder="Search">
+          </form>
+        </div>
+
+        <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
+          <div class="site-logo">
+            <a href="index.html" class="js-logo-clone">FOODIE FARMER</a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 order-3 order-md-3 text-right">
+          <div class="site-top-icons">
+            <ul>
+              <li><a href="accounts/index.html" class="icon icon-person"></span></a></li>
+              <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
+              <li>
+                <a href="cart.html" class="site-cart">
+                  <span class="icon icon-shopping_cart"></span>
+                </a>
+              </li> 
+              <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
+            </ul>
+          </div> 
+        </div>
+
+      </div>
+    </div>
+  </div> 
+  <nav class="site-navigation text-right text-md-center" role="navigation">
+    <div class="container">
+      <ul class="site-menu js-clone-nav d-none d-md-block">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shop.html">Quick Purchase</a></li>
+        <li><a href="group_purchase.html">Group Purchase</a></li>
+        <li><a href="farms.html">Farms</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!--li class="has-children">
+          <a href="#">Dropdown Menu</a>
+          <ul class="dropdown">
+            <li><a href="#">Menu One</a></li>
+            <li><a href="#">Menu Two</a></li>
+            <li><a href="#">Menu Three</a></li>
+          </ul>
+        </li-->
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+    <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black item-name">Group Purchase</strong></div>
+        </div>
+      </div>
+    </div>  
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row shop-single">
+          <div class="col-md-6">
+            <figure class="item-picture" style="background-image: url(images/meat.jpg)"></figure>
+            <span class="product__tag product__tag--discount">-10%</span>
+          </div>
+          <div class="col-md-6">
+            <h2 class="text-black item-name">Tank Top T-Shirt</h2>
+            <p><small class="item-farm"></small></p>
+            <p class="item-description"></p>
+            <div class="product__price">
+                <span class="product__price-del">$10.00</span>
+                <span class="product__price-reg">$9.00</span>
+            </div>
+
+            <br>
+
+            <h5 class="text-black item-name">50 of 100 remaining</h2>
+            <br>
+
+            <p id="demo"></p>
+            <p> Remaining</p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+            <div class="mb-5">
+              <div class="input-group mb-3" style="max-width: 120px;">
+              <div class="input-group-prepend">
+                <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+              </div>
+              <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+              <div class="input-group-append">
+                <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+              </div>
+            </div>
+
+            </div>
+            <p><a href="cart.html" class="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
+            <div id="productDescription_feature_div" data-feature-name="productDescription" data-template-name="productDescription" class="a-row feature" data-cel-widget="productDescription_feature_div">
+
+
+
+<div class="a-divider a-divider-section"><div class="a-divider-inner"></div></div>
+
+<!--Item Description-->
+<h2 class="default">Item Description</h2>
+<div id="productDescription" class="a-section a-spacing-small" data-cel-widget="productDescription">
+<div class="disclaim">
+Color:<strong>チェリーレッド</strong>&nbsp;|&nbsp;
+Size:<strong>ミニ(10cm)</strong>
+</div>
+
+<!-- show up to 2 reviews by default -->
+<p>The Le Creuset 1/3 quart (about 0.3 liter) pan is perfect for spinach, boiled artichokes or fruit tarts. This mini French saucepan is a very practical kitchen utensil. Made of strong and durable cast iron. Satin black enamel is used on the inside. Durable and non-reactive. Non-porous. The outer side is made of durable enamel material with a beautiful luster, adding a popular element to the kitchen. This mini French saucepan achieves even heat distribution and excellent heat preservation performance. It can cook food better and achieve longer heat preservation and preservation of food. This durable enamel cast iron cookware combines many advantages in one and is very compact, and can be cleaned in the dishwasher. Made of strong and durable cast iron. The outer side is made of colorful enamel, which is very durable. The inner side is durable, non-reactive and non-porous. The heat is evenly distributed and the heat preservation performance is excellent. 4 inches in diameter (about 10.2 cm). It is 3.5 inches (approximately 8.9 cm) high.
+</p>
+</div>
+</div>
+</div>
+</div>
+      </div>
+
+<!-- Start Product Details Tab -->
+<div class="col-12">
+    <div class="product product--1 border-around product-details-tab-area">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-content--border">
+                    <ul class="tablist tablist--style-black tablist--style-title tablist--style-gap-70 nav">
+                        <li><a class="nav-link active" data-toggle="tab" href="#product-desc">Description</a></li>
+                        <li><a class="nav-link" data-toggle="tab" href="#product-dis">Product Details</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12">
+            <div class="product-details-tab-box m-t-50">
+                <div class="tab-content">
+                    <!-- Start Tab - Product Description -->
+                    <div class="tab-pane show active" id="product-desc">
+                        <div class="para__content">
+                            <p class="para__text">Nice Meat </p>
+
+                            <p class="para__text">40kg</p>
+
+                            <h6 class="para__title">Product Highlights:</h6>
+                            <ul class="para__list">
+                                <li>Good</li>
+                                <li>Good</li>
+                                <li>Good</li>
+                                <li>Good</li>
+                            </ul>
+                        </div>    
+                    </div>  <!-- End Tab - Product Description -->
+
+                    <!-- Start Tab - Product Details -->
+                    <div class="tab-pane product-dis" id="product-dis">
+                        <div class="product-dis__content">
+                            <a href="#" class="product-dis__img m-b-30"><img src="assets/img/logo/another-logo.jpg" alt=""></a>
+                            <div class="table-responsive-md">
+                                <table class="product-dis__list table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td class="product-dis__title">Weight</td>
+                                            <td class="product-dis__text">400 g</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="product-dis__title">Materials</td>
+                                            <td class="product-dis__text">60% cotton, 40% polyester</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="product-dis__title">Dimensions</td>
+                                            <td class="product-dis__text">10 x 10 x 15 cm</td>
+                                        </tr>
+                                        <tr> 
+                                            <td class="product-dis__title">Other Info</td>
+                                            <td class="product-dis__text">American heirloom jean shorts pug seitan letterpress</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>  <!-- End Tab - Product Details -->
+                     
+
+            
+                    </div>  <!-- Start Tab - Product Review -->
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>  <!-- End Product Details Tab -->
+
+<!--Featured Products-->
+<div class="a-divider a-divider-section"><div class="a-divider-inner"></div></div>
+<div class="site-section block-3 site-blocks-2 bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-7 site-section-heading text-center pt-4">
+        <h2>Featured Products</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="nonloop-block-3 owl-carousel featured-items">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer border-top">
+<div class="container">
+<div class="row">
+  <div class="col-lg-6 mb-5 mb-lg-0">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="footer-heading mb-4">Navigations</h3>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <ul class="list-unstyled">
+          <li><a href="about.html">About</a></li>
+          <li><a href="cart.html">Shopping cart</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <ul class="list-unstyled">
+          <li><a href="shop.html">Quick Purchase</a></li>
+          <li><a href="group_purchase.html">Group Purchase</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <ul class="list-unstyled">
+          <li><a href="farms.html">Farms</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <ul class="list-unstyled">
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-lg-3">
+    <div class="block-5 mb-5">
+      <h3 class="footer-heading mb-4">Contact Info</h3>
+      <ul class="list-unstyled">
+        <li class="address">400 George St<br/>Brisbane QLD 4000</li>
+        <li class="phone"><a href="tel://611900654321">+61 1900 654 321</a></li>
+        <li class="email"><a href="mailto:contactus@foodiefarmer.com">contactus@foodiefarmer.com</a></li>
+      </ul>
+    </div>
+
+    <div class="block-7">
+      <form action="#" method="post">
+        <label for="email_subscribe" class="footer-heading">Subscribe to Updates</label>
+        <div class="form-group">
+          <input type="text" class="form-control py-4" id="email_subscribe" placeholder="Email">
+          <input type="submit" class="btn btn-sm btn-primary" value="Send">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="row pt-5 mt-5 text-center">
+  <div class="col-md-12">
+    <p>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i>
+      by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    </p>
+  </div>
+  
+</div>
+</div>
+</footer>
+
+<div class="modal login-dialog" tabindex="-1" role="dialog">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title">Not logged in</h5>
+  </div>
+  <div class="modal-body">
+    <p>Please sign in to access customer features</p>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  </div>
+</div>
+</div>
+</div>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/aos.js"></script>
+
+<script src="js/main.js"></script>
+
+<script src="js/foodiefarmer.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
