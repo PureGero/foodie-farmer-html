@@ -37,15 +37,17 @@ $(`nav a[href="${filename}"]`).parent().addClass('active')
 // Load shop single item
 if ($('.shop-single').length) {
   let id = new URLSearchParams(window.location.search).get('id')
-  $.get(`/api/customer/get_item?id=${id}`, item => {
-    $('.item-name').text(item.name)
-    $('.item-picture').css('background-image', `url('${item.picture}')`)
-    $('.item-description').text(item.description)
-    $('.item-price').text(formatPrice(item.price))
-    $('.item-detail').text('$' + item.detail)
-    $('.item-rating').text('$' + item.rating)
-    $('.item-comment').text('$' + item.comment)
-    $('.item-farm').text(item.farm + ', ' + item.location)
+  $.get(`/api/customer/get_produce?id=${id}`, items => {
+    items.forEach(item => {
+      $('.item-name').text(item.name)
+      $('.item-picture').css('background-image', `url('${item.picture}')`)
+      $('.item-description').text(item.description)
+      $('.item-price').text(formatPrice(item.price))
+      $('.item-detail').text('$' + item.detail)
+      $('.item-rating').text('$' + item.rating)
+      $('.item-comment').text('$' + item.comment)
+      $('.item-farm').text(item.farm + ', ' + item.location)
+    })
   })
 }
 
@@ -72,8 +74,8 @@ if ($('.shop-group').length) {
 
 // Load recommended items
 if ($('.recommend-items').length) {
-  $.get('/api/customer/list_recommend', data => {
-    data.forEach(item => {
+  $.get('/api/customer/list_recommend', items => {
+    items.forEach(item => {
       $(`<div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
         <a class="block-2-item" href="shop-single.html?id=${item.id}">
           <figure class="image" style="background-image: url('${item.image}')"></figure>
@@ -91,8 +93,8 @@ if ($('.recommend-items').length) {
 
 // Load produce items
 if ($('.produce-items').length) {
-  $.get('/api/customer/get_produce', data => {
-    data.forEach(item => {
+  $.get('/api/customer/get_produce', items => {
+    items.forEach(item => {
       $(`<div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
         <div class="block-4 text-center border">
           <figure class="block-4-image" style="background-image: url('${item.picture}')"></figure>
@@ -109,8 +111,8 @@ if ($('.produce-items').length) {
 
 // Load group items
 if ($('.group-items').length) {
-  $.get('/api/customer/get_group_items', data => {
-    data.forEach(item => {
+  $.get('/api/customer/get_group_items', items => {
+    items.forEach(item => {
       $(`<div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
         <div class="block-4 text-center border">
           <figure class="block-4-image" style="background-image: url('${item.picture}')"></figure>
@@ -130,8 +132,8 @@ if ($('.group-items').length) {
 
 // Load group purchases
 if ($('.group-purchase').length) {
-  $.get('/api/customer/get_group_items?limit=6', data => {
-    data.forEach(item => {
+  $.get('/api/customer/get_group_items?limit=6', items => {
+    items.forEach(item => {
       $(`<div class="item">
         <div class="block-4 text-center">
           <figure class="block-4-image" style="background-image: url('${item.picture}')"></figure>
@@ -178,8 +180,8 @@ if ($('.group-purchase').length) {
 
 // Load featured items
 if ($('.featured-items').length) {
-  $.get('/api/customer/list_recommend?count=6', data => {
-    data.forEach(item => {
+  $.get('/api/customer/list_recommend?count=6', items => {
+    items.forEach(item => {
       $(`<div class="item">
           <div class="block-4 text-center">
             <figure class="block-4-image" style="background-image: url('${item.image}')"></figure>

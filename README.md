@@ -4,7 +4,7 @@ The html base for the Foodie Farmer application
 
 # Running the test html server
 
-Install the packages with
+Install the required packages with
 
   `npm install`
 
