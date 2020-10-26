@@ -106,6 +106,7 @@ if ($('.produce-items').length) {
         </div>
       </div> `).appendTo('.produce-items')
     })
+    createPages('.produce-items', 6)
   })
 }
 
@@ -127,6 +128,34 @@ if ($('.group-items').length) {
         </div>
       </div> `).appendTo('.group-items')
     })
+    createPages('.group-items', 6)
+  })
+}
+
+// Load farms
+if ($('.farms-list').length) {
+  $.get('/api/customer/list_farms', farms => {
+    farms.forEach(farm => {
+      $(`<div class="row mb-5">
+        <div class="container text-center border">
+          <div class="row">
+            <div class="col border px-0">
+              <img src="images/farm_1.jpg" class="img-fluid">
+            </div>
+            <div class="col-md border">
+              <h2 class="text-center text-dark mt-3">${farm.name}</h2>
+              <p class="font-weight-normal text-justify text-dark">Corrupti quos dolores et quas molestias excepturi sint occaecati.
+                Non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+              </p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item font-weight-normal text-dark">${farm.address}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>`).appendTo('.farms-list')
+    })
+    createPages('.farms-list', 2)
   })
 }
 
@@ -222,6 +251,51 @@ if ($('.featured-items').length) {
     }
     slider()
   })
+}
+
+// Create pages of items
+function createPages(parent, itemsPerPage) {
+  // Define the parent as the pages container and set its items per page value
+  $(parent).addClass('pages-container').attr('items-per-page', itemsPerPage)
+
+  // Decrease page button
+  $('<li class="page-decrease">&lt;</li>').appendTo('.pages')
+
+  // Page number buttons
+  for (let i = 0; i < getMaxPage(); i++) {
+    $(`<li class="page-number">${i + 1}</li>`).click(() => selectPage(i)).appendTo('.pages')
+  }
+
+  // Increase page button
+  $('<li class="page-increase">&gt;</li>').appendTo('.pages')
+
+  // Select the first page
+  selectPage(0)
+}
+
+// Returns the maxmimum page number
+function getMaxPage() {
+  return $('.pages-container').children().length / $('.pages-container').attr('items-per-page')
+}
+
+// Select a page
+function selectPage(i) {
+  // Check page number is in range
+  if (i < 0) i = 0
+  if (i >= getMaxPage()) i = Math.ceil(getMaxPage()) - 1
+
+  // Update the arrow buttons
+  $('.page-decrease').click(() => selectPage(i - 1))
+  $('.page-increase').click(() => selectPage(i + 1))
+
+  $(`.page-number`).removeClass('active')
+  $(`.page-number`).slice(i, i + 1).addClass('active')
+
+  // Hide all elements
+  $('.pages-container').children().css('display', 'none')
+
+  // Show the elements on this page
+  $('.pages-container').children().slice(i * $('.pages-container').attr('items-per-page'), (i + 1) * $('.pages-container').attr('items-per-page')).css('display', '')
 }
 
 //add items to HTML5 storage
