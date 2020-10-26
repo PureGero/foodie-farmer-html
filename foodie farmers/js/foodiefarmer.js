@@ -282,7 +282,7 @@ function getMaxPage() {
 function selectPage(i) {
   // Check page number is in range
   if (i < 0) i = 0
-  if (i >= getMaxPage()) i = getMaxPage() - 1
+  if (i >= getMaxPage()) i = Math.ceil(getMaxPage()) - 1
 
   // Update the arrow buttons
   $('.page-decrease').click(() => selectPage(i - 1))
