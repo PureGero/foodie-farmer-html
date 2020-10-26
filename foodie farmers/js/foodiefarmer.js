@@ -324,7 +324,7 @@ function DisplayItems() {
 		//no items in the table
 		if (list == "<tr><th>Item</th><th>Value</th></tr>\n") {
 			list += "<tr><td><i>empty</i></td>\n<td><i>empty</i></td></tr>\n";
-		}
+    }
 	} else {
 		alert('Cannot save shopping list as your browser does not support HTML 5');
 	}
