@@ -254,8 +254,24 @@ if ($('.featured-items').length) {
 
 // Create pages of items
 function createPages(parent, itemsPerPage) {
-  // Define the parent as the pages container and set its items per page value
-  $(parent).addClass('pages-container').attr('items-per-page', itemsPerPage)
+  if (parent) {
+    // Define the parent as the pages container
+    $(parent).addClass('pages-container')
+  }
+  
+  if (itemsPerPage) {
+    // Set the items per page and filter it
+    $('.pages-container').attr('items-per-page', itemsPerPage)
+    return recalculateFilters()
+  }
+
+  if (!$('.pages-container').attr('items-per-page')) {
+    // Items per page is either unset, or set to 0
+    return console.error('items-per-page cannot be 0')
+  }
+
+  // Reset the pages
+  $('.pages').empty()
 
   // Decrease page button
   $('<li class="page-decrease">&lt;</li>').appendTo('.pages')
@@ -278,7 +294,7 @@ function createPages(parent, itemsPerPage) {
 
 // Returns the maxmimum page number
 function getMaxPage() {
-  return $('.pages-container').children().length / $('.pages-container').attr('items-per-page')
+  return $('.pages-container').children(':not(.hidden-item)').length / $('.pages-container').attr('items-per-page')
 }
 
 // Select a page
@@ -291,10 +307,32 @@ function selectPage(i) {
   $(`.page-number`).slice(i, i + 1).addClass('active')
 
   // Hide all elements
-  $('.pages-container').children().css('display', 'none')
+  $('.pages-container').children(':not(.hidden-item)').css('display', 'none')
 
   // Show the elements on this page
-  $('.pages-container').children().slice(i * $('.pages-container').attr('items-per-page'), (i + 1) * $('.pages-container').attr('items-per-page')).css('display', '')
+  $('.pages-container').children(':not(.hidden-item)').slice(i * $('.pages-container').attr('items-per-page'), (i + 1) * $('.pages-container').attr('items-per-page')).css('display', '')
+}
+
+// Recalculate the filters on the items in the pages
+function recalculateFilters() {
+  // Reset hidden items
+  $('.pages-container').children('.hidden-item').removeClass('hidden-item')
+
+  $('.pages-container').children().each((index, child) => {
+    if (!~$(child).text().toLowerCase().indexOf($('.search').val().toLowerCase())) {
+      // Does not contain search query
+      $(child).addClass('hidden-item')
+    }
+  })
+
+  createPages()
+}
+$('.search').on('input', recalculateFilters)
+
+// Fill search box
+let query = new URLSearchParams(window.location.search).get('query')
+if (query) {
+  $('.search').val(query).trigger('input')
 }
 
 //add items to HTML5 storage

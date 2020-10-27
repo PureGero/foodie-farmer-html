@@ -38,3 +38,7 @@
 .pages li:hover {
     color: #3a2ee0;
 }
+
+.hidden-item {
+    display: none;
+}
