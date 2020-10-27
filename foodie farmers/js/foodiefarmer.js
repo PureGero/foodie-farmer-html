@@ -268,6 +268,10 @@ function createPages(parent, itemsPerPage) {
   // Increase page button
   $('<li class="page-increase">&gt;</li>').appendTo('.pages')
 
+  // Arrow button click functions
+  $('.page-decrease').click(() => selectPage(parseInt($(`.page-number.active`).text()) - 2))
+  $('.page-increase').click(() => selectPage(parseInt($(`.page-number.active`).text())))
+
   // Select the first page
   selectPage(0)
 }
@@ -282,10 +286,6 @@ function selectPage(i) {
   // Check page number is in range
   if (i < 0) i = 0
   if (i >= getMaxPage()) i = Math.ceil(getMaxPage()) - 1
-
-  // Update the arrow buttons
-  $('.page-decrease').click(() => selectPage(i - 1))
-  $('.page-increase').click(() => selectPage(i + 1))
 
   $(`.page-number`).removeClass('active')
   $(`.page-number`).slice(i, i + 1).addClass('active')
