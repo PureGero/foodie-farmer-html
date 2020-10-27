@@ -140,12 +140,11 @@ if ($('.farms-list').length) {
         <div class="container text-center border">
           <div class="row">
             <div class="col border px-0">
-              <img src="images/farm_1.jpg" class="img-fluid">
+              <img src="images/farm_1.jpg" class="img-fluid">${farm.image}
             </div>
             <div class="col-md border">
               <h2 class="text-center text-dark mt-3">${farm.name}</h2>
-              <p class="font-weight-normal text-justify text-dark">Corrupti quos dolores et quas molestias excepturi sint occaecati.
-                Non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+              <p class="font-weight-normal text-justify text-dark">${farm.description}
               </p>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item font-weight-normal text-dark">${farm.address}</li>
