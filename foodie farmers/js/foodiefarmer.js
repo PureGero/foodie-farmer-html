@@ -140,7 +140,7 @@ if ($('.farms-list').length) {
         <div class="container text-center border">
           <div class="row">
             <div class="col border px-0">
-              <img src="images/farm_1.jpg" class="img-fluid">${farm.image}
+              <img src="${farm.image}" class="img-fluid">
             </div>
             <div class="col-md border">
               <h2 class="text-center text-dark mt-3">${farm.name}</h2>
