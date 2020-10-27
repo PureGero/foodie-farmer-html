@@ -344,46 +344,61 @@ if (query) {
   $('.search').val(query).trigger('input')
 }
 
+// The key for the cart to use in localStorage
+const CART_KEY = 'foodie-farmer-cart'
+
+// Get the cart data
+function getCart() {
+  if (localStorage.getItem(CART_KEY)) {
+    return JSON.parse(localStorage.getItem(CART_KEY))
+  }
+
+  return {}
+}
+
+// Set the car data
+function setCart(cart) {
+  localStorage.setItem(CART_KEY, JSON.stringify(cart))
+}
+
 //add items to HTML5 storage
 function AddItem() {
+  const cart = getCart()
+
   let key = (itemOnPage.groupPurchase ? 'group_' : 'quick_') + itemOnPage.id
   itemOnPage.count = parseInt($('.count').val())
 
-  let item = localStorage.getItem(key)
-  if (item) {
+  if (cart[key]) {
     // Item is already in cart, combine the two
-    item = JSON.parse(item)
-    item.count += itemOnPage.count
+    cart[key].count += itemOnPage.count
   } else {
     // Item is not in cart yet, set it
-    item = itemOnPage
+    cart[key] = itemOnPage
   }
 
-  localStorage.setItem(key, JSON.stringify(item))
+  setCart(cart)
 }
   
 function calculateCartTotals() {
-  let key, item, i
+  const cart = getCart()
   let total = 0
   
   // Sum the price * count for each item in the cart
-  for (i = 0; i < localStorage.length; i++) {
-    key = localStorage.key(i)
-    item = JSON.parse(localStorage.getItem(key))
+  Object.keys(cart).forEach(key => {
+    let item = cart[key]
     total += item.price * item.count
-  }
+  })
 
   $('.total-price').text(formatPrice(total))
 }
 
 // Load cart
 if ($('.cart').length) {
-  let key, item, i
+  const cart = getCart()
   
   // For each item in the cart...
-  for (i = 0; i < localStorage.length; i++) {
-    key = localStorage.key(i)
-    item = JSON.parse(localStorage.getItem(key))
+  Object.keys(cart).forEach(key => {
+    let item = cart[key]
 
     let row = $(`<tr cart-key="${key}">
       <td class="product-thumbnail">
@@ -394,7 +409,7 @@ if ($('.cart').length) {
       </td>
       <td>${formatPrice(item.price)}</td>
       <td>
-        <div class="input-group mb-3" style="max-width: 120px;">
+        <div class="input-group mb-3" style="max-width: 120px">
           <div class="input-group-prepend">
             <button class="btn btn-outline-primary js-btn-minus" type="button">-</button>
           </div>
@@ -410,12 +425,13 @@ if ($('.cart').length) {
 
     // On count change
     row.find('.form-control').on('input', e => {
+      const cart = getCart()
       let key = $(e.target).parents('tr').attr('cart-key')
-      let item = JSON.parse(localStorage.getItem(key))
+      let item = cart[key]
 
       // Update and save count
       item.count = parseInt($(e.target).val())
-      localStorage.setItem(key, JSON.stringify(item))
+      setCart(cart)
 
       // Update total price
       $(e.target).parents('tr').find('.total-item-price').text(formatPrice(item.price * item.count))
@@ -424,14 +440,18 @@ if ($('.cart').length) {
 
     // On item delete
     row.find('.btn-remove').on('click', e => {
+      const cart = getCart()
       let key = $(e.target).parents('tr').attr('cart-key')
 
-      // Remove the item and update the total price
-      delete localStorage[key]
+      // Delete the entry from the cart
+      delete cart[key]
+      setCart(cart)
+
+      // Remove the row and update the total price
       $(e.target).parents('tr').remove()
       calculateCartTotals()
     })
-  }
+  })
 
   calculateCartTotals()
 }
