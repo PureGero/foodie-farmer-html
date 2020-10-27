@@ -1,683 +1,723 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Foodie Farmer</title>
-    
-    %include head.html%
-    
-  </head>
-  <body class="site-wrap">
-  
-    %include header.html%
 
-    <div class="bg-light py-3">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black item-name">Item Name</strong></div>
-        </div>
+<head>
+  <title>Foodie Farmer</title>
+
+  %include head.html%
+
+</head>
+
+<body class="site-wrap">
+
+  %include header.html%
+
+  <div class="bg-light py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mb-0">
+          <a href="index.html">Home</a>
+          <span class="mx-2 mb-0">/</span>
+          <strong class="text-black item-name">Item Name</strong></div>
       </div>
-    </div>  
+    </div>
+  </div>
 
-    <div class="site-section">
-      <div class="container">
-        <div class="row shop-single">
-          <div class="col-md-6">
-            <figure class="item-picture"></figure>
-          </div>
-          <div class="col-md-6">
-            <h2 class="text-black item-name"></h2>
-            <p><small class="item-farm"></small></p>
-            <p class="item-description"></p>
-            <p><strong class="text-primary h4 item-price"></strong></p>
-            <div class="mb-5">
-              <div class="input-group mb-3" style="max-width: 120px;">
+  <div class="site-section">
+    <div class="container">
+      <div class="row shop-single">
+        <div class="col-md-6">
+          <figure class="item-picture"></figure>
+        </div>
+        <div class="col-md-6">
+          <h2 class="text-black item-name"></h2>
+          <p><small class="item-farm"></small></p>
+          <p class="item-description"></p>
+          <p><strong class="text-primary h4 item-price"></strong></p>
+          <div class="mb-5">
+            <div class="input-group mb-3" style="max-width: 120px;">
               <div class="input-group-prepend">
                 <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
               </div>
-              <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+              <input type="text" class="form-control text-center" value="1" placeholder=""
+                aria-label="Example text with button addon" aria-describedby="button-addon1">
               <div class="input-group-append">
                 <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
               </div>
             </div>
-
+          </div>
+          <p><a href="#" onclick="AddItem()" class="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
+          <div id="productDescription_feature_div" class="a-row feature"
+            data-feature-name="productDescription"
+            data-template-name="productDescription"
+            data-cel-widget="productDescription_feature_div">
+            <div class="a-divider a-divider-section">
+              <div class="a-divider-inner"></div>
             </div>
-            <p><a href="#" onclick="AddItem()" class="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
-            <div id="productDescription_feature_div" data-feature-name="productDescription" data-template-name="productDescription" class="a-row feature" data-cel-widget="productDescription_feature_div">
+            <!--Item Description-->
+            <h2 class="default">Item Description</h2>
+            <div id="productDescription" class="a-section a-spacing-small" data-cel-widget="productDescription">
+              <div class="disclaim">
+                Color: <strong>Red</strong>&nbsp;|&nbsp;
+                Size: <strong>165cm</strong>
+              </div>
 
+              <!-- show up to 2 reviews by default -->
+              <p>The Le Creuset 1/3 quart (about 0.3 liter) pan is perfect for spinach, boiled artichokes or fruit
+                tarts. This mini French saucepan is a very practical kitchen utensil. Made of strong and durable cast
+                iron. Satin black enamel is used on the inside. Durable and non-reactive. Non-porous. The outer side is
+                made of durable enamel material with a beautiful luster, adding a popular element to the kitchen. This
+                mini French saucepan achieves even heat distribution and excellent heat preservation performance. It can
+                cook food better and achieve longer heat preservation and preservation of food. This durable enamel cast
+                iron cookware combines many advantages in one and is very compact, and can be cleaned in the dishwasher.
+                Made of strong and durable cast iron. The outer side is made of colorful enamel, which is very durable.
+                The inner side is durable, non-reactive and non-porous. The heat is evenly distributed and the heat
+                preservation performance is excellent. 4 inches in diameter (about 10.2 cm). It is 3.5 inches
+                (approximately 8.9 cm) high.
+              </p>
+            </div>
 
+            <style type="text/css">
+              #productDescription {
+                color: #333333;
+                word-wrap: break-word;
+                font-size: small;
+                line-height: initial;
+                margin: 0.5em 0px 0em 25px;
+              }
 
-<div class="a-divider a-divider-section"><div class="a-divider-inner"></div></div>
+              #productDescription h3 {
+                margin: 0.75em 0px 0.375em -1px;
+              }
 
-<!--Item Description-->
-<h2 class="default">Item Description</h2>
-<div id="productDescription" class="a-section a-spacing-small" data-cel-widget="productDescription">
-<div class="disclaim">
-Color: <strong>Red</strong>&nbsp;|&nbsp;
-Size: <strong>165cm</strong>
-</div>
+              #productDescription_feature_div>h2.default {
+                color: #CC6600;
+                font-size: medium;
+                margin: 0 0 0.25em;
+              }
 
-<!-- show up to 2 reviews by default -->
-<p>The Le Creuset 1/3 quart (about 0.3 liter) pan is perfect for spinach, boiled artichokes or fruit tarts. This mini French saucepan is a very practical kitchen utensil. Made of strong and durable cast iron. Satin black enamel is used on the inside. Durable and non-reactive. Non-porous. The outer side is made of durable enamel material with a beautiful luster, adding a popular element to the kitchen. This mini French saucepan achieves even heat distribution and excellent heat preservation performance. It can cook food better and achieve longer heat preservation and preservation of food. This durable enamel cast iron cookware combines many advantages in one and is very compact, and can be cleaned in the dishwasher. Made of strong and durable cast iron. The outer side is made of colorful enamel, which is very durable. The inner side is durable, non-reactive and non-porous. The heat is evenly distributed and the heat preservation performance is excellent. 4 inches in diameter (about 10.2 cm). It is 3.5 inches (approximately 8.9 cm) high.
-</p>
-</div>
+              #productDescription_feature_div>h2.books {
+                color: #333 !important;
+                font-size: 21px !important;
+                line-height: 1.3;
+                padding-bottom: 4px;
+                font-weight: normal;
+                margin: 0px;
+              }
 
-<style type="text/css">
-#productDescription {
-color: #333333;
-word-wrap: break-word;
-font-size: small;
-line-height: initial;
-margin: 0.5em 0px 0em 25px;
-}
+              #productDescription_feature_div>h2.softlines {
+                color: #333 !important;
+                font-size: 21px !important;
+                line-height: 1.3;
+                padding-bottom: 4px;
+                font-weight: bold;
+                margin: 0px;
+              }
 
-#productDescription_feature_div > h2.default {
-color: #CC6600;
-font-size: medium;
-margin: 0 0 0.25em;
-}
-#productDescription_feature_div > h2.books {
-color:#333 !important;
-font-size:21px !important;
-line-height: 1.3;
-padding-bottom: 4px;
-font-weight: normal;
-margin: 0px;
-}
-#productDescription_feature_div > h2.softlines {
-color:#333 !important;
-font-size:21px !important;
-line-height: 1.3;
-padding-bottom: 4px;
-font-weight: bold;
-margin: 0px;
-}
-#productDescription > p, #productDescription > div, #productDescription > table {
-margin: 0 0 1em 0;
-}
-#productDescription p {
-margin: 0em 0 1em 1em;
-}
-#productDescription h3 {
-font-weight: normal;
-color: #333333;
-font-size: 1.23em;
-clear: left;
-margin: 0.75em 0px 0.375em -15px;
-}
-#productDescription table {
-border-collapse: inherit !important;
-margin-bottom: 0;
-}
-#productDescription table img {
-max-width: inherit !important;
-}
-#productDescription table td {
-font-size: small;
-vertical-align: inherit !important;
-}
-#productDescription ul li {
-margin: 0 0 0 20px;
-}
-#productDescription ul li ul {
-list-style-type: disc !important;
-margin-left: 20px !important;
-}
-#productDescription ul ul li {
-list-style-type: disc !important;
-margin-left: 20px !important;
-}
-#productDescription > ul ul li {
-list-style-type: disc !important;
-}
-#productDescription ul li ul li {
-margin: 0 0 0 20px;
-}
-#productDescription .aplus p {
-margin: 0 0 1em 0;
-}
-#productDescription small {
-font-size: smaller;
-}
-#productDescription.prodDescWidth {
-max-width: 1000px
-}
-</style>
-<!-- Used to set table width because AUI is overriding the width attribute of the tables coming in description -->
-<script type="text/javascript">
-P.when('jQuery').execute(function($){
-$("#productDescription table").each(function() {
-var width = $(this).attr('width');
-if (width) width += 'px';
-else width = 'auto';
-$(this).css('width', width);
-var padding = $(this).attr('cellpadding');
-if (padding) padding += 'px';
-else padding = '0px';
-$(this).css('padding', padding);
-});
-});
-</script>
+              #productDescription>p,
+              #productDescription>div,
+              #productDescription>table {
+                margin: 0 0 1em 0;
+              }
 
-<style>
-#productDescription h3 {
-margin: 0.75em 0px 0.375em -1px;
-}
-</style>
-</div>
+              #productDescription p {
+                margin: 0em 0 1em 1em;
+              }
 
+              #productDescription h3 {
+                font-weight: normal;
+                color: #333333;
+                font-size: 1.23em;
+                clear: left;
+                margin: 0.75em 0px 0.375em -15px;
+              }
+
+              #productDescription table {
+                border-collapse: inherit !important;
+                margin-bottom: 0;
+              }
+
+              #productDescription table img {
+                max-width: inherit !important;
+              }
+
+              #productDescription table td {
+                font-size: small;
+                vertical-align: inherit !important;
+              }
+
+              #productDescription ul li {
+                margin: 0 0 0 20px;
+              }
+
+              #productDescription ul li ul {
+                list-style-type: disc !important;
+                margin-left: 20px !important;
+              }
+
+              #productDescription ul ul li {
+                list-style-type: disc !important;
+                margin-left: 20px !important;
+              }
+
+              #productDescription>ul ul li {
+                list-style-type: disc !important;
+              }
+
+              #productDescription ul li ul li {
+                margin: 0 0 0 20px;
+              }
+
+              #productDescription .aplus p {
+                margin: 0 0 1em 0;
+              }
+
+              #productDescription small {
+                font-size: smaller;
+              }
+
+              #productDescription.prodDescWidth {
+                max-width: 1000px
+              }
+            </style>
+            <!-- Used to set table width because AUI is overriding the width attribute of the tables coming in description -->
+            <script type="text/javascript">
+              P.when('jQuery').execute(function ($) {
+                $("#productDescription table").each(function () {
+                  var width = $(this).attr('width');
+                  if (width) width += 'px';
+                  else width = 'auto';
+                  $(this).css('width', width);
+                  var padding = $(this).attr('cellpadding');
+                  if (padding) padding += 'px';
+                  else padding = '0px';
+                  $(this).css('padding', padding);
+                });
+              });
+            </script>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-<!--Buyer Coment and Reviews-->
-<div id="reviewsMedley" data-hook="reviews-medley-widget" class="a-fixed-left-grid a-spacing-extra-large"><div class="a-fixed-left-grid-inner" style="padding-left:300px"><div class="a-fixed-left-grid-col a-col-left" style="width:300px;margin-left:-300px;float:left;"><div class="a-row"><h2>Buyer Comment</h2></div><div class="a-section a-spacing-none a-spacing-top-mini cr-widget-ACR"><div class="a-fixed-left-grid AverageCustomerReviews a-spacing-small"><div class="a-fixed-left-grid-inner" style="padding-left:105px"><div class="a-fixed-left-grid-col a-col-left" style="width:105px;margin-left:-105px;float:left;"><i data-hook="average-star-rating" class="a-icon a-icon-star-medium a-star-medium-4-5 averageStarRating"><span class="a-icon-alt">4.6 stars，5 is full mark.</span></i></div><div class="a-fixed-left-grid-col aok-align-center a-col-right" style="padding-left:0%;float:left;"><div class="a-row"><span class="a-size-base a-nowrap"><span data-hook="rating-out-of-text" class="a-size-medium a-color-base">4.6，5 is full mark.</span></span></div></div></div></div><div data-hook="total-review-count" class="a-row a-spacing-medium averageStarRatingNumerical"><span class="a-size-base a-color-secondary"><!--TODO: Replace this string with arp-x-ratings 5/22/19 (ShopperExp-5143)-->
-  66,589 Gloabl Ratings</span></div></div><span class="cr-widget-Histogram">
-<div class="a-fixed-left-grid a-spacing-none"><div class="a-fixed-left-grid-inner" style="padding-left:280px"><div class="a-fixed-left-grid-col a-col-left" style="width:280px;margin-left:-280px;float:left;"><span class="a-declarative" data-action="reviews:filter-action:push-state" data-reviews:filter-action:push-state="{&quot;scrollToSelector&quot;:&quot;#reviews-filter-info&quot;,&quot;allowLinkDefault&quot;:&quot;1&quot;}"><table id="histogramTable" class="a-normal a-spacing-none" role="presentation">
 
 
 
 
 
 
-
-</table><table id="histogramTable" class="a-normal a-align-center a-spacing-base">
-
-<tbody><tr data-reftag="" data-reviews-state-param="{&quot;filterByStar&quot;:&quot;five_star&quot;, &quot;pageNumber&quot;:&quot;1&quot;}" class="a-histogram-row a-align-center">
-
-<td class="aok-nowrap">
-
-<span class="a-size-base">
-<a class="a-link-normal 5star" title="82% ratings are 5 stars" href="/-/zh/product-reviews/B07ZPC9QD4/ref=acr_dp_hist_5?ie=UTF8&amp;filterByStar=five_star&amp;reviewerType=all_reviews#reviews-filter-bar">
-  5 stars
-</a>
-</span>
-
-<span class="a-letter-space"></span>
-</td>
-
-<td class="a-span10">
-<a class="a-link-normal" title="82% ratings are 5 stars" href="/-/zh/product-reviews/B07ZPC9QD4/ref=acr_dp_hist_5?ie=UTF8&amp;filterByStar=five_star&amp;reviewerType=all_reviews#reviews-filter-bar">
-<div class="a-meter" aria-label="82%"><div class="a-meter-bar" style="width: 82%;"></div></div>
-</a>
-</td>
-
-<td class="a-text-right a-nowrap">
-<span class="a-letter-space"></span>
-<span class="a-size-base">
-<a class="a-link-normal" title="82% ratings are 5 stars" href="/-/zh/product-reviews/B07ZPC9QD4/ref=acr_dp_hist_5?ie=UTF8&amp;filterByStar=five_star&amp;reviewerType=all_reviews#reviews-filter-bar">
-  
-    82%
-  
-</a>
-</span>
-</td>
-</tr>
-
-<tr data-reftag="" data-reviews-state-param="{&quot;filterByStar&quot;:&quot;four_star&quot;, &quot;pageNumber&quot;:&quot;1&quot;}" class="a-histogram-row a-align-center">
-
-<td class="aok-nowrap">
-
-<span class="a-size-base">
-<a class="a-link-normal 4star" title="8% ratings are 4 stars" href="/-/zh/product-reviews/B07ZPC9QD4/ref=acr_dp_hist_4?ie=UTF8&amp;filterByStar=four_star&amp;reviewerType=all_reviews#reviews-filter-bar">
-  4 stars
-</a>
-</span>
-
-<span class="a-letter-space"></span>
-</td>
-
-<td class="a-span10">
-<a class="a-link-normal" title="8% ratings are 4 stars" href="/-/zh/product-reviews/B07ZPC9QD4/ref=acr_dp_hist_4?ie=UTF8&amp;filterByStar=four_star&amp;reviewerType=all_reviews#reviews-filter-bar">
-<div class="a-meter" aria-label="8%"><div class="a-meter-bar" style="width: 8%;"></div></div>
-</a>
-</td>
-
-<td class="a-text-right a-nowrap">
-<span class="a-letter-space"></span>
-<span class="a-size-base">
-<a class="a-link-normal" title="8% ratings are 4 stars" href="/-/zh/product-reviews/B07ZPC9QD4/ref=acr_dp_hist_4?ie=UTF8&amp;filterByStar=four_star&amp;reviewerType=all_reviews#reviews-filter-bar">
-  
-    8%
-  
-</a>
-</span>
-</td>
-</tr>
-
-
-<tr data-reftag="" data-reviews-state-param="{&quot;filterByStar&quot;:&quot;three_star&quot;, &quot;pageNumber&quot;:&quot;1&quot;}" class="a-histogram-row a-align-center">
-
-<td class="aok-nowrap">
-
-<span class="a-size-base">
-<a class="a-link-normal 3star" title="3% ratings are 3 stars" href="/-/zh/product-reviews/B07ZPC9QD4/ref=acr_dp_hist_3?ie=UTF8&amp;filterByStar=three_star&amp;reviewerType=all_reviews#reviews-filter-bar">
-  3 stars
-</a>
-</span>
-
-<span class="a-letter-space"></span>
-</td>
-
-<td class="a-span10">
-<a class="a-link-normal" title="3% ratings are 3 stars" href="/-/zh/product-reviews/B07ZPC9QD4/ref=acr_dp_hist_3?ie=UTF8&amp;filterByStar=three_star&amp;reviewerType=all_reviews#reviews-filter-bar">
-<div class="a-meter" aria-label="3%"><div class="a-meter-bar" style="width: 3%;"></div></div>
-</a>
-</td>
-
-<td class="a-text-right a-nowrap">
-<span class="a-letter-space"></span>
-<span class="a-size-base">
-<a class="a-link-normal" title="3% ratings are 3 stars" href="/-/zh/product-reviews/B07ZPC9QD4/ref=acr_dp_hist_3?ie=UTF8&amp;filterByStar=three_star&amp;reviewerType=all_reviews#reviews-filter-bar">
-  
-    3%
-  
-</a>
-</span>
-</td>
-</tr>
-
-
-<tr data-reftag="" data-reviews-state-param="{&quot;filterByStar&quot;:&quot;two_star&quot;, &quot;pageNumber&quot;:&quot;1&quot;}" class="a-histogram-row a-align-center">
-
-<td class="aok-nowrap">
-
-<span class="a-size-base">
-<a class="a-link-normal 2star" title="2% ratings are 2 stars" href="/-/zh/product-reviews/B07ZPC9QD4/ref=acr_dp_hist_2?ie=UTF8&amp;filterByStar=two_star&amp;reviewerType=all_reviews#reviews-filter-bar">
-  2 stars
-</a>
-</span>
-
-<span class="a-letter-space"></span>
-</td>
-
-<td class="a-span10">
-<a class="a-link-normal" title="2% ratings are 2 stars" href="/-/zh/product-reviews/B07ZPC9QD4/ref=acr_dp_hist_2?ie=UTF8&amp;filterByStar=two_star&amp;reviewerType=all_reviews#reviews-filter-bar">
-<div class="a-meter" aria-label="2%"><div class="a-meter-bar" style="width: 2%;"></div></div>
-</a>
-</td>
-
-<td class="a-text-right a-nowrap">
-<span class="a-letter-space"></span>
-<span class="a-size-base">
-<a class="a-link-normal" title="2% ratings are 2 stars" href="/-/zh/product-reviews/B07ZPC9QD4/ref=acr_dp_hist_2?ie=UTF8&amp;filterByStar=two_star&amp;reviewerType=all_reviews#reviews-filter-bar">
-  
-    2%
-  
-</a>
-</span>
-</td>
-</tr>
-
-
-<tr data-reftag="" data-reviews-state-param="{&quot;filterByStar&quot;:&quot;one_star&quot;, &quot;pageNumber&quot;:&quot;1&quot;}" class="a-histogram-row a-align-center">
-
-<td class="aok-nowrap">
-
-<span class="a-size-base">
-<a class="a-link-normal 1star" title="4% ratings are 1 star" href="/-/zh/product-reviews/B07ZPC9QD4/ref=acr_dp_hist_1?ie=UTF8&amp;filterByStar=one_star&amp;reviewerType=all_reviews#reviews-filter-bar">
-  1 star
-</a>
-</span>
-
-<span class="a-letter-space"></span>
-</td>
-
-<td class="a-span10">
-<a class="a-link-normal" title="4% ratings are 1 star" href="/-/zh/product-reviews/B07ZPC9QD4/ref=acr_dp_hist_1?ie=UTF8&amp;filterByStar=one_star&amp;reviewerType=all_reviews#reviews-filter-bar">
-<div class="a-meter" aria-label="4%"><div class="a-meter-bar" style="width: 4%;"></div></div>
-</a>
-</td>
-
-<td class="a-text-right a-nowrap">
-<span class="a-letter-space"></span>
-<span class="a-size-base">
-<a class="a-link-normal" title="4% ratings are 1 star" href="/-/zh/product-reviews/B07ZPC9QD4/ref=acr_dp_hist_1?ie=UTF8&amp;filterByStar=one_star&amp;reviewerType=all_reviews#reviews-filter-bar">
-  
-    4%
-  
-</a>
-</span>
-</td>
-</tr>
-</tbody></table>
-</span></div></div></div><div aria-live="polite" class="a-row a-expander-container a-spacing-top-small a-expander-inline-container"><a href="javascript:void(0)" data-action="a-expander-toggle" class="a-expander-header a-declarative a-expander-inline-header a-link-expander" data-a-expander-toggle="{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;&quot;, &quot;collapse_prompt&quot;:&quot;&quot;}"><i class="a-icon a-icon-expand"></i><span class="a-expander-prompt">How to calculate?</span></a><div aria-expanded="false" class="a-expander-content a-expander-inline-content a-expander-inner" style="display:none">Using machine learning to rate products. 
-</div></div></span>
-<hr aria-hidden="true" class="a-spacing-large a-spacing-top-large a-divider-normal"><span class="cr-lazy-widget cr-summarization-attributes" data-widget-name="cr-summarization-attributes"><span class="cr-widget-SummaryAttribute" data-hook="cr-widget-SummaryAttribute">
-<div id="cr-dp-summarization-attributes" data-hook="summarization-attributes-widget" class="review">
-
-<div class="a-row a-spacing-medium"><span data-hook="summarization-attributes-title" class="a-size-medium a-text-bold">By feature</span></div><div data-hook="cr-summarization-attributes-list" id="cr-summarization-attributes-list" class="a-row a-spacing-none celwidget cr-asin-B07ZPC9QD4" data-csa-c-id="5z07oy-x0pgoc-e08bq7-acs1xc"><div id="cr-summarization-attribute-attr-sound-quality" data-hook="cr-summarization-attribute" class="a-section a-spacing-none"><div class="a-fixed-right-grid a-spacing-base"><div class="a-fixed-right-grid-inner a-grid-vertical-align a-grid-center"><div class="a-fixed-right-grid-col a-col-left" style="padding-right:3%;float:left;"><div class="a-row"><span class="a-size-base a-color-base">Sound quality</span></div></div><div class="a-text-right a-fixed-right-grid-col a-col-right" style="width:120px;margin-right:-120px;float:left;"><i class="a-icon a-icon-star-small a-star-small-4-5"><span class="a-icon-alt">4.6</span></i><span class="a-letter-space"></span><span class="a-size-base a-color-tertiary">4.6</span></div></div></div></div><div id="cr-summarization-attribute-attr-noise-cancelling" data-hook="cr-summarization-attribute" class="a-section a-spacing-none"><div class="a-fixed-right-grid a-spacing-base"><div class="a-fixed-right-grid-inner a-grid-vertical-align a-grid-center"><div class="a-fixed-right-grid-col a-col-left" style="padding-right:3%;float:left;"><div class="a-row"><span class="a-size-base a-color-base">Noise cancellation</span></div></div><div class="a-text-right a-fixed-right-grid-col a-col-right" style="width:120px;margin-right:-120px;float:left;"><i class="a-icon a-icon-star-small a-star-small-4-5"><span class="a-icon-alt">4.5</span></i><span class="a-letter-space"></span><span class="a-size-base a-color-tertiary">4.5</span></div></div></div></div><div id="cr-summarization-attribute-attr-moisture-wicking" data-hook="cr-summarization-attribute" class="a-section a-spacing-none"><div class="a-fixed-right-grid a-spacing-base"><div class="a-fixed-right-grid-inner a-grid-vertical-align a-grid-center"><div class="a-fixed-right-grid-col a-col-left" style="padding-right:3%;float:left;"><div class="a-row"><span class="a-size-base a-color-base">Moisture wicking</span></div></div><div class="a-text-right a-fixed-right-grid-col a-col-right" style="width:120px;margin-right:-120px;float:left;"><i class="a-icon a-icon-star-small a-star-small-4-5"><span class="a-icon-alt">4.5</span></i><span class="a-letter-space"></span><span class="a-size-base a-color-tertiary">4.5</span></div></div></div></div><div data-hook="cr-summarization-attributes-see-more" aria-live="polite" data-a-expander-name="cr-summarization-attributes-see-more" class="a-row a-expander-container a-spacing-none a-expander-extend-container"><div id="cr-summarization-attributes-expanded" data-hook="cr-summarization-attributes-expanded" aria-expanded="false" class="a-expander-content celwidget a-expander-extend-content" style="display:none" data-csa-c-id="lisfb7-mub6vf-a8nb7c-fi0xh8"><div id="cr-summarization-attribute-attr-battery-life" data-hook="cr-summarization-attribute" class="a-section a-spacing-none"><div class="a-fixed-right-grid a-spacing-base"><div class="a-fixed-right-grid-inner a-grid-vertical-align a-grid-center"><div class="a-fixed-right-grid-col a-col-left" style="padding-right:3%;float:left;"><div class="a-row"><span class="a-size-base a-color-base">Battery life</span></div></div><div class="a-text-right a-fixed-right-grid-col a-col-right" style="width:120px;margin-right:-120px;float:left;"><i class="a-icon a-icon-star-small a-star-small-4-5"><span class="a-icon-alt">4.3</span></i><span class="a-letter-space"></span><span class="a-size-base a-color-tertiary">4.3</span></div></div></div></div></div><a href="javascript:void(0)" data-action="a-expander-toggle" class="a-expander-header a-declarative a-expander-extend-header" data-a-expander-toggle="{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;See more&quot;, &quot;collapse_prompt&quot;:&quot;See less&quot;}"><i class="a-icon a-icon-extender-expand"></i><span class="a-expander-prompt">See more</span></a></div></div></div>
-
-<hr aria-hidden="true" class="a-spacing-large a-spacing-top-extra-large a-divider-normal"></span>
-</span><span class="cr-lazy-widget cr-solicitation" data-widget-name="cr-solicitation"><div data-hook="cr-solicitation" class="a-section cr-solicitation"><h3 data-hook="solicitation-title" class="a-spacing-micro">Review this product</h3><div data-hook="share-your-thoughts-text" id="dp-summary-share-your-thoughts" class="a-row a-spacing-medium">Share your thoughts with other customers</div><div class="a-row"><span class="a-button a-button-base writeReviewButton cm-cr-button-wide" id="a-autoid-22"><span class="a-button-inner"><a href="/review/create-review/ref=cm_cr_othr_d_wr_but_top?ie=UTF8&amp;channel=glance-detail&amp;asin=B07ZPC9QD4" data-hook="write-review-button" class="a-button-text" role="button" id="a-autoid-22-announce">Write a customer review</a></span></span></div></div></span><hr aria-hidden="true" class="a-spacing-extra-large a-spacing-top-extra-large a-divider-normal"><hr aria-hidden="true" class="a-spacing-extra-large a-spacing-top-extra-large a-divider-normal"></div><div class="a-fixed-left-grid-col a-col-right" style="padding-left:2.5%;float:left;"><div class="a-row cm_cr_grid_center_container"><div class="a-fixed-right-grid-col cm_cr_grid_center_left" style="float:left;"></div><div class="a-fixed-right-grid-col cm_cr_grid_center_right" style="float:left;"><span class="cr-widget-MedleyCustomerImages" data-hook="cr-widget-MedleyCustomerImages">
-<div class="a-popover-preload" id="a-popover-reviews-image-gallery"><div class="reviewLightboxPopoverContainer" data-hook="customer-images-modal">
-<div class="reviewsLightbox" id="reviews-image-gallery"></div>
-</div>
-</div><div id="reviews-image-gallery-container" data-asin="B07ZPC9QD4" data-hook="customer-images-widget" class="a-section a-spacing-medium reviews-customer-images"><div class="a-row"><h3>Customer images</h3></div><div class="a-row a-spacing-small a-spacing-top-small"><div class="review-image-tile" data-hook="review-image-tile-gallery">
-<img alt="Customer image" src="https://images-na.ssl-images-amazon.com/images/I/61kA7YYm1dL._CR0,204,1224,1224_UX175.jpg" class="a-dynamic-image cr-customer-image-thumbnail" width="22.5%" data-a-dynamic-image="{&quot;https://images-na.ssl-images-amazon.com/images/I/61kA7YYm1dL._CR0,204,1224,1224_UX175.jpg&quot;:[175,175],&quot;https://images-na.ssl-images-amazon.com/images/I/61kA7YYm1dL._CR0,204,1224,1224_UX64.jpg&quot;:[64,64]}"></div>
-<div class="review-image-tile" data-hook="review-image-tile-gallery">
-<img alt="Customer image" src="https://images-na.ssl-images-amazon.com/images/I/61rqg4H5KWL._CR0,204,1224,1224_UX175.jpg" class="a-dynamic-image cr-customer-image-thumbnail" width="22.5%" data-a-dynamic-image="{&quot;https://images-na.ssl-images-amazon.com/images/I/61rqg4H5KWL._CR0,204,1224,1224_UX175.jpg&quot;:[175,175],&quot;https://images-na.ssl-images-amazon.com/images/I/61rqg4H5KWL._CR0,204,1224,1224_UX64.jpg&quot;:[64,64]}"></div>
-<div class="review-image-tile" data-hook="review-image-tile-gallery">
-<img alt="Customer image" src="https://images-na.ssl-images-amazon.com/images/I/61x4eFf397L._CR0,204,1224,1224_UX175.jpg" class="a-dynamic-image cr-customer-image-thumbnail" width="22.5%" data-a-dynamic-image="{&quot;https://images-na.ssl-images-amazon.com/images/I/61x4eFf397L._CR0,204,1224,1224_UX175.jpg&quot;:[175,175],&quot;https://images-na.ssl-images-amazon.com/images/I/61x4eFf397L._CR0,204,1224,1224_UX64.jpg&quot;:[64,64]}"></div>
-<div class="review-image-tile" data-hook="review-image-tile-gallery">
-<img alt="Customer image" src="https://images-na.ssl-images-amazon.com/images/I/71hOdx2hQrL._CR0,204,1224,1224_UX175.jpg" class="a-dynamic-image cr-customer-image-thumbnail" width="22.5%" data-a-dynamic-image="{&quot;https://images-na.ssl-images-amazon.com/images/I/71hOdx2hQrL._CR0,204,1224,1224_UX64.jpg&quot;:[64,64],&quot;https://images-na.ssl-images-amazon.com/images/I/71hOdx2hQrL._CR0,204,1224,1224_UX175.jpg&quot;:[175,175]}"></div>
-</div><div class="a-row"><a data-hook="see-all-images-link" class="a-link-normal reviews-image-gallery-link" href="#CustomerImages">See all customer images</a></div><div style="display:none;">
-<span class="a-declarative" data-action="a-modal" data-a-modal="{&quot;name&quot;:&quot;reviews-image-gallery&quot;}"><a href="javascript:void(0)" class="a-popover-trigger a-declarative"><i class="a-icon a-icon-popover"></i></a></span></div>
-
-</div></span>
-<span class="cr-lazy-widget cr-summarization-lighthut" data-widget-name="cr-summarization-lighthut"><span class="cr-widget-Lighthut" data-hook="cr-widget-Lighthut"></span>
-</span><span class="cr-widget-Filters" data-hook="cr-widget-Filters">
-<div class="a-section a-spacing-large"><div class="card-padding">
-<div id="cm-cr-filters" class="celwidget" data-hook="reviews-filter-widget" data-csa-c-id="4zauyh-2yv629-l02iql-k8ascz">
-
-<h3 class="a-spacing-base">Filter comments</h3><ul class="a-unordered-list a-nostyle a-button-list a-declarative a-button-toggle-group a-horizontal" role="radiogroup" data-action="a-button-group"><li><span class="a-list-item"><span class="a-declarative" data-action="reviews:filter-action:apply" data-reviews:filter-action:apply="{&quot;toggleFilters&quot;:&quot;true&quot;,&quot;filterByLanguage&quot;:&quot;zh_CN&quot;}"><span class="a-button a-button-normal a-button-toggle aok-float-left" role="radio" id="a-autoid-11" aria-posinset="1" aria-setsize="2"><span class="a-button-inner"><input data-hook="reviews-preferred-language-button" data-reftag="cm_cr_dp_d_fltrs_prel_0" class="a-button-input" type="submit" aria-labelledby="a-autoid-11-announce"><span class="a-button-text" aria-hidden="true" id="a-autoid-11-announce"><span class="a-size-small">Chinese</span></span></span></span></span></span></li><li><span class="a-list-item"><span class="a-declarative" data-action="reviews:filter-action:apply" data-reviews:filter-action:apply="{&quot;toggleFilters&quot;:&quot;true&quot;,&quot;filterByLanguage&quot;:&quot;en_US&quot;}"><span class="a-button a-button-normal a-button-toggle aok-float-left" role="radio" id="a-autoid-12" aria-posinset="2" aria-setsize="2"><span class="a-button-inner"><input data-hook="reviews-primary-language-button" data-reftag="cm_cr_dp_d_fltrs_pril_1" class="a-button-input" type="submit" aria-labelledby="a-autoid-12-announce"><span class="a-button-text" aria-hidden="true" id="a-autoid-12-announce"><span class="a-size-small">English</span></span></span></span></span></span></li></ul></div>
-</div>
-</div><hr aria-hidden="true" class="a-spacing-medium a-divider-normal cr-full-screen-width"></span>
-<span class="cr-widget-FocalReviews" data-hook="cr-widget-FocalReviews">
-<div class="a-section a-spacing-medium"><div class="card-padding">
-<a id="customer-reviews-content" aria-label="Top reviews" class="a-link-normal celwidget" href="#" data-csa-c-id="eavjnb-j763f7-bl116r-9wdodc"></a>
-
-
-<div id="cm-cr-dp-review-sort-type" data-reftag="cm_cr_dp_d_fltrs_srt" class="a-section a-spacing-small">
-<span class="a-declarative" data-action="reviews:filter-action:change" data-reviews:filter-action:change="{&quot;filterType&quot;:&quot;sortOrder&quot;}">
-
-<span class="a-dropdown-container"><select name="" autocomplete="off" id="cm-cr-sort-dropdown" tabindex="0" data-action="a-dropdown-select" class="a-native-dropdown a-declarative">
-
-<option value="helpful" data-a-css-class="cm-cr-sort-order-option" selected="">
-Top reviews
-</option>
-
-<option value="recent" data-a-css-class="cm-cr-sort-order-option">
-Most recent
-</option>
-
-</select><span tabindex="-1" data-a-class="cm-cr-dp-filter-dropdown" class="a-button a-button-dropdown a-button-small cm-cr-dp-filter-dropdown" aria-hidden="true" id="a-autoid-13" style="min-width: 0%;"><span class="a-button-inner"><span class="a-button-text a-declarative" data-action="a-dropdown-button" role="button" aria-hidden="true" id="a-autoid-13-announce"><span class="a-dropdown-prompt">
-Top reviews
-</span></span><i class="a-icon a-icon-dropdown"></i></span></span></span>
-</span>
-</div><div id="cm-cr-local-reviews-title" class="a-section"><h3 data-hook="dp-local-reviews-header" class="a-spacing-medium a-spacing-top-large">
-
-
-Popular reviews from US
-</h3></div><div id="cm-cr-dp-review-header" class="a-section a-spacing-small"></div><span class="cr-translate-cta">
-</span>
-
-<div class="a-row"><div class="a-section a-spacing-extra-large a-spacing-top-medium a-text-center review-load-error aok-hidden"><div class="a-box a-alert a-alert-error cr-error" aria-live="assertive" role="alert"><div class="a-box-inner a-alert-container"><h4 class="a-alert-heading">There was a problem filtering reviews right now. Please try again later.</h4><i class="a-icon a-icon-alert"></i><div class="a-alert-content"></div></div></div></div><div id="cm-cr-dp-reviews-loading-wrapper" class="a-row a-spacing-medium aok-hidden"><div class="a-spinner-wrapper cr-reviews-loading aok-hidden"><span class="a-spinner a-spinner-medium"></span></div></div><div class="a-section a-spacing-large reviews-content filterable-reviews-content celwidget" data-csa-c-id="rbxzmx-xe6t2v-du7wwm-r2ma1d"><div id="cm-cr-dp-review-list" data-hook="top-customer-reviews-widget" class="a-section review-views celwidget" data-csa-c-id="xf4goy-o6thrj-2mb451-i2xxhc"><div id="R3MXI8ZV1P0T0R" data-hook="review" class="a-section review aok-relative"><div id="R3MXI8ZV1P0T0R-review-card" class="a-row a-spacing-none"><div id="customer_review-R3MXI8ZV1P0T0R" class="a-section celwidget" data-csa-c-id="pexpyb-vz5zil-zfbjjh-js7lhz"><div class="genome-widget-row">
-<div class="profile-widget-with-avatar">
-<div data-hook="genome-widget" class="a-row a-spacing-mini"><a href="/-/zh/gp/profile/amzn1.account.AGMWACNMAG74AXBF7IJ22IOZSZPA/ref=cm_cr_dp_d_gw_tr?ie=UTF8" class="a-profile" data-a-size="small"><div aria-hidden="true" class="a-profile-avatar-wrapper"><div class="a-profile-avatar"><img src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png" class="" data-src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png"><noscript><img src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png"/></noscript></div></div><div class="a-profile-content"><span class="a-profile-name">Vincent</span></div></a></div></div>
-<div class="badges-genome-widget">
-<div class="a-row a-spacing-mini"><span class="a-declarative" data-action="cr-popup" data-cr-popup="{&quot;width&quot;:&quot;340&quot;,&quot;title&quot;:&quot;Help&quot;,&quot;url&quot;:&quot;/gp/help/customer/display.html/ref=cm_cr_dp_bdg_help?ie=UTF8&amp;nodeId=14279681&amp;pop-up=1#tr&quot;,&quot;height&quot;:&quot;340&quot;}"><span class="a-letter-space"></span><a class="a-link-normal a-text-normal c7y-badge-link c7y-badge-hall-of-fame" href="/-/zh/gp/help/customer/display.html/ref=cm_cr_dp_bdg_help?ie=UTF8&amp;nodeId=14279681&amp;pop-up=1#tr"><span class="a-size-mini a-color-link c7yBadgeAUI c7yTopDownDashedStrike c7y-badge-text a-text-bold">HALL OF FAME</span></a><span class="a-letter-space"></span><a class="a-link-normal a-text-normal c7y-badge-link c7y-badge-top-50-reviewer" href="/-/zh/gp/help/customer/display.html/ref=cm_cr_dp_bdg_help?ie=UTF8&amp;nodeId=14279681&amp;pop-up=1#tr"><span class="a-size-mini a-color-link c7yBadgeAUI c7yTopDownDashedStrike c7y-badge-text a-text-bold">TOP 50 REVIEWER</span></a><span class="a-letter-space"></span><a class="a-link-normal a-text-normal c7y-badge-link c7y-badge-vine-voice" href="/-/zh/gp/help/customer/display.html/ref=cm_cr_dp_bdg_help?ie=UTF8&amp;nodeId=14279681&amp;pop-up=1#tr"><span class="a-size-mini a-color-link c7yBadgeAUI c7yTopDownDashedStrike c7y-badge-text a-text-bold">VINE VOICE</span></a></span></div></div>
-</div>
-<div class="a-row"><a class="a-link-normal" title="4.0 out of 5 stars" href="/-/zh/gp/customer-reviews/R3MXI8ZV1P0T0R/ref=cm_cr_dp_d_rvw_ttl?ie=UTF8&amp;ASIN=B07ZPC9QD4"><i data-hook="review-star-rating" class="a-icon a-icon-star a-star-4 review-rating"><span class="a-icon-alt">4.0 out of 5 stars</span></i></a><span class="a-letter-space"></span><a data-hook="review-title" class="a-size-base a-link-normal review-title a-color-base review-title-content a-text-bold" href="/-/zh/gp/customer-reviews/R3MXI8ZV1P0T0R/ref=cm_cr_dp_d_rvw_ttl?ie=UTF8&amp;ASIN=B07ZPC9QD4">
-
-
-<span>List of Features/Changes compared to Airpods (v2)</span>
-
-</a></div><span data-hook="review-date" class="a-size-base a-color-secondary review-date">Reviewed in the United States on October 30, 2019</span><div class="a-row a-spacing-mini review-data review-format-strip"></div><div class="a-row a-spacing-small review-data"><span data-hook="review-body" class="a-size-base review-text"><div aria-live="polite" data-a-expander-name="review_text_read_more" data-a-expander-collapsed-height="300" class="a-expander-collapsed-height a-row a-expander-container a-expander-partial-collapse-container" style="max-height: none; height: 300px;"><div data-hook="review-collapsed" aria-expanded="false" class="a-expander-content reviewText review-text-content a-expander-partial-collapse-content" style="padding-bottom: 20px;">
-
-<span>
-Like iphone 11 Pro, Macbook Pro, Airpad Pro; the "Pro" denotes a higher end product.<br><br>Compared to the Airpods (version 2) highest end model (with wireless charging case*); the Airpods Pro is $50 more MSRP.<br><br>Compared to the non wireless case version it's $90 more<br><br>*Airpods Pro does have wireless charging case by default. Only one version.<br><br>Let's go through the differences<br><br>1. Physical Appearance:<br><br>Shorter Stem, but larger bud or head<br><br>There's a large black airflow grill<br><br>A mic inside and outside the Airpods<br><br>Case is same thickness, a lot wider, but shorter. Still uses lighting cable to charge, but it does come with a lighting to USB-C cable<br><br>2. In-ear, instead of on-ear<br><br>If your ear has a small cavum and the original airpods fit perfectly, then the Airpads Pro may be a tight fit/more uncomfortable, but seeing the in-ear design, the ear piece will go into the ear canal and the rest will float in place.<br><br>Those with normal or larger cavum it'll fit well.<br><br>Some may not like the ear piece going into their ear canal<br><br>These ear phones are more for a closed environment than an open one<br><br>Seeing that it's an in-ear design, you may feel this hollow air effect going on unless you turn on transparency mode (more on this later) or play music with active noise cancelling on<br><br>Seeing that it's in-ear, it has a tighter grip, better for joggers, those who shake their head around a lot for some reason, or if you run up stairs often. If you have an intense workout regimen and/or do extreme sports and not mindful it still can fall out<br><br>There's a Ear Tip Fit Test on app. There's several ear tips in box. When you turn on this feature in app it'll calibrate and suggest what ear tips are best listening experience for you<br><br>If you lose the tips or get them dirty overtime, you can go to the Apple store and get replacement pair for around $4 or get cheaper 3rd party ones when they come out<br><br>3. Squeeze instead of tap<br><br>Instead of tapping on the earbuds, you are pinching or squeezing the stem.<br><br>1x to play, pause, and answer calls<br><br>2x to skip forward tracks<br><br>3x to skip back tracks<br><br>Press and hold to switch between active noise cancel and transparency mode<br><br>Still able to say "Hey Siri" to do voice commands/adjust volume anytime<br><br>No physical volume controls on buds<br><br>4. Battery life<br><br>Battery life varies depending on how far away you are from the device and volume you set. Battery depreciation over time. These are just rough estimates<br><br>Pro in general has 4.5 listening time with active noise cancelling or transparency on. Airpods version 2 has 5 hours. Note Airpod version 2 does not have active noise cancelling or transparency mode.  You can get 5 hours with noise cancelling and transparency off, but most likely you're not going to unless you're really desperate for battery<br><br>Pro has 3.5 talk time. Airpods have 3 hours<br><br>Case both old 24 hours battery life<br><br>Pro: 5 mins in case = 1 hour talk or listen time. Airpods 15min in case = 3 hours listen, 2 hours talk<br><br>5.  Water/sweat resistant<br><br>Now you can go to the gym and do cardio with them on.<br><br>As mentioned before, tighter grip seeing that it's in-ear<br><br>May survive light rain. Do not recommended going in the shower or dunk in the pool with it though<br><br> 6. Active noise cancellation, Transparency mode<br><br>Airpods pro has 3 modes: Active noise cancellation, off and Transparency mode<br><br>Active nose cancellation tries to block out outside noise while listening to music. I'd say it drowns out may 70%. If you focus to outside or aren't focused to music; you still may be able to pick out what's going on, but in general it does it's job.<br><br>Off is just like the standard in-ear headphones, but with the hollow air sound when no music is playing<br><br>Transparency mode. The black airflow grills let in outside sound so you're able to hear both outside sound and music same time. Think of it as open ear headsets.<br><br>Unlike some in-ear headsets the black airflow grills prevent you from hearing yourself in your head when you talk<br><br>7. Sound Quality<br><br>Better than the previous version seeing the active noise cancelling and in-ear with more focused sound direcly into your ear canal. It's not $250 audiophile quality sound.  Better quality sound in lows and mids compared to non-pro version. If you ever tried the Power Beats Pro, it sound very similar to those<br><br>You can hear callers better in a noisy environment and less likely raise your voice<br><br>--Conclusion:<br><br>Other than that, all other features are the same. Meant to be used on Apple devices. Very good ease of use for Apple users, and is in-style these days (shows social status). Sound quality is better that the non-PRO version, and you do get noise cancellation. There are other headphones that do it better sound in this price range, but may not be as convenient with pairing to Apple devices.
-</span>
-
-</div><div class="a-expander-header a-expander-partial-collapse-header" style="opacity: 1; display: block;"><div class="a-expander-content-fade"></div><a href="javascript:void(0)" data-hook="expand-collapse-read-more-less" data-action="a-expander-toggle" class="a-declarative" data-a-expander-toggle="{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;Read more&quot;, &quot;collapse_prompt&quot;:&quot;Read less&quot;}"><i class="a-icon a-icon-extender-expand"></i><span class="a-expander-prompt">Read more</span></a></div></div></span></div><div data-hook="review-comments" class="a-row review-comments cr-vote-action-bar"><span class="cr-vote" data-hook="review-voting-widget">
-<div class="a-row a-spacing-small"><span data-hook="helpful-vote-statement" class="a-size-base a-color-tertiary cr-vote-text">4,979 people found this helpful</span></div><div class="cr-helpful-button aok-float-left">
-<span class="a-button a-button-base" id="a-autoid-14"><span class="a-button-inner"><a href="https://www.amazon.com/-/zh/ap/signin?openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB07ZPC9QD4%2Fref%3Dcm_cr_dp_d_vote_lft%3Fie%3DUTF8%26voteInstanceId%3DR3MXI8ZV1P0T0R%26voteValue%3D1%26csrfT%3DglwAwU2KSGtofqn%252F2fkDEj%252Bb3NKPPdRXlVNNm5oAAAABAAAAAF%252BTpoJyYXcAAAAA%252B4kUEk%252F7iMGR3xPcX6iU%23R3MXI8ZV1P0T0R&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.assoc_handle=usflex&amp;openid.mode=checkid_setup&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0" data-hook="vote-helpful-button" class="a-button-text" role="button" id="a-autoid-14-announce"><div class="cr-helpful-text">
-Helpful</div>
-</a></span></span></div>
-</span>
-
-<i class="a-icon a-icon-text-separator" role="img" aria-label="|"></i><a data-hook="review-comment" class="a-size-base a-link-normal a-color-secondary a-text-normal" href="/-/zh/gp/customer-reviews/R3MXI8ZV1P0T0R/ref=cm_cr_dp_d_rvw_btm?ie=UTF8&amp;ASIN=B07ZPC9QD4#wasThisHelpful">Comment</a><span class="cr-footer-line-height">
-<span><i class="a-icon a-icon-text-separator" role="img" aria-label="|"></i><span class="a-declarative" data-action="cr-popup" data-cr-popup="{&quot;width&quot;:&quot;580&quot;,&quot;title&quot;:&quot;ReportAbuse&quot;,&quot;url&quot;:&quot;/hz/reviews-render/report-abuse?ie=UTF8&amp;voteDomain=Reviews&amp;ref=cm_cr_dp_d_report&amp;csrfT=glwAwU2KSGtofqn%2F2fkDEj%2Bb3NKPPdRXlVNNm5oAAAABAAAAAF%2BTpoJyYXcAAAAA%2B4kUEk%2F7iMGR3xPcX6iU&amp;entityId=R3MXI8ZV1P0T0R&amp;sessionId=138-6912250-4192104&quot;,&quot;height&quot;:&quot;380&quot;}"><a class="a-size-base a-link-normal a-color-secondary report-abuse-link a-text-normal" href="/-/zh/hz/reviews-render/report-abuse?ie=UTF8&amp;voteDomain=Reviews&amp;ref=cm_cr_dp_d_report&amp;csrfT=glwAwU2KSGtofqn%2F2fkDEj%2Bb3NKPPdRXlVNNm5oAAAABAAAAAF%2BTpoJyYXcAAAAA%2B4kUEk%2F7iMGR3xPcX6iU&amp;entityId=R3MXI8ZV1P0T0R&amp;sessionId=138-6912250-4192104">Report abuse</a></span></span></span>
-</div></div></div></div><div id="RR4PUQZ6Z0R06" data-hook="review" class="a-section review aok-relative"><div id="RR4PUQZ6Z0R06-review-card" class="a-row a-spacing-none"><div id="customer_review-RR4PUQZ6Z0R06" class="a-section celwidget" data-csa-c-id="9xb39b-fu9qgj-peu5j3-csnbdy"><div data-hook="genome-widget" class="a-row a-spacing-mini"><a href="/-/zh/gp/profile/amzn1.account.AEWJAJGFSH3O3EWPUD3H7PW2WWUA/ref=cm_cr_dp_d_gw_tr?ie=UTF8" class="a-profile" data-a-size="small"><div aria-hidden="true" class="a-profile-avatar-wrapper"><div class="a-profile-avatar"><img src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png" class="" data-src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png"><noscript><img src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png"/></noscript></div></div><div class="a-profile-content"><span class="a-profile-name">Jorge Moran</span></div></a></div><div class="a-row"><a class="a-link-normal" title="5.0 out of 5 stars" href="/-/zh/gp/customer-reviews/RR4PUQZ6Z0R06/ref=cm_cr_dp_d_rvw_ttl?ie=UTF8&amp;ASIN=B07ZPC9QD4"><i data-hook="review-star-rating" class="a-icon a-icon-star a-star-5 review-rating"><span class="a-icon-alt">5.0 out of 5 stars</span></i></a><span class="a-letter-space"></span><a data-hook="review-title" class="a-size-base a-link-normal review-title a-color-base review-title-content a-text-bold" href="/-/zh/gp/customer-reviews/RR4PUQZ6Z0R06/ref=cm_cr_dp_d_rvw_ttl?ie=UTF8&amp;ASIN=B07ZPC9QD4">
-
-<span>Saved my marriage</span>
-
-</a></div><span data-hook="review-date" class="a-size-base a-color-secondary review-date">Reviewed in the United States on October 31, 2019</span><div class="a-row a-spacing-mini review-data review-format-strip"><span data-hook="avp-badge-linkless" class="a-size-mini a-color-state a-text-bold">Verified Purchase</span></div><div class="a-row a-spacing-small review-data"><span data-hook="review-body" class="a-size-base review-text"><div aria-live="polite" data-a-expander-name="review_text_read_more" data-a-expander-collapsed-height="300" class="a-expander-collapsed-height a-row a-expander-container a-expander-partial-collapse-container" style="max-height:300px"><div data-hook="review-collapsed" aria-expanded="false" class="a-expander-content reviewText review-text-content a-expander-partial-collapse-content">
-
-
-
-<span>
-With the new transparency mode, I can listen to music knowing that I will never be ran over by a car on the street again. Another W for Tim Cook and the boys
-</span>
-
-</div><div class="a-expander-header a-expander-partial-collapse-header" style="opacity: 0; display: none;"><div class="a-expander-content-fade"></div><a href="javascript:void(0)" data-hook="expand-collapse-read-more-less" data-action="a-expander-toggle" class="a-declarative" data-a-expander-toggle="{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;Read more&quot;, &quot;collapse_prompt&quot;:&quot;Read less&quot;}"><i class="a-icon a-icon-extender-expand"></i><span class="a-expander-prompt">Read more</span></a></div></div></span></div><div data-hook="review-comments" class="a-row review-comments cr-vote-action-bar"><span class="cr-vote" data-hook="review-voting-widget">
-<div class="a-row a-spacing-small"><span data-hook="helpful-vote-statement" class="a-size-base a-color-tertiary cr-vote-text">2,956 people found this helpful</span></div><div class="cr-helpful-button aok-float-left">
-<span class="a-button a-button-base" id="a-autoid-15"><span class="a-button-inner"><a href="https://www.amazon.com/-/zh/ap/signin?openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB07ZPC9QD4%2Fref%3Dcm_cr_dp_d_vote_lft%3Fie%3DUTF8%26voteInstanceId%3DRR4PUQZ6Z0R06%26voteValue%3D1%26csrfT%3DgoZrxWFBR8v5AL9sNgVNSjGELgZ2AA7KG1FZ%252BP4AAAABAAAAAF%252BTpoJyYXcAAAAA%252B4kUEk%252F7iMGR3xPcX6iU%23RR4PUQZ6Z0R06&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.assoc_handle=usflex&amp;openid.mode=checkid_setup&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0" data-hook="vote-helpful-button" class="a-button-text" role="button" id="a-autoid-15-announce"><div class="cr-helpful-text">
-Helpful</div>
-</a></span></span></div>
-</span>
-
-<i class="a-icon a-icon-text-separator" role="img" aria-label="|"></i><a data-hook="review-comment" class="a-size-base a-link-normal a-color-secondary a-text-normal" href="/-/zh/gp/customer-reviews/RR4PUQZ6Z0R06/ref=cm_cr_dp_d_rvw_btm?ie=UTF8&amp;ASIN=B07ZPC9QD4#wasThisHelpful">Comment</a><span class="cr-footer-line-height">
-<span><i class="a-icon a-icon-text-separator" role="img" aria-label="|"></i><span class="a-declarative" data-action="cr-popup" data-cr-popup="{&quot;width&quot;:&quot;580&quot;,&quot;title&quot;:&quot;ReportAbuse&quot;,&quot;url&quot;:&quot;/hz/reviews-render/report-abuse?ie=UTF8&amp;voteDomain=Reviews&amp;ref=cm_cr_dp_d_report&amp;csrfT=goZrxWFBR8v5AL9sNgVNSjGELgZ2AA7KG1FZ%2BP4AAAABAAAAAF%2BTpoJyYXcAAAAA%2B4kUEk%2F7iMGR3xPcX6iU&amp;entityId=RR4PUQZ6Z0R06&amp;sessionId=138-6912250-4192104&quot;,&quot;height&quot;:&quot;380&quot;}"><a class="a-size-base a-link-normal a-color-secondary report-abuse-link a-text-normal" href="/-/zh/hz/reviews-render/report-abuse?ie=UTF8&amp;voteDomain=Reviews&amp;ref=cm_cr_dp_d_report&amp;csrfT=goZrxWFBR8v5AL9sNgVNSjGELgZ2AA7KG1FZ%2BP4AAAABAAAAAF%2BTpoJyYXcAAAAA%2B4kUEk%2F7iMGR3xPcX6iU&amp;entityId=RR4PUQZ6Z0R06&amp;sessionId=138-6912250-4192104">Report abuse</a></span></span></span>
-</div></div></div></div><div id="RZDWQBT1911C7" data-hook="review" class="a-section review aok-relative"><div id="RZDWQBT1911C7-review-card" class="a-row a-spacing-none"><div id="customer_review-RZDWQBT1911C7" class="a-section celwidget" data-csa-c-id="ed22kg-h6m5xu-h7f63l-u24n4"><div data-hook="genome-widget" class="a-row a-spacing-mini"><a href="/-/zh/gp/profile/amzn1.account.AGJCHWGCZOBETEYAGU2XVYYQDIIA/ref=cm_cr_dp_d_gw_tr?ie=UTF8" class="a-profile" data-a-size="small"><div aria-hidden="true" class="a-profile-avatar-wrapper"><div class="a-profile-avatar"><img src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png" class="" data-src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png"><noscript><img src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png"/></noscript></div></div><div class="a-profile-content"><span class="a-profile-name">Jon</span></div></a></div><div class="a-row"><a class="a-link-normal" title="5.0 out of 5 stars" href="/-/zh/gp/customer-reviews/RZDWQBT1911C7/ref=cm_cr_dp_d_rvw_ttl?ie=UTF8&amp;ASIN=B07ZPC9QD4"><i data-hook="review-star-rating" class="a-icon a-icon-star a-star-5 review-rating"><span class="a-icon-alt">5.0 out of 5 stars</span></i></a><span class="a-letter-space"></span><a data-hook="review-title" class="a-size-base a-link-normal review-title a-color-base review-title-content a-text-bold" href="/-/zh/gp/customer-reviews/RZDWQBT1911C7/ref=cm_cr_dp_d_rvw_ttl?ie=UTF8&amp;ASIN=B07ZPC9QD4">
-
-
-
-<span>Lit</span>
-
-</a></div><span data-hook="review-date" class="a-size-base a-color-secondary review-date">Reviewed in the United States on October 30, 2019</span><div class="a-row a-spacing-mini review-data review-format-strip"></div><div class="a-row a-spacing-small review-data"><span data-hook="review-body" class="a-size-base review-text"><div aria-live="polite" data-a-expander-name="review_text_read_more" data-a-expander-collapsed-height="300" class="a-expander-collapsed-height a-row a-expander-container a-expander-partial-collapse-container" style="max-height:300px"><div data-hook="review-collapsed" aria-expanded="false" class="a-expander-content reviewText review-text-content a-expander-partial-collapse-content">
-
-<span>
-They fire
-</span>
-
-</div><div class="a-expander-header a-expander-partial-collapse-header" style="opacity: 0; display: none;"><div class="a-expander-content-fade"></div><a href="javascript:void(0)" data-hook="expand-collapse-read-more-less" data-action="a-expander-toggle" class="a-declarative" data-a-expander-toggle="{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;Read more&quot;, &quot;collapse_prompt&quot;:&quot;Read less&quot;}"><i class="a-icon a-icon-extender-expand"></i><span class="a-expander-prompt">Read more</span></a></div></div></span></div><div data-hook="review-comments" class="a-row review-comments cr-vote-action-bar"><span class="cr-vote" data-hook="review-voting-widget">
-<div class="a-row a-spacing-small"><span data-hook="helpful-vote-statement" class="a-size-base a-color-tertiary cr-vote-text">2,096 people found this helpful</span></div><div class="cr-helpful-button aok-float-left">
-<span class="a-button a-button-base" id="a-autoid-16"><span class="a-button-inner"><a href="https://www.amazon.com/-/zh/ap/signin?openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB07ZPC9QD4%2Fref%3Dcm_cr_dp_d_vote_lft%3Fie%3DUTF8%26voteInstanceId%3DRZDWQBT1911C7%26voteValue%3D1%26csrfT%3DghbKTT%252F3Raw9DorW3PZFqOGSOp8ALFYVlwusLGMAAAABAAAAAF%252BTpoJyYXcAAAAA%252B4kUEk%252F7iMGR3xPcX6iU%23RZDWQBT1911C7&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.assoc_handle=usflex&amp;openid.mode=checkid_setup&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0" data-hook="vote-helpful-button" class="a-button-text" role="button" id="a-autoid-16-announce"><div class="cr-helpful-text">
-Helpful</div>
-</a></span></span></div>
-</span>
-
-<i class="a-icon a-icon-text-separator" role="img" aria-label="|"></i><a data-hook="review-comment" class="a-size-base a-link-normal a-color-secondary a-text-normal" href="/-/zh/gp/customer-reviews/RZDWQBT1911C7/ref=cm_cr_dp_d_rvw_btm?ie=UTF8&amp;ASIN=B07ZPC9QD4#wasThisHelpful">Comment</a><span class="cr-footer-line-height">
-<span><i class="a-icon a-icon-text-separator" role="img" aria-label="|"></i><span class="a-declarative" data-action="cr-popup" data-cr-popup="{&quot;width&quot;:&quot;580&quot;,&quot;title&quot;:&quot;ReportAbuse&quot;,&quot;url&quot;:&quot;/hz/reviews-render/report-abuse?ie=UTF8&amp;voteDomain=Reviews&amp;ref=cm_cr_dp_d_report&amp;csrfT=ghbKTT%2F3Raw9DorW3PZFqOGSOp8ALFYVlwusLGMAAAABAAAAAF%2BTpoJyYXcAAAAA%2B4kUEk%2F7iMGR3xPcX6iU&amp;entityId=RZDWQBT1911C7&amp;sessionId=138-6912250-4192104&quot;,&quot;height&quot;:&quot;380&quot;}"><a class="a-size-base a-link-normal a-color-secondary report-abuse-link a-text-normal" href="/-/zh/hz/reviews-render/report-abuse?ie=UTF8&amp;voteDomain=Reviews&amp;ref=cm_cr_dp_d_report&amp;csrfT=ghbKTT%2F3Raw9DorW3PZFqOGSOp8ALFYVlwusLGMAAAABAAAAAF%2BTpoJyYXcAAAAA%2B4kUEk%2F7iMGR3xPcX6iU&amp;entityId=RZDWQBT1911C7&amp;sessionId=138-6912250-4192104">Report abuse</a></span></span></span>
-</div></div></div></div><div id="R3LS2FXECG29YA" data-hook="review" class="a-section review aok-relative"><div id="R3LS2FXECG29YA-review-card" class="a-row a-spacing-none"><div id="customer_review-R3LS2FXECG29YA" class="a-section celwidget" data-csa-c-id="t52ux6-rvc0wl-encdir-fojpow"><div data-hook="genome-widget" class="a-row a-spacing-mini"><a href="/-/zh/gp/profile/amzn1.account.AEEUMZI5G3NOLDSOPGCRXZGP24WQ/ref=cm_cr_dp_d_gw_tr?ie=UTF8" class="a-profile" data-a-size="small"><div aria-hidden="true" class="a-profile-avatar-wrapper"><div class="a-profile-avatar"><img src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png" class="" data-src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png"><noscript><img src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png"/></noscript></div></div><div class="a-profile-content"><span class="a-profile-name">bbq</span></div></a></div><div class="a-row"><a class="a-link-normal" title="5.0 out of 5 stars" href="/-/zh/gp/customer-reviews/R3LS2FXECG29YA/ref=cm_cr_dp_d_rvw_ttl?ie=UTF8&amp;ASIN=B07ZPC9QD4"><i data-hook="review-star-rating" class="a-icon a-icon-star a-star-5 review-rating"><span class="a-icon-alt">5.0 out of 5 stars</span></i></a><span class="a-letter-space"></span><a data-hook="review-title" class="a-size-base a-link-normal review-title a-color-base review-title-content a-text-bold" href="/-/zh/gp/customer-reviews/R3LS2FXECG29YA/ref=cm_cr_dp_d_rvw_ttl?ie=UTF8&amp;ASIN=B07ZPC9QD4">
-
-
-<span>This is good</span>
-
-</a></div><span data-hook="review-date" class="a-size-base a-color-secondary review-date">Reviewed in the United States on December 11, 2019</span><div class="a-row a-spacing-mini review-data review-format-strip"><span data-hook="avp-badge-linkless" class="a-size-mini a-color-state a-text-bold">Verified Purchase</span></div><div class="a-row a-spacing-small review-data"><span data-hook="review-body" class="a-size-base review-text"><div aria-live="polite" data-a-expander-name="review_text_read_more" data-a-expander-collapsed-height="300" class="a-expander-collapsed-height a-row a-expander-container a-expander-partial-collapse-container" style="max-height: none; height: 300px;"><div data-hook="review-collapsed" aria-expanded="false" class="a-expander-content reviewText review-text-content a-expander-partial-collapse-content" style="padding-bottom: 20px;"><div id="video-block-R3LS2FXECG29YA" class="a-section a-spacing-small a-spacing-top-mini video-block"></div><input type="hidden" name="" value="https://images-na.ssl-images-amazon.com/images/I/D1yEe5XOO6S.mp4" class="video-url"><input type="hidden" name="" value="https://images-na.ssl-images-amazon.com/images/I/01lL-sRO+wS.png" class="video-slate-img-url">
-
-
-<span>
-&nbsp;Edit after 1 month:<br><br>This  is popular in North America, and wearing it has become a fashion. I think it is the best electronic product after iPhone and Echo in the past 10 years.<br>iPhone 4 Steve Jobs 2010<br>Echo Jeff Bezos 2014<br>Airpods Pro Tim Cook 2019<br><br>1. It is suitable for sports enthusiasts. Airpods Pro has a new anti-sweat function, so you don't have to worry about sweat damaging the headphones during exercise. Noise reduction function can isolate external sounds, so you can enjoy music at the same time<br>2. Battery life. I tested the battery box for about 16 hours, and the headset has less than 5 hours. The noise reduction function may consume more power.<br>3. It's not suitable for sleeping. When you wake up, you may find headphones everywhere. In addition, when the power is off, the beep is very annoying. It is recommended that friends who want to sleep use sleep earplugs.<br>4, I found that the low-frequency sound quality will be more impactful and fuller than Airpods 2, but the overall sound quality is not much different from Airpods2<br><br>Old review:<br><br>I give this product 4 stars. I got this product before Black Friday and have been using it for 10 days. Here is my experience using headphones<br>Appearance: 3 stars<br>1.The surface feel is the same as the previous two generations, and it is easy to scratch. It is recommended to buy a third-party protective case or a charging case with a protective case.<br>2.Portability personally feels better than the previous two generations, because the appearance is flatter and the earstems are shorter<br>3. There are three sizes of earbuds. The default is medium size. The little ears are still a bit painful after wearing them for a long time. Changing the trumpet is much better. The silicone sleeve is not easy to remove and replace. In addition, the silicone of the earphones is a bit smelly.<br>4. Uneven gaps are found in the charging case. I don't think there should be any problems with the workmanship of the product at this price, so the appearance is only 3 stars.<br>Comfort: 4 stars<br>1. In-ear AirPods Pro is not as comfortable as non-in-ear AirPods.<br>2. At present, it has been about 40 hours with earphones. It is said that there are stomata to regulate air pressure, so there will be no pressure in the ear for a long time. Ear pressure balance is better than Bose<br>3. AirPods Pro will have better air tightness to the ears. Sony WH1000XM3 will have some air leakage, but Sony WH1000XM3 is a headphone. Among in-ear active noise cancelling headphones, AirPods Pro may be the smallest and integrated The highest degree and the most complete function<br>4, running without worrying about falling, squat without worrying about pressing the neck. Its presence is much stronger than AirPods. You ca n’t expect to wear it for a long time like AirPods before. You will forget its existence. In fact, it will always support your ears to remind you of its existence. One advantage is that compared to AirPods, AirPods Pro is stronger and harder to drop. For sports-loving users, AirPods Pro will be more suitable for you.<br>5 stars<br>1. Active noise reduction is the biggest difference between Pro and AirPods 2. AirPods Pro has three noise reduction modes, namely noise reduction on, off, and transparent mode. The official said that Apple ’s innovation in transparent mode, but I see other brands (Samsung, Sony) The headset also has a similar function.<br>2, AirPods Pro's noise reduction is not as good as Sony WH1000XM3 on-ear noise reduction headphones, but it is the best among real wireless headphones. As for how to achieve such an obvious noise reduction effect in such a small volume, I don't understand. The intuitive feeling is that the noise reduction effect is obvious.<br>3, I can feel quite quiet on the road, so it is strongly recommended to use noise reduction off or transparent mode on the road.<br><br>Sound quality 4 stars<br>The AirPods Pro's sound quality has not been significantly improved compared to the previous generation of AirPods<br><br>Summary: This is an excellent headset. If you value the noise reduction function more, it is suitable for you. But if you are more concerned about the sound quality and have no need for noise reduction, I suggest you buy AirPods 2, because AirPods 2 is cheaper. In addition, the charging box and headphones must not be lost, the official charging box and headphones accessories are expensive
-</span>
-
-</div><div class="a-expander-header a-expander-partial-collapse-header" style="opacity: 1; display: block;"><div class="a-expander-content-fade"></div><a href="javascript:void(0)" data-hook="expand-collapse-read-more-less" data-action="a-expander-toggle" class="a-declarative" data-a-expander-toggle="{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;Read more&quot;, &quot;collapse_prompt&quot;:&quot;Read less&quot;}"><i class="a-icon a-icon-extender-expand"></i><span class="a-expander-prompt">Read more</span></a></div></div></span></div><div data-hook="review-comments" class="a-row review-comments cr-vote-action-bar"><span class="cr-vote" data-hook="review-voting-widget">
-<div class="a-row a-spacing-small"><span data-hook="helpful-vote-statement" class="a-size-base a-color-tertiary cr-vote-text">2,077 people found this helpful</span></div><div class="cr-helpful-button aok-float-left">
-<span class="a-button a-button-base" id="a-autoid-17"><span class="a-button-inner"><a href="https://www.amazon.com/-/zh/ap/signin?openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB07ZPC9QD4%2Fref%3Dcm_cr_dp_d_vote_lft%3Fie%3DUTF8%26voteInstanceId%3DR3LS2FXECG29YA%26voteValue%3D1%26csrfT%3DgveKHTZSC%252FJV4oHvol%252FhPV%252FhXVO8jS9NNKeNSlsAAAABAAAAAF%252BTpoJyYXcAAAAA%252B4kUEk%252F7iMGR3xPcX6iU%23R3LS2FXECG29YA&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.assoc_handle=usflex&amp;openid.mode=checkid_setup&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0" data-hook="vote-helpful-button" class="a-button-text" role="button" id="a-autoid-17-announce"><div class="cr-helpful-text">
-Helpful</div>
-</a></span></span></div>
-</span>
-
-<i class="a-icon a-icon-text-separator" role="img" aria-label="|"></i><a data-hook="review-comment" class="a-size-base a-link-normal a-color-secondary a-text-normal" href="/-/zh/gp/customer-reviews/R3LS2FXECG29YA/ref=cm_cr_dp_d_rvw_btm?ie=UTF8&amp;ASIN=B07ZPC9QD4#wasThisHelpful">Comment</a><span class="cr-footer-line-height">
-<span><i class="a-icon a-icon-text-separator" role="img" aria-label="|"></i><span class="a-declarative" data-action="cr-popup" data-cr-popup="{&quot;width&quot;:&quot;580&quot;,&quot;title&quot;:&quot;ReportAbuse&quot;,&quot;url&quot;:&quot;/hz/reviews-render/report-abuse?ie=UTF8&amp;voteDomain=Reviews&amp;ref=cm_cr_dp_d_report&amp;csrfT=gveKHTZSC%2FJV4oHvol%2FhPV%2FhXVO8jS9NNKeNSlsAAAABAAAAAF%2BTpoJyYXcAAAAA%2B4kUEk%2F7iMGR3xPcX6iU&amp;entityId=R3LS2FXECG29YA&amp;sessionId=138-6912250-4192104&quot;,&quot;height&quot;:&quot;380&quot;}"><a class="a-size-base a-link-normal a-color-secondary report-abuse-link a-text-normal" href="/-/zh/hz/reviews-render/report-abuse?ie=UTF8&amp;voteDomain=Reviews&amp;ref=cm_cr_dp_d_report&amp;csrfT=gveKHTZSC%2FJV4oHvol%2FhPV%2FhXVO8jS9NNKeNSlsAAAABAAAAAF%2BTpoJyYXcAAAAA%2B4kUEk%2F7iMGR3xPcX6iU&amp;entityId=R3LS2FXECG29YA&amp;sessionId=138-6912250-4192104">Report abuse</a></span></span></span>
-</div></div></div></div><div id="RRDWWL604PUQ3" data-hook="review" class="a-section review aok-relative"><div id="RRDWWL604PUQ3-review-card" class="a-row a-spacing-none"><div id="customer_review-RRDWWL604PUQ3" class="a-section celwidget" data-csa-c-id="chkyd7-au2a2c-bzooa4-juw0rk"><div data-hook="genome-widget" class="a-row a-spacing-mini"><a href="/-/zh/gp/profile/amzn1.account.AGNJH2WW6KJ7RKYR2WJW7LHL5ZOA/ref=cm_cr_dp_d_gw_tr?ie=UTF8" class="a-profile" data-a-size="small"><div aria-hidden="true" class="a-profile-avatar-wrapper"><div class="a-profile-avatar"><img src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png" class="" data-src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png"><noscript><img src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png"/></noscript></div></div><div class="a-profile-content"><span class="a-profile-name">BTR</span></div></a></div><div class="a-row"><a class="a-link-normal" title="3.0 out of 5 stars" href="/-/zh/gp/customer-reviews/RRDWWL604PUQ3/ref=cm_cr_dp_d_rvw_ttl?ie=UTF8&amp;ASIN=B07ZPC9QD4"><i data-hook="review-star-rating" class="a-icon a-icon-star a-star-3 review-rating"><span class="a-icon-alt">3.0 out of 5 stars</span></i></a><span class="a-letter-space"></span><a data-hook="review-title" class="a-size-base a-link-normal review-title a-color-base review-title-content a-text-bold" href="/-/zh/gp/customer-reviews/RRDWWL604PUQ3/ref=cm_cr_dp_d_rvw_ttl?ie=UTF8&amp;ASIN=B07ZPC9QD4">
-
-
-<span>Apple forgot to pack a few components</span>
-
-</a></div><span data-hook="review-date" class="a-size-base a-color-secondary review-date">Reviewed in the United States on November 2, 2019</span><div class="a-row a-spacing-mini review-data review-format-strip"><span data-hook="avp-badge-linkless" class="a-size-mini a-color-state a-text-bold">Verified Purchase</span></div><div class="a-row a-spacing-small review-data"><span data-hook="review-body" class="a-size-base review-text"><div aria-live="polite" data-a-expander-name="review_text_read_more" data-a-expander-collapsed-height="300" class="a-expander-collapsed-height a-row a-expander-container a-expander-partial-collapse-container" style="max-height:300px"><div data-hook="review-collapsed" aria-expanded="false" class="a-expander-content reviewText review-text-content a-expander-partial-collapse-content">
-
-
-<span>
-Love Apple products but I’m tired of their games<br>With the iPhone 11 they introduced the new charging end (not the one that goes into the phone, the one that plugs into the cube then into the receptacle).<br>The AirPods pro comes with the same cable but no cube. This means if you don’t have an iPhone product you can’t charge these period. And the charging wire it comes with is worthless unless you’ve already bought an iPhone 11<br>Apple charges a ridiculous premium for their products. They should back it with the proper hardware
-</span>
-
-</div><div class="a-expander-header a-expander-partial-collapse-header" style="opacity: 0; display: none;"><div class="a-expander-content-fade"></div><a href="javascript:void(0)" data-hook="expand-collapse-read-more-less" data-action="a-expander-toggle" class="a-declarative" data-a-expander-toggle="{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;Read more&quot;, &quot;collapse_prompt&quot;:&quot;Read less&quot;}"><i class="a-icon a-icon-extender-expand"></i><span class="a-expander-prompt">Read more</span></a></div></div></span></div><div data-hook="review-comments" class="a-row review-comments cr-vote-action-bar"><span class="cr-vote" data-hook="review-voting-widget">
-<div class="a-row a-spacing-small"><span data-hook="helpful-vote-statement" class="a-size-base a-color-tertiary cr-vote-text">2,213 people found this helpful</span></div><div class="cr-helpful-button aok-float-left">
-<span class="a-button a-button-base" id="a-autoid-18"><span class="a-button-inner"><a href="https://www.amazon.com/-/zh/ap/signin?openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB07ZPC9QD4%2Fref%3Dcm_cr_dp_d_vote_lft%3Fie%3DUTF8%26voteInstanceId%3DRRDWWL604PUQ3%26voteValue%3D1%26csrfT%3DgjE8u8gfsfkuZwtXlSbB7yXWUMQ3%252B4rIyjFloKcAAAABAAAAAF%252BTpoJyYXcAAAAA%252B4kUEk%252F7iMGR3xPcX6iU%23RRDWWL604PUQ3&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.assoc_handle=usflex&amp;openid.mode=checkid_setup&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0" data-hook="vote-helpful-button" class="a-button-text" role="button" id="a-autoid-18-announce"><div class="cr-helpful-text">
-Helpful</div>
-</a></span></span></div>
-</span>
-
-<i class="a-icon a-icon-text-separator" role="img" aria-label="|"></i><a data-hook="review-comment" class="a-size-base a-link-normal a-color-secondary a-text-normal" href="/-/zh/gp/customer-reviews/RRDWWL604PUQ3/ref=cm_cr_dp_d_rvw_btm?ie=UTF8&amp;ASIN=B07ZPC9QD4#wasThisHelpful">Comment</a><span class="cr-footer-line-height">
-<span><i class="a-icon a-icon-text-separator" role="img" aria-label="|"></i><span class="a-declarative" data-action="cr-popup" data-cr-popup="{&quot;width&quot;:&quot;580&quot;,&quot;title&quot;:&quot;ReportAbuse&quot;,&quot;url&quot;:&quot;/hz/reviews-render/report-abuse?ie=UTF8&amp;voteDomain=Reviews&amp;ref=cm_cr_dp_d_report&amp;csrfT=gjE8u8gfsfkuZwtXlSbB7yXWUMQ3%2B4rIyjFloKcAAAABAAAAAF%2BTpoJyYXcAAAAA%2B4kUEk%2F7iMGR3xPcX6iU&amp;entityId=RRDWWL604PUQ3&amp;sessionId=138-6912250-4192104&quot;,&quot;height&quot;:&quot;380&quot;}"><a class="a-size-base a-link-normal a-color-secondary report-abuse-link a-text-normal" href="/-/zh/hz/reviews-render/report-abuse?ie=UTF8&amp;voteDomain=Reviews&amp;ref=cm_cr_dp_d_report&amp;csrfT=gjE8u8gfsfkuZwtXlSbB7yXWUMQ3%2B4rIyjFloKcAAAABAAAAAF%2BTpoJyYXcAAAAA%2B4kUEk%2F7iMGR3xPcX6iU&amp;entityId=RRDWWL604PUQ3&amp;sessionId=138-6912250-4192104">Report abuse</a></span></span></span>
-</div></div></div></div></div></div></div><div id="reviews-medley-footer" data-hook="reviews-medley-footer" class="a-section"><div class="a-row"></div><div class="a-row a-spacing-medium"><hr aria-hidden="true" class="a-spacing-base a-divider-normal"><a data-hook="see-all-reviews-link-foot" class="a-link-emphasis a-text-bold" href="/-/zh/Apple-MWP22AM-A-AirPods-Pro/product-reviews/B07ZPC9QD4/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&amp;reviewerType=all_reviews">See all reviews</a></div></div></div>
-</div></span>
-<span class="cr-widget-DesktopGlobalReviews" data-hook="cr-widget-DesktopGlobalReviews">
-
-
-
-<div class="a-divider a-divider-section a-spacing-small"><div class="a-divider-inner"></div></div>
-
-<span class="global-reviews-all">
-<div id="reviews-medley-global-expand-head" data-hook="reviews-medley-global-head" class="a-section global-reviews-header">
-<h3 data-hook="dp-global-reviews-header" class="a-spacing-base">
-
-Top reviews from other countries
-
-</h3>
-
-
-</div>
-
-<div class="a-row a-spacing-large">
-<div class="a-section global-reviews-content celwidget" data-csa-c-id="1y78t-1q97wn-rf3won-lb37vz">
-
-<div id="cm-cr-global-review-list" data-hook="global-customer-reviews-widget" class="a-section global-review-views review-views celwidget" data-csa-c-id="u4jlno-psi9zs-deu2gx-ah8g44">
-<div id="R1INQ9S9KVZ9TF" data-hook="review" class="a-section review aok-relative cr-desktop-review-page-0"><div id="R1INQ9S9KVZ9TF-review-card" class="a-row a-spacing-none"><div id="customer_review_foreign-R1INQ9S9KVZ9TF" class="a-section celwidget" data-csa-c-id="atnb67-qgaj82-7g7jng-ivdlok"><div data-hook="genome-widget" class="a-row a-spacing-mini"><div class="a-profile" data-a-size="small"><div aria-hidden="true" class="a-profile-avatar-wrapper"><div class="a-profile-avatar"><img src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/85c8da6c-63c5-4a7f-9f91-5975c88b3713._CR0,0,386,386_SX48_.jpg" class="" data-src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/85c8da6c-63c5-4a7f-9f91-5975c88b3713._CR0,0,386,386_SX48_.jpg"><noscript><img src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/85c8da6c-63c5-4a7f-9f91-5975c88b3713._CR0,0,386,386_SX48_.jpg"/></noscript></div></div><div class="a-profile-content"><span class="a-profile-name">Saúl Mondragón Mendoza</span></div></div></div><div class="a-row a-spacing-none"><i data-hook="cmps-review-star-rating" class="a-icon a-icon-star a-star-5 review-rating"><span class="a-icon-alt">5.0 out of 5 stars</span></i><span class="a-letter-space"></span><span data-hook="review-title" class="a-size-base review-title a-color-base review-title-content a-text-bold">
-
-
-<span>100% Recomendado</span>
-
-</span></div><span data-hook="review-date" class="a-size-base a-color-secondary review-date">Reviewed in Mexico on December 30, 2019</span><div class="a-row a-spacing-mini review-data review-format-strip"><span data-hook="avp-badge-linkless" class="a-size-mini a-color-state a-text-bold">Verified Purchase</span></div><div class="a-row a-spacing-small review-data"><span data-hook="review-body" class="a-size-base review-text"><div aria-live="polite" data-a-expander-name="review_text_read_more" data-a-expander-collapsed-height="300" class="a-expander-collapsed-height a-row a-expander-container a-expander-partial-collapse-container" style="max-height:300px"><div data-hook="review-collapsed" aria-expanded="false" class="a-expander-content reviewText review-text-content a-expander-partial-collapse-content">
-
-
-<span>
-Excelente embalaje y llegada antes de lo previsto. Sin duda alguna me quedo con una muy buena experiencia. Los AirPods son originales y están sellados
-</span>
-
-</div><div class="a-expander-header a-expander-partial-collapse-header" style="opacity: 0; display: none;"><div class="a-expander-content-fade"></div><a href="javascript:void(0)" data-hook="expand-collapse-read-more-less" data-action="a-expander-toggle" class="a-declarative" data-a-expander-toggle="{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;Read more&quot;, &quot;collapse_prompt&quot;:&quot;Read less&quot;}"><i class="a-icon a-icon-extender-expand"></i><span class="a-expander-prompt">Read more</span></a></div></div></span></div><div class="a-popover-preload" id="a-popover-R1INQ9S9KVZ9TF_gallerySection_main"><div class="reviewLightboxPopoverContainer">
-<div class="reviewsLightbox" id="R1INQ9S9KVZ9TF_gallerySection_main"></div>
-</div>
-</div><div id="R1INQ9S9KVZ9TF_imageSection_main" class="a-section a-spacing-medium review-image-container"><div class="review-image-tile-section" data-reviewid="R1INQ9S9KVZ9TF">
-<img alt="review image" src="https://images-na.ssl-images-amazon.com/images/I/71shAq5PisL._SY88.jpg" data-hook="cmps-review-image-tile" class="linkless-review-image-tile" height="88" width="100%" data-src="https://images-na.ssl-images-amazon.com/images/I/71shAq5PisL._SY88.jpg"><noscript><img alt="review image" src="https://images-na.ssl-images-amazon.com/images/I/71shAq5PisL._SY88.jpg" height="88" width="100%"/></noscript></div>
-
-</div><div data-hook="review-comments" class="a-row review-comments cr-vote-action-bar"><span class="cr-vote" data-hook="review-voting-widget">
-<div class="a-row a-spacing-small"><span data-hook="helpful-vote-statement" class="a-size-base a-color-tertiary cr-vote-text">36 people found this helpful</span></div></span>
-
-<span class="cr-footer-line-height">
-<span><span class="a-declarative" data-action="cr-popup" data-cr-popup="{&quot;width&quot;:&quot;580&quot;,&quot;title&quot;:&quot;ReportAbuse&quot;,&quot;url&quot;:&quot;/hz/reviews-render/report-abuse?ie=UTF8&amp;voteDomain=Reviews&amp;ref=cm_cr_dp_d_freport&amp;csrfT=gh5i1xCQz9jyVthReQ85xvc9MeMRP7bBXTQtY1cAAAABAAAAAF%2BTpoJyYXcAAAAA%2B4kUEk%2F7iMGR3xPcX6iU&amp;entityId=R1INQ9S9KVZ9TF&amp;sessionId=138-6912250-4192104&quot;,&quot;height&quot;:&quot;380&quot;}"><a class="a-size-base a-link-normal a-color-secondary report-abuse-link a-text-normal" href="/-/zh/hz/reviews-render/report-abuse?ie=UTF8&amp;voteDomain=Reviews&amp;ref=cm_cr_dp_d_freport&amp;csrfT=gh5i1xCQz9jyVthReQ85xvc9MeMRP7bBXTQtY1cAAAABAAAAAF%2BTpoJyYXcAAAAA%2B4kUEk%2F7iMGR3xPcX6iU&amp;entityId=R1INQ9S9KVZ9TF&amp;sessionId=138-6912250-4192104">Report abuse</a></span></span></span>
-</div></div></div></div><div id="R7KSV1TC3E9JY" data-hook="review" class="a-section review aok-relative cr-desktop-review-page-0"><div id="R7KSV1TC3E9JY-review-card" class="a-row a-spacing-none"><div id="customer_review_foreign-R7KSV1TC3E9JY" class="a-section celwidget" data-csa-c-id="7okgmq-4f4gwf-8mb7c9-v1rf9f"><div data-hook="genome-widget" class="a-row a-spacing-mini"><div class="a-profile" data-a-size="small"><div aria-hidden="true" class="a-profile-avatar-wrapper"><div class="a-profile-avatar"><img src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/d18e2710-2b7d-4676-9d11-e9d331513ddf._CR62,0,375,375_SX48_.jpg" class="" data-src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/d18e2710-2b7d-4676-9d11-e9d331513ddf._CR62,0,375,375_SX48_.jpg"><noscript><img src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/d18e2710-2b7d-4676-9d11-e9d331513ddf._CR62,0,375,375_SX48_.jpg"/></noscript></div></div><div class="a-profile-content"><span class="a-profile-name">Ismael S.</span></div></div></div><div class="a-row a-spacing-none"><i data-hook="cmps-review-star-rating" class="a-icon a-icon-star a-star-1 review-rating"><span class="a-icon-alt">1.0 out of 5 stars</span></i><span class="a-letter-space"></span><span data-hook="review-title" class="a-size-base review-title a-color-base review-title-content a-text-bold">
-
-<span>Producto Usado / Remanofacturado</span>
-
-</span></div><span data-hook="review-date" class="a-size-base a-color-secondary review-date">Reviewed in Mexico on May 30, 2020</span><div class="a-row a-spacing-mini review-data review-format-strip"><span data-hook="avp-badge-linkless" class="a-size-mini a-color-state a-text-bold">Verified Purchase</span></div><div class="a-row a-spacing-small review-data"><span data-hook="review-body" class="a-size-base review-text"><div aria-live="polite" data-a-expander-name="review_text_read_more" data-a-expander-collapsed-height="300" class="a-expander-collapsed-height a-row a-expander-container a-expander-partial-collapse-container" style="max-height:300px"><div data-hook="review-collapsed" aria-expanded="false" class="a-expander-content reviewText review-text-content a-expander-partial-collapse-content">
-
-
-<span>
-Me parece que si es original, pero el producto venia con un nombre de otro usuario, ni siquiera se tomaron la delicadeza de restearlo, ademas, venia con un sonido estraño cuando los tocabas de la cabeza en ambos audifonos. En mi opinion son remanofacturados de los que devolvieron por alguna falla, los regrese porque me engañaron, en ningún lado dice que son usados o remanofacturados. Los devolví.
-</span>
-
-</div><div class="a-expander-header a-expander-partial-collapse-header" style="opacity: 0; display: none;"><div class="a-expander-content-fade"></div><a href="javascript:void(0)" data-hook="expand-collapse-read-more-less" data-action="a-expander-toggle" class="a-declarative" data-a-expander-toggle="{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;Read more&quot;, &quot;collapse_prompt&quot;:&quot;Read less&quot;}"><i class="a-icon a-icon-extender-expand"></i><span class="a-expander-prompt">Read more</span></a></div></div></span></div><div data-hook="review-comments" class="a-row review-comments cr-vote-action-bar"><span class="cr-vote" data-hook="review-voting-widget">
-<div class="a-row a-spacing-small"><span data-hook="helpful-vote-statement" class="a-size-base a-color-tertiary cr-vote-text">26 people found this helpful</span></div></span>
-
-<span class="cr-footer-line-height">
-<span><span class="a-declarative" data-action="cr-popup" data-cr-popup="{&quot;width&quot;:&quot;580&quot;,&quot;title&quot;:&quot;ReportAbuse&quot;,&quot;url&quot;:&quot;/hz/reviews-render/report-abuse?ie=UTF8&amp;voteDomain=Reviews&amp;ref=cm_cr_dp_d_freport&amp;csrfT=gu6qsFbbq0sYNtRUfastAeThoSKaSPnLR6KhylYAAAABAAAAAF%2BTpoJyYXcAAAAA%2B4kUEk%2F7iMGR3xPcX6iU&amp;entityId=R7KSV1TC3E9JY&amp;sessionId=138-6912250-4192104&quot;,&quot;height&quot;:&quot;380&quot;}"><a class="a-size-base a-link-normal a-color-secondary report-abuse-link a-text-normal" href="/-/zh/hz/reviews-render/report-abuse?ie=UTF8&amp;voteDomain=Reviews&amp;ref=cm_cr_dp_d_freport&amp;csrfT=gu6qsFbbq0sYNtRUfastAeThoSKaSPnLR6KhylYAAAABAAAAAF%2BTpoJyYXcAAAAA%2B4kUEk%2F7iMGR3xPcX6iU&amp;entityId=R7KSV1TC3E9JY&amp;sessionId=138-6912250-4192104">Report abuse</a></span></span></span>
-</div></div></div></div><div id="RMWZNAJ3TJ6AU" data-hook="review" class="a-section review aok-relative cr-desktop-review-page-0"><div id="RMWZNAJ3TJ6AU-review-card" class="a-row a-spacing-none"><div id="customer_review_foreign-RMWZNAJ3TJ6AU" class="a-section celwidget" data-csa-c-id="ljwbw9-fc1bsi-m9bane-cknr71"><div data-hook="genome-widget" class="a-row a-spacing-mini"><div class="a-profile" data-a-size="small"><div aria-hidden="true" class="a-profile-avatar-wrapper"><div class="a-profile-avatar"><img src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/7ed6b728-a759-41a0-89d9-a8db17af0773._CR0,0,500,500_SX48_.jpg" class="" data-src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/7ed6b728-a759-41a0-89d9-a8db17af0773._CR0,0,500,500_SX48_.jpg"><noscript><img src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/7ed6b728-a759-41a0-89d9-a8db17af0773._CR0,0,500,500_SX48_.jpg"/></noscript></div></div><div class="a-profile-content"><span class="a-profile-name">Xavi</span></div></div></div><div class="a-row a-spacing-none"><i data-hook="cmps-review-star-rating" class="a-icon a-icon-star a-star-4 review-rating"><span class="a-icon-alt">4.0 out of 5 stars</span></i><span class="a-letter-space"></span><span data-hook="review-title" class="a-size-base review-title a-color-base review-title-content a-text-bold">
-
-
-<span>Buenos audífonos 5/5 audio 3.5/5</span>
-
-</span></div><span data-hook="review-date" class="a-size-base a-color-secondary review-date">Reviewed in Mexico on March 25, 2020</span><div class="a-row a-spacing-mini review-data review-format-strip"><span data-hook="avp-badge-linkless" class="a-size-mini a-color-state a-text-bold">Verified Purchase</span></div><div class="a-row a-spacing-small review-data"><span data-hook="review-body" class="a-size-base review-text"><div aria-live="polite" data-a-expander-name="review_text_read_more" data-a-expander-collapsed-height="300" class="a-expander-collapsed-height a-row a-expander-container a-expander-partial-collapse-container" style="max-height:300px"><div data-hook="review-collapsed" aria-expanded="false" class="a-expander-content reviewText review-text-content a-expander-partial-collapse-content">
-
-
-<span>
-El producto es excelente, en cuanto a comodidad, portabilidad, aislamiento y diseño, no hay ningún problema a la hora de sincronizar con el iPhone.<br>La única falla que he tenido es que se va se van zafando de los oídos con el tiempo, no se si por las gomas que son muy grandes para mi tipo de oído pero si se te va cayendo después de un rato y no me pasaba eso con los series 1 y 2.<br>Ah y si buscas unos audífonos con gran calidad de audio, estos no mejoran mucho a sus modelos anteriores, es bueno el audio pero no se compara con unos Sony o Beats de estudio.
-</span>
-
-</div><div class="a-expander-header a-expander-partial-collapse-header" style="opacity: 0; display: none;"><div class="a-expander-content-fade"></div><a href="javascript:void(0)" data-hook="expand-collapse-read-more-less" data-action="a-expander-toggle" class="a-declarative" data-a-expander-toggle="{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;Read more&quot;, &quot;collapse_prompt&quot;:&quot;Read less&quot;}"><i class="a-icon a-icon-extender-expand"></i><span class="a-expander-prompt">Read more</span></a></div></div></span></div><div data-hook="review-comments" class="a-row review-comments cr-vote-action-bar"><span class="cr-vote" data-hook="review-voting-widget">
-<div class="a-row a-spacing-small"><span data-hook="helpful-vote-statement" class="a-size-base a-color-tertiary cr-vote-text">19 people found this helpful</span></div></span>
-
-<span class="cr-footer-line-height">
-<span><span class="a-declarative" data-action="cr-popup" data-cr-popup="{&quot;width&quot;:&quot;580&quot;,&quot;title&quot;:&quot;ReportAbuse&quot;,&quot;url&quot;:&quot;/hz/reviews-render/report-abuse?ie=UTF8&amp;voteDomain=Reviews&amp;ref=cm_cr_dp_d_freport&amp;csrfT=gh64Mvu9Dq90sc91xqybmRoJfX1Ym89oHHbYyDYAAAABAAAAAF%2BTpoJyYXcAAAAA%2B4kUEk%2F7iMGR3xPcX6iU&amp;entityId=RMWZNAJ3TJ6AU&amp;sessionId=138-6912250-4192104&quot;,&quot;height&quot;:&quot;380&quot;}"><a class="a-size-base a-link-normal a-color-secondary report-abuse-link a-text-normal" href="/-/zh/hz/reviews-render/report-abuse?ie=UTF8&amp;voteDomain=Reviews&amp;ref=cm_cr_dp_d_freport&amp;csrfT=gh64Mvu9Dq90sc91xqybmRoJfX1Ym89oHHbYyDYAAAABAAAAAF%2BTpoJyYXcAAAAA%2B4kUEk%2F7iMGR3xPcX6iU&amp;entityId=RMWZNAJ3TJ6AU&amp;sessionId=138-6912250-4192104">Report abuse</a></span></span></span>
-</div></div></div></div><div id="R1ZAKZLCFV07VM" data-hook="review" class="a-section review aok-relative cr-desktop-review-page-0"><div id="R1ZAKZLCFV07VM-review-card" class="a-row a-spacing-none"><div id="customer_review_foreign-R1ZAKZLCFV07VM" class="a-section celwidget" data-csa-c-id="b3g178-wf47mp-n9jqip-ysdjd8"><div data-hook="genome-widget" class="a-row a-spacing-mini"><div class="a-profile" data-a-size="small"><div aria-hidden="true" class="a-profile-avatar-wrapper"><div class="a-profile-avatar"><img src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png" class="" data-src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png"><noscript><img src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png"/></noscript></div></div><div class="a-profile-content"><span class="a-profile-name">Pedro S.</span></div></div></div><div class="a-row a-spacing-none"><i data-hook="cmps-review-star-rating" class="a-icon a-icon-star a-star-3 review-rating"><span class="a-icon-alt">3.0 out of 5 stars</span></i><span class="a-letter-space"></span><span data-hook="review-title" class="a-size-base review-title a-color-base review-title-content a-text-bold">
-
-
-
-<span>Muy buenos en general, pero con ciertos detalles.</span>
-
-</span></div><span data-hook="review-date" class="a-size-base a-color-secondary review-date">Reviewed in Mexico on June 15, 2020</span><div class="a-row a-spacing-mini review-data review-format-strip"><span data-hook="avp-badge-linkless" class="a-size-mini a-color-state a-text-bold">Verified Purchase</span></div><div class="a-row a-spacing-small review-data"><span data-hook="review-body" class="a-size-base review-text"><div aria-live="polite" data-a-expander-name="review_text_read_more" data-a-expander-collapsed-height="300" class="a-expander-collapsed-height a-row a-expander-container a-expander-partial-collapse-container" style="max-height:300px"><div data-hook="review-collapsed" aria-expanded="false" class="a-expander-content reviewText review-text-content a-expander-partial-collapse-content">
-
-
-
-<span>
-Primero tengo que destacar lo rápido que fue la entrega del producto, llegó muy Bien empaquetado, se veía nuevo, al sacarlos del empaque se veía todo muy bien, pero ahí empezó el primer “detalle” al conectarlos decía “Arpods Pro de Ricardo” lo cual no entendí, porque si son nuevos, no entiendo porque tiene que tener otro nombre.<br>Total los eh probado 3 días han funcionado de maravilla excepto por un problema y MUY grave, se descarga mucho más rápido un airpods que otro.<br>Por lo que si se mantiene ese problema desgraciadamente tendré que devolverlos, espero que se arregle o que exista un cambio por otra unidad.
-</span>
-
-</div><div class="a-expander-header a-expander-partial-collapse-header" style="opacity: 0; display: none;"><div class="a-expander-content-fade"></div><a href="javascript:void(0)" data-hook="expand-collapse-read-more-less" data-action="a-expander-toggle" class="a-declarative" data-a-expander-toggle="{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;Read more&quot;, &quot;collapse_prompt&quot;:&quot;Read less&quot;}"><i class="a-icon a-icon-extender-expand"></i><span class="a-expander-prompt">Read more</span></a></div></div></span></div><div class="a-popover-preload" id="a-popover-R1ZAKZLCFV07VM_gallerySection_main"><div class="reviewLightboxPopoverContainer">
-<div class="reviewsLightbox" id="R1ZAKZLCFV07VM_gallerySection_main"></div>
-</div>
-</div><div id="R1ZAKZLCFV07VM_imageSection_main" class="a-section a-spacing-medium review-image-container"><div class="review-image-tile-section" data-reviewid="R1ZAKZLCFV07VM">
-<img alt="review image" src="https://images-na.ssl-images-amazon.com/images/I/61fz2ULpeLL._SY88.jpg" data-hook="cmps-review-image-tile" class="linkless-review-image-tile" height="88" width="100%" data-src="https://images-na.ssl-images-amazon.com/images/I/61fz2ULpeLL._SY88.jpg"><noscript><img alt="review image" src="https://images-na.ssl-images-amazon.com/images/I/61fz2ULpeLL._SY88.jpg" height="88" width="100%"/></noscript><img alt="review image" src="https://images-na.ssl-images-amazon.com/images/I/61Lc3e4+BOL._SY88.jpg" data-hook="cmps-review-image-tile" class="linkless-review-image-tile" height="88" width="100%" data-src="https://images-na.ssl-images-amazon.com/images/I/61Lc3e4+BOL._SY88.jpg"><noscript><img alt="review image" src="https://images-na.ssl-images-amazon.com/images/I/61Lc3e4+BOL._SY88.jpg" height="88" width="100%"/></noscript><img alt="review image" src="https://images-na.ssl-images-amazon.com/images/I/61A3K2QMtiL._SY88.jpg" data-hook="cmps-review-image-tile" class="linkless-review-image-tile" height="88" width="100%" data-src="https://images-na.ssl-images-amazon.com/images/I/61A3K2QMtiL._SY88.jpg"><noscript><img alt="review image" src="https://images-na.ssl-images-amazon.com/images/I/61A3K2QMtiL._SY88.jpg" height="88" width="100%"/></noscript></div>
-
-</div><div data-hook="review-comments" class="a-row review-comments cr-vote-action-bar"><span class="cr-vote" data-hook="review-voting-widget">
-<div class="a-row a-spacing-small"><span data-hook="helpful-vote-statement" class="a-size-base a-color-tertiary cr-vote-text">12 people found this helpful</span></div></span>
-
-<span class="cr-footer-line-height">
-<span><span class="a-declarative" data-action="cr-popup" data-cr-popup="{&quot;width&quot;:&quot;580&quot;,&quot;title&quot;:&quot;ReportAbuse&quot;,&quot;url&quot;:&quot;/hz/reviews-render/report-abuse?ie=UTF8&amp;voteDomain=Reviews&amp;ref=cm_cr_dp_d_freport&amp;csrfT=gsWDw9ZuSScXNCoy2XWPyetF3KNEGhIwTi7m3FEAAAABAAAAAF%2BTpoJyYXcAAAAA%2B4kUEk%2F7iMGR3xPcX6iU&amp;entityId=R1ZAKZLCFV07VM&amp;sessionId=138-6912250-4192104&quot;,&quot;height&quot;:&quot;380&quot;}"><a class="a-size-base a-link-normal a-color-secondary report-abuse-link a-text-normal" href="/-/zh/hz/reviews-render/report-abuse?ie=UTF8&amp;voteDomain=Reviews&amp;ref=cm_cr_dp_d_freport&amp;csrfT=gsWDw9ZuSScXNCoy2XWPyetF3KNEGhIwTi7m3FEAAAABAAAAAF%2BTpoJyYXcAAAAA%2B4kUEk%2F7iMGR3xPcX6iU&amp;entityId=R1ZAKZLCFV07VM&amp;sessionId=138-6912250-4192104">Report abuse</a></span></span></span>
-</div></div></div></div><div id="RX7BG2IWHSUWY" data-hook="review" class="a-section review aok-relative cr-desktop-review-page-0"><div id="RX7BG2IWHSUWY-review-card" class="a-row a-spacing-none"><div id="customer_review_foreign-RX7BG2IWHSUWY" class="a-section celwidget" data-csa-c-id="9ep5oh-2ywpv8-msqq6k-tzbre"><div data-hook="genome-widget" class="a-row a-spacing-mini"><div class="a-profile" data-a-size="small"><div aria-hidden="true" class="a-profile-avatar-wrapper"><div class="a-profile-avatar"><img src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png" class="" data-src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png"><noscript><img src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png"/></noscript></div></div><div class="a-profile-content"><span class="a-profile-name">Maicon Rodrigues De Meira</span></div></div></div><div class="a-row a-spacing-none"><i data-hook="cmps-review-star-rating" class="a-icon a-icon-star a-star-5 review-rating"><span class="a-icon-alt">5.0 out of 5 stars</span></i><span class="a-letter-space"></span><span data-hook="review-title" class="a-size-base review-title a-color-base review-title-content a-text-bold">
-
-
-
-<span>Originalidade e qualidade do produto e atendimento do vendedor.</span>
-
-</span></div><span data-hook="review-date" class="a-size-base a-color-secondary review-date">Reviewed in Brazil on December 6, 2019</span><div class="a-row a-spacing-mini review-data review-format-strip"><span data-hook="avp-badge-linkless" class="a-size-mini a-color-state a-text-bold">Verified Purchase</span></div><div class="a-row a-spacing-small review-data"><span data-hook="review-body" class="a-size-base review-text"><div aria-live="polite" data-a-expander-name="review_text_read_more" data-a-expander-collapsed-height="300" class="a-expander-collapsed-height a-row a-expander-container a-expander-partial-collapse-container" style="max-height:300px"><div data-hook="review-collapsed" aria-expanded="false" class="a-expander-content reviewText review-text-content a-expander-partial-collapse-content">
-
-
-
-<span>
-Airpods Pro, fones perfeitos e dispensam quaisquer comentários, Apple sem dúvidas é a melhor. Quanto a  Loja HR Infinity Store, se eu indico? Indico de olhos fechados, meu produto chegou em um dia útil, Vendedor nota 1000000000
-</span>
-
-</div><div class="a-expander-header a-expander-partial-collapse-header" style="opacity: 0; display: none;"><div class="a-expander-content-fade"></div><a href="javascript:void(0)" data-hook="expand-collapse-read-more-less" data-action="a-expander-toggle" class="a-declarative" data-a-expander-toggle="{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;Read more&quot;, &quot;collapse_prompt&quot;:&quot;Read less&quot;}"><i class="a-icon a-icon-extender-expand"></i><span class="a-expander-prompt">Read more</span></a></div></div></span></div><div class="a-popover-preload" id="a-popover-RX7BG2IWHSUWY_gallerySection_main"><div class="reviewLightboxPopoverContainer">
-<div class="reviewsLightbox" id="RX7BG2IWHSUWY_gallerySection_main"></div>
-</div>
-</div><div id="RX7BG2IWHSUWY_imageSection_main" class="a-section a-spacing-medium review-image-container"><div class="review-image-tile-section" data-reviewid="RX7BG2IWHSUWY">
-<img alt="review image" src="https://images-na.ssl-images-amazon.com/images/I/61ttw1kGfgL._SY88.jpg" data-hook="cmps-review-image-tile" class="linkless-review-image-tile" height="88" width="100%" data-src="https://images-na.ssl-images-amazon.com/images/I/61ttw1kGfgL._SY88.jpg"><noscript><img alt="review image" src="https://images-na.ssl-images-amazon.com/images/I/61ttw1kGfgL._SY88.jpg" height="88" width="100%"/></noscript></div>
-
-</div><div data-hook="review-comments" class="a-row review-comments cr-vote-action-bar"><span class="cr-vote" data-hook="review-voting-widget">
-<div class="a-row a-spacing-small"><span data-hook="helpful-vote-statement" class="a-size-base a-color-tertiary cr-vote-text">16 people found this helpful</span></div></span>
-
-<span class="cr-footer-line-height">
-<span><span class="a-declarative" data-action="cr-popup" data-cr-popup="{&quot;width&quot;:&quot;580&quot;,&quot;title&quot;:&quot;ReportAbuse&quot;,&quot;url&quot;:&quot;/hz/reviews-render/report-abuse?ie=UTF8&amp;voteDomain=Reviews&amp;ref=cm_cr_dp_d_freport&amp;csrfT=gtrH6SuI0%2FxPYw3MPpKeexCFp7T6FByZn3JzbWIAAAABAAAAAF%2BTpoJyYXcAAAAA%2B4kUEk%2F7iMGR3xPcX6iU&amp;entityId=RX7BG2IWHSUWY&amp;sessionId=138-6912250-4192104&quot;,&quot;height&quot;:&quot;380&quot;}"><a class="a-size-base a-link-normal a-color-secondary report-abuse-link a-text-normal" href="/-/zh/hz/reviews-render/report-abuse?ie=UTF8&amp;voteDomain=Reviews&amp;ref=cm_cr_dp_d_freport&amp;csrfT=gtrH6SuI0%2FxPYw3MPpKeexCFp7T6FByZn3JzbWIAAAABAAAAAF%2BTpoJyYXcAAAAA%2B4kUEk%2F7iMGR3xPcX6iU&amp;entityId=RX7BG2IWHSUWY&amp;sessionId=138-6912250-4192104">Report abuse</a></span></span></span>
-</div></div></div></div><div id="cr-pagination-footer-0" class="a-section a-spacing-top-extra-large"><hr aria-hidden="true" class="a-spacing-base a-divider-normal"><a data-hook="see-all-reviews-link-foot" class="a-link-emphasis a-text-bold" href="/-/zh/Apple-MWP22AM-A-AirPods-Pro/product-reviews/B07ZPC9QD4/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&amp;reviewerType=all_reviews">See all reviews</a></div>
-</div>
-</div>
-</div>
-</span>
-</span>
-</div></div></div></div></div>
-
-
-
-
-  
-
-
-
-
-<!--Featured Products-->
-    <div class="a-divider a-divider-section"><div class="a-divider-inner"></div></div>
-    <div class="site-section block-3 site-blocks-2 bg-light">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-7 site-section-heading text-center pt-4">
-            <h2>Featured Products</h2>
+  <!--Buyer Coment and Reviews-->
+  <div class="site-section">
+    <div class="container">
+      <div class="buyer-comment">
+        <!-- left aside -->
+        <div class="comment-aside">
+          <h2>Buyer Comments</h2>
+          <div class="ratings">
+            <div class="ratings-icon"></div>
+            <span class="ratings-score">4.7 out of 5</span>
           </div>
+          <p class="ratings-num clearfix">2,958 global ratings</p>
+          <div class="ratings-star">
+            <!-- 5star -->
+            <a href="#" class="star-item">
+              <span class="ratings-star-title ratings-star-num">5 star</span>
+              <div class="star-progress-bg">
+                <div class="star-progress-bar star-progress-bar1"></div>
+              </div>
+              <span class="ratings-star-title ratings-star-percent">83%</span>
+            </a>
+            <!-- 4star -->
+            <a href="#" class="star-item">
+              <span class="ratings-star-title ratings-star-num">4 star</span>
+              <div class="star-progress-bg">
+                <div class="star-progress-bar star-progress-bar2"></div>
+              </div>
+              <span class="ratings-star-title ratings-star-percent">9%</span>
+            </a>
+            <!-- 3star -->
+            <a href="#" class="star-item">
+              <span class="ratings-star-title ratings-star-num">3 star</span>
+              <div class="star-progress-bg">
+                <div class="star-progress-bar star-progress-bar3"></div>
+              </div>
+              <span class="ratings-star-title ratings-star-percent">3%</span>
+            </a>
+            <!-- 2star -->
+            <a href="#" class="star-item">
+              <span class="ratings-star-title ratings-star-num">2 star</span>
+              <div class="star-progress-bg">
+                <div class="star-progress-bar star-progress-bar4"></div>
+              </div>
+              <span class="ratings-star-title ratings-star-percent">2%</span>
+            </a>
+            <!-- 1star -->
+            <a href="#" class="star-item">
+              <span class="ratings-star-title ratings-star-num">1 star</span>
+              <div class="star-progress-bg">
+                <div class="star-progress-bar star-progress-bar5"></div>
+              </div>
+              <span class="ratings-star-title ratings-star-percent">3%</span>
+            </a>
+          </div>
+          <a href="#" class="how">
+            <span>How are ratings calculated?</span>
+          </a>
+          <hr class="aside-hr">
+          <span class="aside-subtitle">By feature</span>
+          <div class="features">
+            <div class="feature-detail">
+              <span>Good!</span>
+              <div class="ratings">
+                <div class="ratings-icon"></div>
+                <span class="ratings-score">4.7 out of 5</span>
+              </div>
+            </div>
+            <div class="feature-detail">
+              <span>very Good!</span>
+              <div class="ratings">
+                <div class="ratings-icon"></div>
+                <span class="ratings-score">4.7 out of 5</span>
+              </div>
+            </div>
+            <div class="feature-detail">
+              <span>Nice!</span>
+              <div class="ratings">
+                <div class="ratings-icon"></div>
+                <span class="ratings-score">4.7 out of 5</span>
+              </div>
+            </div>
+          </div>
+          <hr class="aside-hr">
+          <span class="aside-subtitle">Review this product</span>
+          <p>Share your thoughts with other customers</p>
+          <span class="review-btn">
+            <a href="#">Write a customer review</a>
+          </span>
+          <hr class="aside-hr">
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="nonloop-block-3 owl-carousel featured-items">
-              
+        <!-- images and other -->
+        <div class="more-comments">
+          <div class="customer-images">
+            <h3>Customer images</h3>
+            <div class="customer-images-detail">
+              <a href="#">
+                <img src="./images/bread.jpg" alt="">
+              </a>
+              <a href="#">
+                <img src="./images/fruit1.jpg" alt="">
+              </a>
+              <a href="#">
+                <img src="./images/beef.jpg" alt="">
+              </a>
+              <a href="#">
+                <img src="./images/noodle.jpg" alt="">
+              </a>
+              <a href="#">
+                <img src="./images/fruitplate.jpg" alt="">
+              </a>
+              <a href="#">
+                <img src="./images/fruitplate.jpg" alt="">
+              </a>
+              <a href="#">
+                <img src="./images/fruitplate.jpg" alt="">
+              </a>
+              <!-- <a href="#">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/71kEo4-26DL._CR0,204,1224,1224_UX175.jpg" alt="">
+              </a>
+              <a href="#">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/71kEo4-26DL._CR0,204,1224,1224_UX175.jpg" alt="">
+              </a>
+              <a href="#">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/71kEo4-26DL._CR0,204,1224,1224_UX175.jpg" alt="">
+              </a>
+              <a href="#">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/71kEo4-26DL._CR0,204,1224,1224_UX175.jpg" alt="">
+              </a> -->
+            </div>
+            <a href="#">See all customer images</a>
+          </div>
+          <div class="customer-mention">
+            <h3>Read reviews that mention</h3>
+            <div class="mention-tip">
+              <a href="#">better life</a>
+              <a href="#">better life</a>
+              <a href="#">better life</a>
+              <a href="#">better life</a>
+              <a href="#">better life</a>
+              <a href="#">better life</a>
+            </div>
+          </div>
+          <hr>
+          <div class="customer-top-reviews">
+            <h3>Top reviews from the ABC</h3>
+            <div class="user-reviews">
+              <a href="#" class="user-info">
+                <span class="avatar"></span>
+                <span class="user-name">Blue House</span>
+              </a>
+              <div class="review-ratings">
+                <span class="review-star">评分图片</span>
+                <a href="#" class="review-brief">good good good</a>
+              </div>
+              <p class="date" style="margin: 0">Reviewed in the United States on August 19, 2019</p>
+              <div class="model">
+                <span>Color: Club Red</span><span class="model-mark">|</span>
+                <span class="Verified">Verified Purchase</span>
+              </div>
+              <p class="more-reviews">
+                These headphones are amazing! The sound is great and clear, they get loud af, noise canceling when music is playing, basically noise canceling even when music isn’t playing. They are comfortable except after a few hours of constant use they start to hurt your ears but that is like any over ear headphones. The battery life also lasts soooo long, they are great headphones, I definitely recommend!
+              </p>
+              <p><span>139</span> people found this helpful</p>
+              <div class="review-help">
+                <a href="#" class="help-btn">Helpful</a><span class="help-mark">|</span>
+                <a href="#">Comment</a><span class="help-mark">|</span>
+                <a href="#" class="help-mark">Report abuse</a>
+              </div>
+            </div>
+            <div class="user-reviews">
+              <a href="#" class="user-info">
+                <span class="avatar"></span>
+                <span class="user-name">Blue House</span>
+              </a>
+              <div class="review-ratings">
+                <span class="review-star">评分图片</span>
+                <a href="#" class="review-brief">good good good</a>
+              </div>
+              <p class="date" style="margin: 0">Reviewed in the United States on August 19, 2019</p>
+              <div class="model">
+                <span>Color: Club Red</span><span class="model-mark">|</span>
+                <span class="Verified">Verified Purchase</span>
+              </div>
+              <p class="more-reviews">
+                These headphones are amazing! The sound is great and clear, they get loud af, noise canceling when music is playing, basically noise canceling even when music isn’t playing. They are comfortable except after a few hours of constant use they start to hurt your ears but that is like any over ear headphones. The battery life also lasts soooo long, they are great headphones, I definitely recommend!
+              </p>
+              <p><span>139</span> people found this helpful</p>
+              <div class="review-help">
+                <a href="#" class="help-btn">Helpful</a><span class="help-mark">|</span>
+                <a href="#">Comment</a><span class="help-mark">|</span>
+                <a href="#" class="help-mark">Report abuse</a>
+              </div>
+            </div>
+            <div class="user-reviews">
+              <a href="#" class="user-info">
+                <span class="avatar"></span>
+                <span class="user-name">Blue House</span>
+              </a>
+              <div class="review-ratings">
+                <span class="review-star">评分图片</span>
+                <a href="#" class="review-brief">good good good</a>
+              </div>
+              <p class="date" style="margin: 0">Reviewed in the United States on August 19, 2019</p>
+              <div class="model">
+                <span>Color: Club Red</span><span class="model-mark">|</span>
+                <span class="Verified">Verified Purchase</span>
+              </div>
+              <p class="more-reviews">
+                These headphones are amazing! The sound is great and clear, they get loud af, noise canceling when music is playing, basically noise canceling even when music isn’t playing. They are comfortable except after a few hours of constant use they start to hurt your ears but that is like any over ear headphones. The battery life also lasts soooo long, they are great headphones, I definitely recommend!
+              </p>
+              <p><span>139</span> people found this helpful</p>
+              <div class="review-help">
+                <a href="#" class="help-btn">Helpful</a><span class="help-mark">|</span>
+                <a href="#">Comment</a><span class="help-mark">|</span>
+                <a href="#" class="help-mark">Report abuse</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  
-    %include footer.html%
-    
-  </body>
+  </div>
+
+  <style>
+    .review-help {
+      width: 100%;
+    }
+    .review-help a {
+      display: inline-block;
+    }
+    .review-help a.help-btn {
+      /* width: 100px; */
+      border-radius: 8px;
+      padding: 2px 15px;
+      color: #fff;
+      background-color: #7971ea;
+    }
+    .review-help .help-mark {
+      margin: 0 5px;
+    }
+    .model .model-mark {
+      margin: 0 10px;
+    }
+    .model .Verified {
+      font-size: 14px;
+    }
+    .review-ratings .review-star {
+      display: inline-block;
+      width: 100px;
+      height: 16px;
+      border: 1px solid #000;
+      vertical-align: middle;
+      font-size: 12px;
+      margin-right: 10px;
+    }
+    .customer-top-reviews {
+      width: 100%;
+    }
+    .customer-top-reviews .user-reviews {
+      /* border: 1px solid #000; */
+      margin-bottom: 20px;
+    }
+    .user-reviews .user-info {
+      display: inline-block;
+    }
+    .user-reviews .user-info > .avatar {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      /* background-color: red; */
+      border: 2px solid #7971ea;
+      vertical-align: middle;
+      border-radius: 100%;
+      margin-right: 10px;
+    }
+    .user-reviews .user-info > .user-name {
+      display: inline-block;
+      height: 30px;
+      line-height: 30px;
+    }
+    .review-star {
+      width: 40px;
+    }
+    /* mention */
+    .customer-mention {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .customer-mention .mention-tip {
+      width: 100%;
+      margin-top: 20px;
+    }
+    .mention-tip a {
+      display: inline-block;
+      padding: 5px 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      color: #fff;
+      background-color: #7971ea;
+    }
+
+    /* comments */
+    .more-comments {
+      width: 100%;
+      min-width: 500px;
+      padding-left: 100px;
+      /* height: 1000px; */
+      /* border: 1px solid #000; */
+    }
+    .more-comments h3 {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .customer-images {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    /* .customer-images h3 {
+      font-size: 18px;
+      font-weight: 700;
+    } */
+    .customer-images .customer-images-detail {
+      width: 100%;
+      column-count: 4;
+      column-gap: 10px;
+      /* display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap; */
+    }
+    .customer-images .customer-images-detail a {
+      display: inline-block;
+      margin-top: 5px;
+      /* width: 20%; */
+      /* margin-right: 10px;
+      margin-bottom: 10px; */
+    }
+    .customer-images .customer-images-detail img {
+      /* width: 200px; */
+      /* height: 100px; */
+      display: block;
+      width: 100%;
+    }
+    /* Review this product */
+    .review-btn {
+      display: inline-block;
+      width: 100%;
+      height: 28px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      text-align: center;
+      background-color: #7971ea;
+      /* background-image: linear-gradient(#eee, #ddd); */
+    }
+    .review-btn a {
+      color: #fff;
+      display: inline-block;
+      width: 100%;
+    }
+    .aside-hr {
+      margin: 40px 0;
+    }
+    /* feature */
+    .aside-subtitle {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 700;
+    }
+    .features {
+      width: 100%;
+    }
+    .features .feature-detail {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .features .feature-detail .ratings {
+      flex: 1.5;
+    }
+    .features .feature-detail>span {
+      padding-top: 5px;
+      flex: 1;
+    }
+    /* ratings-star */
+    .ratings-star {
+      width: calc(100% - 15px);
+      margin-right: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+    .ratings-star .star-item {
+      width: 100%;
+      height: 20px;
+      margin: 5px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .star-item .ratings-star-title {
+      flex: 1;
+    }
+    .star-item .ratings-star-title.ratings-star-percent {
+      text-align: right;
+    }
+    .star-item .star-progress-bg {
+      width: 180px;
+      height: 100%;
+      background-color: #eaeaea;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .star-item .star-progress-bg .star-progress-bar {
+      height: 100%;
+      background-color:#7971ea;
+    }
+    /* ratings-star end */
+    .star-progress-bar1 {
+      width: 83%;
+    }
+    .star-progress-bar2 {
+      width: 9%;
+    }
+    .star-progress-bar3 {
+      width: 3%;
+    }
+    .star-progress-bar4 {
+      width: 2%;
+    }
+    .star-progress-bar5{
+      width: 3%;
+    }
+
+    .clearfix {
+      clear: both;
+    }
+    .buyer-comment {
+      width: 100%;
+      /* height: 1000px; */
+      padding-left: 300px;
+      /* border: 1px solid #000; */
+    }
+    .comment-aside {
+      float: left;
+      min-width: 300px;
+      margin-left: -300px;
+      /* border: 1px solid red; */
+    }
+    .comment-aside h2 {
+      margin: 0;
+      font-weight: 700;
+    }
+    .comment-aside .ratings {
+      width: 100%;
+      height: 25px;
+      line-height: 25px;
+      padding-top: 5px;
+    }
+    .comment-aside .ratings .ratings-icon {
+      float: left;
+      width: 84px;
+      height: 100%;
+      background-image: url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIIcon-experiment_2020_1x-ab77f2096189c997cff30248be58833be7846633._V2_.png);
+      background-position: -82px -26px;
+      margin-right: 10px;
+    }
+    .comment-aside .ratings .ratings-score {
+      float: left;
+      height: 100%;
+      line-height: 1.4;
+    }
+    .comment-aside .ratings-num {
+      padding-top: 5px;
+    }
+  </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--Featured Products-->
+  <div class="a-divider a-divider-section">
+    <div class="a-divider-inner"></div>
+  </div>
+  <div class="site-section block-3 site-blocks-2 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-7 site-section-heading text-center pt-4">
+          <h2>Featured Products</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="nonloop-block-3 owl-carousel featured-items">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  %include footer.html%
+
+</body>
+
 </html>
