@@ -34,11 +34,17 @@ function formatPrice(price) {
 let filename = location.pathname.substr(location.pathname.lastIndexOf('/') + 1)
 $(`nav a[href="${filename}"]`).parent().addClass('active')
 
+// The item being shown on this shop-single or shop-group page
+let itemOnPage = {}
+
 // Load shop single item
 if ($('.shop-single').length) {
   let id = new URLSearchParams(window.location.search).get('id')
   $.get(`/api/customer/get_produce?id=${id}`, items => {
     items.forEach(item => {
+      itemOnPage = item
+      itemOnPage.quickPurchase = true
+
       $('.item-name').text(item.name)
       $('.item-picture').css('background-image', `url('${item.picture}')`)
       $('.item-description').text(item.description)
@@ -56,6 +62,9 @@ if ($('.shop-group').length) {
   let id = new URLSearchParams(window.location.search).get('id')
   $.get(`/api/customer/get_group_items?id=${id}`, items => {
     items.forEach(item => {
+      itemOnPage = item
+      itemOnPage.groupPurchase = true
+      
       $('.item-name').text(item.name)
       $('.item-picture').css('background-image', `url('${item.picture}')`)
       $('.item-description').text(item.description)
@@ -337,32 +346,92 @@ if (query) {
 
 //add items to HTML5 storage
 function AddItem() {
+  let key = (itemOnPage.groupPurchase ? 'group_' : 'quick_') + itemOnPage.id
+  itemOnPage.count = parseInt($('.count').val())
 
-  var name = document.getElementsByClassName("text-black item-name")[0].innerHTML
-  var quanitity = document.getElementsByClassName("form-control text-center")[0].innerHTML
-  localStorage.setItem(name, quanitity);
+  let item = localStorage.getItem(key)
+  if (item) {
+    // Item is already in cart, combine the two
+    item = JSON.parse(item)
+    item.count += itemOnPage.count
+  } else {
+    // Item is not in cart yet, set it
+    item = itemOnPage
+  }
+
+  localStorage.setItem(key, JSON.stringify(item))
+}
+  
+function calculateCartTotals() {
+  let key, item, i
+  let total = 0
+  
+  // Sum the price * count for each item in the cart
+  for (i = 0; i < localStorage.length; i++) {
+    key = localStorage.key(i)
+    item = JSON.parse(localStorage.getItem(key))
+    total += item.price * item.count
+  }
+
+  $('.total-price').text(formatPrice(total))
 }
 
-function BrowserCheck() {
-	return ('localStorage' in window && window['localStorage'] !== null)
-}
-    
-function DisplayItems() {
-	if (BrowserCheck()) {
-		var key = "";
-		var list = "<tr><th>Item</th><th>Value</th></tr>\n";
-    var i = 0;
-    
-		for (i = 0; i <= localStorage.length-1; i++) {
-			key = localStorage.key(i);
-			list += "<tr><td>" + key + "</td>\n<td>"
-					+ localStorage.getItem(key) + "</td></tr>\n";
-		}
-		//no items in the table
-		if (list == "<tr><th>Item</th><th>Value</th></tr>\n") {
-			list += "<tr><td><i>empty</i></td>\n<td><i>empty</i></td></tr>\n";
-    }
-	} else {
-		alert('Cannot save shopping list as your browser does not support HTML 5');
-	}
+// Load cart
+if ($('.cart').length) {
+  let key, item, i
+  
+  // For each item in the cart...
+  for (i = 0; i < localStorage.length; i++) {
+    key = localStorage.key(i)
+    item = JSON.parse(localStorage.getItem(key))
+
+    let row = $(`<tr cart-key="${key}">
+      <td class="product-thumbnail">
+        <img src="${item.picture}" alt="Image" class="img-fluid">
+      </td>
+      <td class="product-name">
+        <h2 class="h5 text-black">${item.name}</h2>
+      </td>
+      <td>${formatPrice(item.price)}</td>
+      <td>
+        <div class="input-group mb-3" style="max-width: 120px;">
+          <div class="input-group-prepend">
+            <button class="btn btn-outline-primary js-btn-minus" type="button">-</button>
+          </div>
+          <input type="text" class="form-control text-center" value="${item.count}" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+          <div class="input-group-append">
+            <button class="btn btn-outline-primary js-btn-plus" type="button">+</button>
+          </div>
+        </div>
+      </td>
+      <td class="total-item-price">${formatPrice(item.price * item.count)}</td>
+      <td><button class="btn btn-primary btn-sm btn-remove">X</button></td>
+    </tr>`).appendTo('.cart')
+
+    // On count change
+    row.find('.form-control').on('input', e => {
+      let key = $(e.target).parents('tr').attr('cart-key')
+      let item = JSON.parse(localStorage.getItem(key))
+
+      // Update and save count
+      item.count = parseInt($(e.target).val())
+      localStorage.setItem(key, JSON.stringify(item))
+
+      // Update total price
+      $(e.target).parents('tr').find('.total-item-price').text(formatPrice(item.price * item.count))
+      calculateCartTotals()
+    })
+
+    // On item delete
+    row.find('.btn-remove').on('click', e => {
+      let key = $(e.target).parents('tr').attr('cart-key')
+
+      // Remove the item and update the total price
+      delete localStorage[key]
+      $(e.target).parents('tr').remove()
+      calculateCartTotals()
+    })
+  }
+
+  calculateCartTotals()
 }
