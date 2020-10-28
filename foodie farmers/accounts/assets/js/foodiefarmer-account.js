@@ -10,6 +10,11 @@ const stockMap = {}
 // Map of group purchase id to the group purchase of the farmer
 const groupPurchaseMap = {}
 
+// Move to the selected tab
+if (location.hash.length > 1) {
+  $(`[href$="${location.hash}"]`).click()
+}
+
 // On google sign in
 function onSignIn(googleUser) {
   let profile = googleUser.getBasicProfile()

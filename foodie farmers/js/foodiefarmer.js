@@ -496,6 +496,6 @@ function order(button) {
   }).done((data) => {
     console.log('Done')
     setCart({})
-    window.location='accounts/index.html#pills-order-tab'
+    window.location='accounts/index.html#pills-order'
   })
 }
