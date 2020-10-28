@@ -3,12 +3,15 @@
 /* Foodie Farmer javascript */
 
 let loginDialogShown = false
+let signedIn = false
 
 // On google sign in
 function onSignIn(googleUser) {
   let profile = googleUser.getBasicProfile()
 
   $.post('/api/signin', 'idtoken=' + googleUser.getAuthResponse().id_token, data => {
+    signedIn = true
+
     if (loginDialogShown) {
       location.reload()
     }
@@ -19,10 +22,15 @@ function onSignIn(googleUser) {
 /*$.get('/api/customer/get_profile').fail(jqXHR => {
   // The server returns a response code of 400 when not logged in
   if (jqXHR.status == 400) {
-    loginDialogShown = true
-    $('.login-dialog').modal()
+    showLoginDialog()
   }
 })*/
+
+// Show the login dialog
+function showLoginDialog() {
+  loginDialogShown = true
+  $('.login-dialog').modal()
+}
 
 // Returns the price formatted in the local currency
 //  eg $2.00 or 200￥
@@ -454,4 +462,40 @@ if ($('.cart').length) {
   })
 
   calculateCartTotals()
+}
+
+// Place the order
+function order(button) {
+  $(button).text('Placing order...')
+
+  if (!signedIn) {
+    // Not signed in, show the login dialog
+    showLoginDialog()
+
+    // Try to order again later once they might be logged in
+    return setTimeout(order.bind(button), 1000)
+  }
+
+  const cart = getCart()
+  let orders = []
+
+  // Generate orders to send to the server
+  Object.keys(cart).forEach(key => {
+    orders.push({
+      id: cart[key].id,
+      count: cart[key].count,
+      groupPurchase: cart[key].groupPurchase
+    })
+  })
+
+  $.ajax({
+    type: 'post',
+    url: '/api/customer/place_order',
+    data: JSON.stringify(orders),
+    contentType: 'application/json'
+  }).done((data) => {
+    console.log('Done')
+    setCart({})
+    window.location='accounts/index.html#pills-order-tab'
+  })
 }
