@@ -48,6 +48,8 @@ function loadProfile(idtoken) {
     $('#farmName').val(customer.farmName)
     $('#farmAddress').val(customer.farmAddress)
 
+    loadOrders()
+
     if (customer.farmName) {
       // Show the farm tabs if we are a farm
       showFarmTabs()
@@ -67,6 +69,22 @@ function loadProfile(idtoken) {
       // Another kind of error occured
       $('.welcome-dashboard').html(`Could not contact api server`)
     }
+  })
+}
+
+// Load the customers orders
+function loadOrders() {
+  $.get('/api/customer/list_orders', orders => {
+    orders.forEach(order => {
+      $(`<tr>
+        <td><img src="${order.picture}" title="${order.name}" width="64px"/></td>
+        <td>${order.name}</td>
+        <td>${new Date(order.date).toLocaleDateString()}</td>
+        <td>${order.status}</td>
+        <td>${order.quantity}</td>
+        <td>$${order.quantity * order.price}</td>
+      </tr>`).appendTo('.my-account-order tbody')
+    })
   })
 }
 
